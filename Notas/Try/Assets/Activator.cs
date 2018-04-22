@@ -29,7 +29,7 @@ public class Activator : MonoBehaviour {
         else if  (Input.GetKeyDown(key) && active==false)
             {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
-            BarraVidaScript.Damage(BarraVidaScript.damageValue);
+            BarraVidaScript.Damage(BarraVidaScript.damage);
             }
 
       
