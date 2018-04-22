@@ -428,8 +428,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+
 --- !u!114 &600438183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,8 +696,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+
 --- !u!114 &952626529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,8 +927,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+
 --- !u!114 &1160752893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,7 +1017,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.27
+    width: 0.3
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1290,6 +1296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
 --- !u!114 &1596281857
