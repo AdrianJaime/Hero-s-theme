@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 1057219064}
   - component: {fileID: 1057219065}
   m_Layer: 0
-  m_Name: 'Conrrolador de Vida '
+  m_Name: Controlador de Vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 1768413959}
   Health: 100
-  damage: 10
+  damageValue: 10
   vidaCurada: 5
 --- !u!1 &1083408424
 GameObject:
