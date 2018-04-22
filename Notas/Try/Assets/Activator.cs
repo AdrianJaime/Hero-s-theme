@@ -25,7 +25,7 @@ public class Activator : MonoBehaviour {
             PuntosDeJuegoScript.MultiplicadorDeCombo++;
             NotaEliminada = true;
         }
-        else if  (Input.GetKeyDown(key) && !active)
+        else if  (Input.GetKeyDown(key) && active==false)
             {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
             BarraVidaScript.Damage(25.0f);
