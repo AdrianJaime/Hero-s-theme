@@ -288,7 +288,7 @@ RectTransform:
   m_GameObject: {fileID: 581987491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_Children:
   - {fileID: 35404111}
   m_Father: {fileID: 1869742208}
@@ -296,8 +296,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 77.90498, y: 126.06498}
-  m_SizeDelta: {x: -285.20996, y: -261.53003}
+  m_AnchoredPosition: {x: 104.755005, y: 100.80002}
+  m_SizeDelta: {x: -275.63, y: -290}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581987493
 MonoBehaviour:
@@ -428,10 +428,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
-
 --- !u!114 &600438183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,8 +441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuntosDeJuegoScript: {fileID: 0}
-  BarraVidaScript: {fileID: 0}
+  PuntosDeJuegoScript: {fileID: 2084888614}
+  BarraVidaScript: {fileID: 1057219065}
   key: 115
   NotaEliminada: 0
 --- !u!1 &649525414
@@ -696,10 +694,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
-
 --- !u!114 &952626529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,8 +707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuntosDeJuegoScript: {fileID: 0}
-  BarraVidaScript: {fileID: 0}
+  PuntosDeJuegoScript: {fileID: 2084888614}
+  BarraVidaScript: {fileID: 1057219065}
   key: 100
   NotaEliminada: 0
 --- !u!1 &1057219063
@@ -795,8 +791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 39.050022, y: 63.364998}
-  m_SizeDelta: {x: -427.90002, y: -238.06999}
+  m_AnchoredPosition: {x: 101.15001, y: 73.049995}
+  m_SizeDelta: {x: -303.7, y: -218.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083408426
 MonoBehaviour:
@@ -927,10 +923,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
-
 --- !u!114 &1160752893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,8 +936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuntosDeJuegoScript: {fileID: 0}
-  BarraVidaScript: {fileID: 0}
+  PuntosDeJuegoScript: {fileID: 2084888614}
+  BarraVidaScript: {fileID: 1057219065}
   key: 97
   NotaEliminada: 0
 --- !u!1 &1443295388
@@ -1017,7 +1011,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.3
+    width: 0.27
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1296,7 +1290,6 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
 --- !u!114 &1596281857
