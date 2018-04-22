@@ -9,6 +9,7 @@ public class Activator : MonoBehaviour {
     public KeyCode key;
     bool active = false;
     GameObject Note;
+    public float damage;
 
    public  bool NotaEliminada;
 	// Use this for initialization
@@ -28,7 +29,7 @@ public class Activator : MonoBehaviour {
         else if  (Input.GetKeyDown(key) && active==false)
             {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
-            BarraVidaScript.Damage(25.0f);
+            BarraVidaScript.Damage(damage);
             }
         NotaEliminada = false;
     }

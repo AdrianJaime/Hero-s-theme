@@ -6,7 +6,7 @@ public class BarraVida : MonoBehaviour {
 
 	public Scrollbar HealthBar;
     float HealthMax;
-    public float Health = 100;
+    public float Health = 100.0f;
 
     private void Start()
     {
