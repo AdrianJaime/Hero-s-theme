@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class not : MonoBehaviour {
+public class Notas : MonoBehaviour {
     public int speed;
     // Use this for initialization
     void Start () {
