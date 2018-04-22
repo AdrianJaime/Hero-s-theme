@@ -9,6 +9,7 @@ public class PuntosDeJuego : MonoBehaviour {
     public int PuntosPorNota=100;
 
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,8 +17,7 @@ public class PuntosDeJuego : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //esto implementado en el codigo de las notas. Si hay una nota y se presiona se suma.
-        PuntosTotales += (PuntosPorNota* MultiplicadorDeCombo);
+      
 		
 	}
 }
