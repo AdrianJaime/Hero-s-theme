@@ -18,7 +18,6 @@ public class BarraVida : MonoBehaviour {
 	{
 		Health -= value;
 		HealthBar.size = Health / HealthMax;
-;
 	}
 
 }
