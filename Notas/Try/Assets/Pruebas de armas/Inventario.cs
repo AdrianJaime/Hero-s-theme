@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour {
 
+
+    //mirar de usar GetComponent
     public BaseDeDatos BaseDeDatosScript;
-    public GameObject slotPefab;
+    private GameObject slotPefab;
     private List<SlotInfo> slotInfoList;
     private int capacity;
+
+
 
     private void CrearInventarioVacío()
     {
@@ -24,6 +28,6 @@ public class Inventario : MonoBehaviour {
 
     public void AñadirItem(int _identificadorItem)
     {
-        Item
+       
     }
 }
