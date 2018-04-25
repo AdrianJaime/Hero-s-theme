@@ -11,4 +11,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b047313e9dbf0944c9755a5faefbb1f5, type: 3}
   m_Name: Armas
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - identificador: 1
+    name: 
+    rareza: 0
+    nivel: 0
+    precioVenta: 0
+    expProportcionada: 0
+    stats:
+      damage: 0
+      combo: 0
+      vida: 0
+  - identificador: 2
+    name: 
+    rareza: 0
+    nivel: 0
+    precioVenta: 0
+    expProportcionada: 0
+    stats:
+      damage: 0
+      combo: 0
+      vida: 0

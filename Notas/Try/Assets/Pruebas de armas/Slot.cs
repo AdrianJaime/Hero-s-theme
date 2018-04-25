@@ -10,11 +10,11 @@ public class Slot : MonoBehaviour {
     {
         slotInfo = new SlotInfo();
         slotInfo.identificador = _identificador;
-        slotInfo.SetEmptySlot;
+        slotInfo.SetEmptySlot();
     }
 
 }
-
+[System.Serializable]
 public class SlotInfo
 {
     public int identificador;

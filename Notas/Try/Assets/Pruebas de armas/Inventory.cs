@@ -5,17 +5,19 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    private BaseDeDatos BaseDeDatosScript;
-    private GameObject slotPrefab;
-    private List<SlotInfo> slotInfoList;
-    private int capacity;
+    public BaseDeDatos BaseDeDatosScript;
+    public GameObject slotPrefab;
+    [SerializeField]
+    public List<SlotInfo> slotInfoList;
+    public int capacity;
+    private string saveDataInventario;
 
     private void Start()
     {
         slotInfoList = new List<SlotInfo>();
         if(PlayerPrefs.HasKey("inventario"))
         {
-            //cargar inventario
+            CargarInventario();
         }
         else
         {
@@ -38,7 +40,19 @@ public class Inventory : MonoBehaviour
 
     private void CargarInventario()
     {
+        saveDataInventario = PlayerPrefs.GetString("inventario");
+        InventarioGuardado guardarInventario = JsonUtility.FromJson<InventarioGuardado>(saveDataInventario);
+        this.slotInfoList = guardarInventario.slotInfoList;
+    }
 
+    private SlotInfo EncontrarItemEnInventario(int _identificadorItem)
+    {
+        foreach(SlotInfo slotInfo in slotInfoList)
+        {
+            if (slotInfo.identificadorItem == _identificadorItem && !slotInfo.isEmpty)
+                return slotInfo;
+        }
+        return null;
     }
 
     private SlotInfo SlotAccesible(int _identificadorItem)
@@ -56,7 +70,6 @@ public class Inventory : MonoBehaviour
         return null; //ningun lugar
     }
 
-
     public void AñadirItem(int _identificadorItem)
     {
         Item item = BaseDeDatosScript.FindItem(_identificadorItem);//mirar en la base de datos y encontralo
@@ -70,9 +83,48 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
     public void EliminarItem(int _identificadorItem)
     {
-
+        SlotInfo slotInfo = EncontrarItemEnInventario(_identificadorItem);
+        if (slotInfo != null)
+        {
+            if (slotInfo.cantidad == 1)
+                slotInfo.SetEmptySlot();
+            else
+                slotInfo.cantidad--;
+        }
     }
+
+
+    private class InventarioGuardado
+    {
+        public List<SlotInfo> slotInfoList;
+    }
+
+    public void GuardarInventario()
+    {
+        InventarioGuardado guardarInventario = new InventarioGuardado();
+        guardarInventario.slotInfoList = this.slotInfoList;
+        saveDataInventario = JsonUtility.ToJson(guardarInventario);
+        PlayerPrefs.SetString("inventario", saveDataInventario);
+    }
+
+    [ContextMenu("Instrucción_1")]
+    public void Instrucción_1()
+    {
+        AñadirItem(1);
+    }
+    [ContextMenu("Instrucción_2")]
+    public void Instrucción_2()
+    {
+        EliminarItem(1);
+    }
+    [ContextMenu("Instrucción_3")]
+    public void AlmacenarInventario()
+    {
+        GuardarInventario();
+    }
+
 }
 
