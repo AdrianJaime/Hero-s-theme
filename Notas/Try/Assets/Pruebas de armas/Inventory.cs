@@ -36,7 +36,10 @@ public class Inventory : MonoBehaviour
             newSlot.baseDeDatos = BaseDeDatosScript;
             SlotInfo newSlotInfo = newSlot.slotInfo;
             slotInfoList.Add(newSlotInfo);
+
+            //problema arreglado la funcion no sirv de nada ponerla aqui xD parezco subnormal
         }
+
     }
 
     private void CargarInventario()
@@ -102,6 +105,7 @@ public class Inventory : MonoBehaviour
             else
                 slotInfo.cantidad--;
         }
+        EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();
     }
 
 
