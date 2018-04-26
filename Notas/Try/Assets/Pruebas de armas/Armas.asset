@@ -13,22 +13,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - identificador: 1
-    name: 
-    rareza: 0
-    nivel: 0
-    precioVenta: 0
-    expProportcionada: 0
+    name: Polla
+    rareza: 100
+    nivel: 80
+    precioVenta: 99999
+    expProportcionada: 99999
     stats:
       damage: 0
       combo: 0
       vida: 0
-  - identificador: 2
-    name: 
-    rareza: 0
-    nivel: 0
-    precioVenta: 0
-    expProportcionada: 0
+    imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
+  - identificador: 1
+    name: Polla
+    rareza: 100
+    nivel: 80
+    precioVenta: 99999
+    expProportcionada: 99999
     stats:
       damage: 0
       combo: 0
       vida: 0
+    imagenItem: {fileID: 0}
+  - identificador: 1
+    name: Polla
+    rareza: 100
+    nivel: 80
+    precioVenta: 99999
+    expProportcionada: 99999
+    stats:
+      damage: 0
+      combo: 0
+      vida: 0
+    imagenItem: {fileID: 0}

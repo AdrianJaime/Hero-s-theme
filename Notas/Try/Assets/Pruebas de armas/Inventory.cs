@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
+    public Transform panelInventrio;
     public BaseDeDatos BaseDeDatosScript;
     public GameObject slotPrefab;
     [SerializeField]
@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        
         slotInfoList = new List<SlotInfo>();
         if(PlayerPrefs.HasKey("inventario"))
         {
@@ -25,14 +26,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     private void CrearInventarioVacío()
     {
         for (int i = 0; i < capacity; i++)
         {
-            GameObject slot = Instantiate <GameObject>(slotPrefab, this.transform);
-            Slot newSlot = slotPrefab.GetComponent<Slot>();
+            GameObject slot = Instantiate <GameObject>(slotPrefab, panelInventrio);
+            Slot newSlot = slot.GetComponent<Slot>();
             newSlot.CreateSlot(i);
+            newSlot.baseDeDatos = BaseDeDatosScript;
             SlotInfo newSlotInfo = newSlot.slotInfo;
             slotInfoList.Add(newSlotInfo);
         }
@@ -53,6 +54,11 @@ public class Inventory : MonoBehaviour
                 return slotInfo;
         }
         return null;
+    }
+
+    private Slot EncontrarSlot(int _identificador)
+    {
+        return panelInventrio.GetChild(_identificador).GetComponent<Slot>(); //getchild lo que hace es buscar en el panale de inventario el componente con el identificador, hijo del panel. En este caso tanto el identificador del slot como idenificador hijo concuerdan por lo que de puta madre.Delvolviendo el slot
     }
 
     private SlotInfo SlotAccesible(int _identificadorItem)
@@ -80,6 +86,8 @@ public class Inventory : MonoBehaviour
                 slotInfo.cantidad++;
                 slotInfo.identificadorItem = _identificadorItem;
                 slotInfo.isEmpty = false;
+
+                EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();
             }
         }
     }

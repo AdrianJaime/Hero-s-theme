@@ -12,6 +12,7 @@ public class Item
     public int precioVenta;
     public int expProportcionada;//exp que da el arma al fusionarla
     public Stats stats;
+    public Sprite imagenItem;
 
     [System.Serializable]//para poder ver los atributos
     public struct Stats

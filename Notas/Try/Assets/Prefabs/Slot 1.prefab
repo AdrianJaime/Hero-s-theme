@@ -168,11 +168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotInfo:
-    identificador: 0
-    isEmpty: 0
-    identificadorItem: 0
+    identificador: 23
+    isEmpty: 1
+    identificadorItem: -1
     cantidad: 0
     cantidadMax: 5
+  baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
+  representacionItem: {fileID: 114050603975390354}
+  nivel: {fileID: 114309665355858254}
 --- !u!222 &222079800805444296
 CanvasRenderer:
   m_ObjectHideFlags: 1

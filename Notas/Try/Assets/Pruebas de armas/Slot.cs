@@ -1,16 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour {
 
     public SlotInfo slotInfo;
+
+    public BaseDeDatos baseDeDatos;
+    public Image representacionItem;
+    public Text nivel;
 
     public void CreateSlot(int _identificador)
     {
         slotInfo = new SlotInfo();
         slotInfo.identificador = _identificador;
         slotInfo.SetEmptySlot();
+    }
+
+    public void ActualizarInterfaz()
+    {
+        if (slotInfo.isEmpty)
+        {
+            representacionItem.sprite = null;
+            representacionItem.enabled = false;
+
+            nivel.gameObject.SetActive(false);
+        }
+        else
+        {
+           representacionItem.sprite = baseDeDatos.FindItem(slotInfo.identificadorItem).imagenItem;
+            representacionItem.enabled = true;
+
+            nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();
+            nivel.gameObject.SetActive(true);
+        }
     }
 
 }
