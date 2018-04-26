@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelInventrio: {fileID: 120710060}
   BaseDeDatosScript: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
-  slotPrefab: {fileID: 1628562458941586, guid: 1517e6e0f3652c447bc6276e19ed6619, type: 2}
+  slotPrefab: {fileID: 1724066597879650, guid: 83471bb53d7a0324f952674c86bbf4a7, type: 2}
   slotInfoList: []
   capacity: 24
 --- !u!1 &1114020306
