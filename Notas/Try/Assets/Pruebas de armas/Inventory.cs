@@ -37,6 +37,7 @@ public class Inventory : MonoBehaviour
             SlotInfo newSlotInfo = newSlot.slotInfo;
             slotInfoList.Add(newSlotInfo);
 
+            newSlot.ActualizarInterfaz();
             //problema arreglado la funcion no sirv de nada ponerla aqui xD parezco subnormal
         }
 

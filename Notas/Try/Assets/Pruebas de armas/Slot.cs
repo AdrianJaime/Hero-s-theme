@@ -45,7 +45,7 @@ public class SlotInfo
     public bool isEmpty;
     public int identificadorItem;
     public int cantidad;
-    public int cantidadMax=5;
+    public int cantidadMax;
 
     public void SetEmptySlot()
     {
