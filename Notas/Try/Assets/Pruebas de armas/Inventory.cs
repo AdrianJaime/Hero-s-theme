@@ -48,6 +48,17 @@ public class Inventory : MonoBehaviour
         saveDataInventario = PlayerPrefs.GetString("inventario");
         InventarioGuardado guardarInventario = JsonUtility.FromJson<InventarioGuardado>(saveDataInventario);
         this.slotInfoList = guardarInventario.slotInfoList;
+        for (int i = 0; i < capacity; i++)
+        {
+            GameObject slot = Instantiate<GameObject>(slotPrefab, panelInventrio);
+            Slot newSlot = slot.GetComponent<Slot>();
+            newSlot.CreateSlot(i);
+            newSlot.baseDeDatos = BaseDeDatosScript;
+            newSlot.slotInfo = slotInfoList[i];
+
+            newSlot.ActualizarInterfaz();
+            //problema arreglado la funcion no sirv de nada ponerla aqui xD parezco subnormal
+        }
     }
 
     private SlotInfo EncontrarItemEnInventario(int _identificadorItem)
