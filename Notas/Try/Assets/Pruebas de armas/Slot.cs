@@ -28,6 +28,7 @@ public class Slot : MonoBehaviour {
             representacionItem.enabled = false;
 
             nivel.gameObject.SetActive(false);
+
             rango.gameObject.SetActive(false);
 
         }
@@ -51,13 +52,16 @@ public class SlotInfo
 {
     public int identificador;
     public bool isEmpty;
+    public bool used;
     public int identificadorItem;
     public int cantidad;
     public int cantidadMax;
 
+
     public void SetEmptySlot()
     {
         isEmpty = true;
+        used = false;
         cantidad = 0;
         identificadorItem = -1;
     }

@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public Transform panelInventrio;
     public BaseDeDatos BaseDeDatosScript;
     public GameObject slotPrefab;
+
     [SerializeField]
     public List<SlotInfo> slotInfoList;
     public int capacity;
@@ -71,7 +72,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    private Slot EncontrarSlot(int _identificador)
+    public Slot EncontrarSlot(int _identificador)
     {
         return panelInventrio.GetChild(_identificador).GetComponent<Slot>(); //getchild lo que hace es buscar en el panale de inventario el componente con el identificador, hijo del panel. En este caso tanto el identificador del slot como idenificador hijo concuerdan por lo que de puta madre.Delvolviendo el slot
     }
@@ -133,6 +134,8 @@ public class Inventory : MonoBehaviour
         saveDataInventario = JsonUtility.ToJson(guardarInventario);
         PlayerPrefs.SetString("inventario", saveDataInventario);
     }
+
+    
 
     [ContextMenu("Instrucción_1")]
     public void Instrucción_1()

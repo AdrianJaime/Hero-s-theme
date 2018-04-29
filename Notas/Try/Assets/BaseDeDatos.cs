@@ -16,6 +16,7 @@ public class Item
 
     public Stats stats;
   
+    public TipoItem tipoItem ;
 
     [System.Serializable]//para poder ver los atributos
     public struct Stats
@@ -25,6 +26,8 @@ public class Item
         public int vida;
     }
 }
+
+public enum TipoItem {Arma=0,Cabeza=1,Cuerpo=2,Piernas=3};
 
 [CreateAssetMenu(menuName ="Inventory System/BaseDeDatos")]
 public class BaseDeDatos : ScriptableObject {
