@@ -28,7 +28,7 @@ public class Slot : MonoBehaviour {
             representacionItem.enabled = false;
 
             nivel.gameObject.SetActive(false);
-            //rango.gameObject.SetActive(false);
+            rango.gameObject.SetActive(false);
 
         }
         else //representacion del slot cuando hay un iteem
@@ -39,8 +39,8 @@ public class Slot : MonoBehaviour {
             nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
-            //rango.text = baseDeDatos.FindItem(slotInfo.identificadorItem).rango.ToString();//Rango
-            //rango.gameObject.SetActive(true);
+            rango.text = baseDeDatos.FindItem(slotInfo.identificadorItem).rango.ToString();//Rango
+            rango.gameObject.SetActive(true);
 
         }
     }

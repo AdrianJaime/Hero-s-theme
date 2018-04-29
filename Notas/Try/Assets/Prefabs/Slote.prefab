@@ -187,6 +187,7 @@ MonoBehaviour:
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   representacionItem: {fileID: 114331742434780314}
   nivel: {fileID: 114274497872624380}
+  rango: {fileID: 114395485198946390}
 --- !u!114 &114395485198946390
 MonoBehaviour:
   m_ObjectHideFlags: 1
