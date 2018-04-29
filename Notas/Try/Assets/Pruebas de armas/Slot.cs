@@ -8,8 +8,10 @@ public class Slot : MonoBehaviour {
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
-    public Image representacionItem;
+
+    public Image representacionItem; //Atributos refernetes al aspecto visual del slot
     public Text nivel;
+    public Text rango;
 
     public void CreateSlot(int _identificador)
     {
@@ -20,20 +22,26 @@ public class Slot : MonoBehaviour {
 
     public void ActualizarInterfaz()
     {
-        if (slotInfo.isEmpty)
+        if (slotInfo.isEmpty) //representacion del slot cuando no hay ningun item
         {
             representacionItem.sprite = null;
             representacionItem.enabled = false;
 
             nivel.gameObject.SetActive(false);
+            //rango.gameObject.SetActive(false);
+
         }
-        else
+        else //representacion del slot cuando hay un iteem
         {
-           representacionItem.sprite = baseDeDatos.FindItem(slotInfo.identificadorItem).imagenItem;
+            representacionItem.sprite = baseDeDatos.FindItem(slotInfo.identificadorItem).imagenItem;//Imagen
             representacionItem.enabled = true;
 
-            nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();
+            nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
+
+            //rango.text = baseDeDatos.FindItem(slotInfo.identificadorItem).rango.ToString();//Rango
+            //rango.gameObject.SetActive(true);
+
         }
     }
 

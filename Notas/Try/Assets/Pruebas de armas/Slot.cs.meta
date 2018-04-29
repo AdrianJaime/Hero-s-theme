@@ -5,7 +5,12 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
+  - representacionItem: {fileID: 114331742434780314, guid: 0750edd079807e74b9bad9edbfa3540f,
+      type: 2}
+  - nivel: {fileID: 114274497872624380, guid: 0750edd079807e74b9bad9edbfa3540f, type: 2}
+  - rango: {fileID: 114395485198946390, guid: 0750edd079807e74b9bad9edbfa3540f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

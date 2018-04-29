@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        
+        //PlayerPrefs.DeleteAll();
         slotInfoList = new List<SlotInfo>();
         if(PlayerPrefs.HasKey("inventario"))
         {
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (SlotInfo slotinfo in slotInfoList) //encntrar un slot con el donde se guarden el mismo equipo
         {
-            if (slotinfo.identificadorItem == _identificadorItem && slotinfo.cantidad < slotinfo.cantidadMax && !slotinfo.isEmpty)
+            if (slotinfo.identificadorItem == _identificadorItem && slotinfo.cantidad < slotinfo.cantidadMax && !slotinfo.isEmpty) //Cambio de planes, al final por cada slot solo habrá un eemento asi que el codigo hay que retocarlo. de momento se quedará así simplemente modificando los parametros
                 return slotinfo;
         }
         foreach (SlotInfo slotinfo in slotInfoList) //si ese slot no existe o esta ocupado con su maxima capacidad encuentra otro vacío
@@ -95,7 +95,7 @@ public class Inventory : MonoBehaviour
     {
         Item item = BaseDeDatosScript.FindItem(_identificadorItem);//mirar en la base de datos y encontralo
         if (item != null){
-            SlotInfo slotInfo = SlotAccesible(_identificadorItem);//encontrar el item y guardarlo
+            SlotInfo slotInfo = SlotAccesible(_identificadorItem);//encontrar el slor donde debe estar y guardar la información del itemm
             if (slotInfo != null)
             {
                 slotInfo.cantidad++;

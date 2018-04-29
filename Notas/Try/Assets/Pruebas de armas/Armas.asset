@@ -12,36 +12,36 @@ MonoBehaviour:
   m_Name: Armas
   m_EditorClassIdentifier: 
   items:
-  - identificador: 1
+  - imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
+    identificador: 1
     name: Polla
     rareza: 100
     nivel: 80
-    precioVenta: 99999
-    expProportcionada: 99999
+    rango: 1
+    expAcumulada: 0
     stats:
       damage: 0
       combo: 0
       vida: 0
-    imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
-  - identificador: 1
+  - imagenItem: {fileID: 0}
+    identificador: 1
     name: Polla
     rareza: 100
     nivel: 80
-    precioVenta: 99999
-    expProportcionada: 99999
+    rango: 0
+    expAcumulada: 0
     stats:
       damage: 0
       combo: 0
       vida: 0
-    imagenItem: {fileID: 0}
-  - identificador: 1
+  - imagenItem: {fileID: 0}
+    identificador: 1
     name: Polla
     rareza: 100
     nivel: 80
-    precioVenta: 99999
-    expProportcionada: 99999
+    rango: 0
+    expAcumulada: 0
     stats:
       damage: 0
       combo: 0
       vida: 0
-    imagenItem: {fileID: 0}
