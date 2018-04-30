@@ -15,6 +15,7 @@ public class SlotPersonalización : MonoBehaviour {
     public void registarSlot() //Lo que quiero es que al puslar un botón del inventrio se encuentre 
     {
 
-        item = baseDeDatos.FindItem(slot.slotInfo.identificadorItem);
+        item = baseDeDatos.FindItem(this.slot.slotInfo.identificadorItem);
+        itemImagen.sprite = baseDeDatos.FindItem(slot.slotInfo.identificadorItem).imagenItem;
     }
 }

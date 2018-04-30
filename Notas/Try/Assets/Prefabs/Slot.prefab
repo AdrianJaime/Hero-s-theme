@@ -127,7 +127,7 @@ MonoBehaviour:
       vida: 0
     tipoItem: 0
   "TipoSlotPersonalizaci\xF3n": 0
-  itemImagen: {fileID: 0}
+  itemImagen: {fileID: 114314108131528298}
 --- !u!222 &222087121986115860
 CanvasRenderer:
   m_ObjectHideFlags: 1
