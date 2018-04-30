@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemySpawnController : MonoBehaviour {
 
-    public BarraVida vida;       // Reference to the player's heatlh.
+    //public BarraVida vida;       lo dejo comentado pero despues se tiene que poner que pare cuando la vida del juaador sea =<0;
     public GameObject enemyPrefab;     // The enemy prefab to be spawned.
     public BaseDeDatosEnemigos baseDeDatosEnemigos;
-    public EnemyCode enemyCode;
     public Transform panelEnemy;
 
     public List<EnemyInfo> enemyInfoList;
@@ -32,21 +31,6 @@ public class EnemySpawnController : MonoBehaviour {
     {
         //comprobar que el enemigo del start sigue vivo, y si no spawnear el siguiente en la lista.
     }
-    void Spawn()
-    {
-        if (vida.Health <= 0)
-        {
 
-            return;
-        }
-        if (enemy == null)
-        {
-
-        }
-    }
-    public bool checkEnemy()
-    {
-        if()
-    }
 }
 
