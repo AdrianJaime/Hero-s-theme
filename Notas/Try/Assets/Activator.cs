@@ -9,16 +9,9 @@ public class Activator : MonoBehaviour {
     public KeyCode key;
     bool active = false;
     GameObject Note;
-<<<<<<< HEAD
-	// Use this for initialization
-	void Start () {
-	}
-=======
 
 
-  
 
->>>>>>> Alejandro_Modificaciones
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,21 +24,14 @@ public class Activator : MonoBehaviour {
                 BarraVidaScript.Curar(BarraVidaScript.vidaCurada);
             }
             PuntosDeJuegoScript.MultiplicadorDeCombo++;
-<<<<<<< HEAD
 
-=======
->>>>>>> Alejandro_Modificaciones
         }
         else if  (Input.GetKeyDown(key) && active==false)
             {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
             BarraVidaScript.Damage(BarraVidaScript.damageValue);
             }
-<<<<<<< HEAD
-=======
 
-      
->>>>>>> Alejandro_Modificaciones
     }
 
     void OnTriggerEnter2D(Collider2D col)
