@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 [System.Serializable]//para poder ver los atributos
-public class EnemigoCode
+public class Enemy
 {
     public Sprite image;
     public Stats stats;
@@ -23,11 +23,11 @@ public class EnemigoCode
 [CreateAssetMenu(menuName = "Inventory System/BaseDeDatosEnemy")]
 public class BaseDeDatosEnemigos : ScriptableObject
 {
-    public List<EnemigoCode> enemys = new List<EnemigoCode>();
+    public List<Enemy> enemys = new List<Enemy>();
 
-    public EnemigoCode FindEnemy (int _identificadorEnemigo)
+    public Enemy FindEnemy (int _identificadorEnemigo)
     {
-        foreach (EnemigoCode enemy in enemys)
+        foreach (Enemy enemy in enemys)
         {
             if (enemy.identificador == _identificadorEnemigo)
                 return enemy;

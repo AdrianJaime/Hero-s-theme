@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyCode : MonoBehaviour {
 
+  
     public EnemyInfo enemyInfo;
     public BaseDeDatosEnemigos baseDeDatosEnemigos;
     public Image representacionEnemy;
@@ -14,6 +15,9 @@ public class EnemyCode : MonoBehaviour {
         enemyInfo = new EnemyInfo();
         enemyInfo.identificadorEnemy = _identificadoEnemy;
         enemyInfo.spawned = true;
+        enemyInfo.vida = baseDeDatosEnemigos.FindEnemy(_identificadoEnemy).stats.vidaMax;
+        enemyInfo.damage = baseDeDatosEnemigos.FindEnemy(_identificadoEnemy).stats.damage;
+
     }
 
     public void ActualizarInterfazEnemy()
@@ -36,12 +40,16 @@ public class EnemyCode : MonoBehaviour {
 [System.Serializable]
 public class EnemyInfo
 {
+ 
     public int identificadorEnemy;
     public bool spawned;
+    public int vida;
+    public int damage;
 
     public EnemyInfo()
     {
         identificadorEnemy = -1;
         spawned = false;
-    }
+      
+}
 }

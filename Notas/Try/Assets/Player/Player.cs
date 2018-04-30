@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public EnemySpawnController enemySpawnController;
     public SlotPersonalización slotPersonalizacionCabeza;
     public SlotPersonalización slotPersonalizacionCuerpo;
     public SlotPersonalización slotPersonalizacionPies;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour {
         totalCombo = slotPersonalizacionArma.item.stats.combo + slotPersonalizacionCabeza.item.stats.combo + slotPersonalizacionCuerpo.item.stats.combo + slotPersonalizacionPies.item.stats.combo;
     }
 
-
-
+    public void Atack()
+    {
+        enemySpawnController.actualEnemy.enemyInfo.vida -= 1;
+    }
 }
