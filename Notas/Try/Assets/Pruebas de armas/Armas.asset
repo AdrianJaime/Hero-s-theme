@@ -14,15 +14,15 @@ MonoBehaviour:
   items:
   - imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
     identificador: 1
-    name: Polla
-    rareza: 100
-    nivel: 80
-    rango: 1
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
     expAcumulada: 0
     stats:
-      damage: 20
-      combo: 10
-      vida: 5
+      damage: 10
+      combo: 5
+      vida: 50
     tipoItem: 0
   - imagenItem: {fileID: 0}
     identificador: 1

@@ -14,16 +14,20 @@ public class Player : MonoBehaviour {
     public int totalDamage;
     public int totalVida;
     public int totalCombo;
-     
-    public void SetValueOfItems(int _identificadorItem)
+    private void Update()
     {
-        totalDamage = slotPersonalizacionArma.item.stats.damage + slotPersonalizacionCabeza.item.stats.damage + slotPersonalizacionCuerpo.item.stats.damage + slotPersonalizacionPies.item.stats.damage;
-        totalVida = slotPersonalizacionArma.item.stats.vida + slotPersonalizacionCabeza.item.stats.vida  + slotPersonalizacionCuerpo.item.stats.vida + slotPersonalizacionPies.item.stats.vida;
-        totalCombo = slotPersonalizacionArma.item.stats.combo + slotPersonalizacionCabeza.item.stats.combo + slotPersonalizacionCuerpo.item.stats.combo + slotPersonalizacionPies.item.stats.combo;
+        SetValueOfItems();
+    }
+
+    public void SetValueOfItems()
+    {
+        totalDamage = slotPersonalizacionArma.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionPies.itemSlotPersonalizacion.stats.damage;
+        totalVida = slotPersonalizacionArma.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.vida  + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionPies.itemSlotPersonalizacion.stats.vida;
+        totalCombo = slotPersonalizacionArma.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.combo + slotPersonalizacionPies.itemSlotPersonalizacion.stats.combo;
     }
 
     public void Atack()
     {
-        enemySpawnController.actualEnemy.enemyInfo.vida -= 1;
+        enemySpawnController.actualEnemy.enemyInfo.vida -= totalDamage;
     }
 }
