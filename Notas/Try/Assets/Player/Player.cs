@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public EnemySpawnController enemySpawnController;
+
+    public PanelPersonalizacion panelPersonalizacion;
+
     public SlotPersonalización slotPersonalizacionCabeza;
     public SlotPersonalización slotPersonalizacionCuerpo;
     public SlotPersonalización slotPersonalizacionPies;
@@ -14,10 +17,21 @@ public class Player : MonoBehaviour {
     public int totalDamage;
     public int totalVida;
     public int totalCombo;
+
+     void Start()
+    {
+        slotPersonalizacionArma = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)0);
+        slotPersonalizacionCabeza = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)1);
+        slotPersonalizacionCuerpo = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)2);
+        slotPersonalizacionPies = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3);
+
+    }
+
     private void Update()
     {
         SetValueOfItems();
     }
+
 
     public void SetValueOfItems()
     {

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f9cd4d6a3f5f78b4584e729897da735d
+timeCreated: 1525454777
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
+  - panelPersonalizacion: {fileID: 224522583282085626, guid: dcbf1d0371bc19c469d46ddd45aead91,
+      type: 2}
+  - BaseDeDatosScript: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725,
+      type: 2}
+  - slotPersonalizacionPrefab: {fileID: 1628562458941586, guid: 1517e6e0f3652c447bc6276e19ed6619,
+      type: 2}
+  - slotInventario: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

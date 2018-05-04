@@ -262,9 +262,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114983045833408378, guid: 1517e6e0f3652c447bc6276e19ed6619,
+      - m_Target: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
           type: 2}
-        m_MethodName: RegistarSlot
+        m_MethodName: SetItemInSlotPersonalizacion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
