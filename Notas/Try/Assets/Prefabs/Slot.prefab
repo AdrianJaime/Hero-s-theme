@@ -112,22 +112,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
+  slotInventory: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+    type: 2}
   itemSlotPersonalizacion:
-    imagenItem: {fileID: 0}
-    identificador: -1
+    imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
+    identificador: 1
     name: 
     rareza: 0
     nivel: 0
     rango: 0
     expAcumulada: 0
     stats:
-      damage: 0
-      combo: 0
-      vida: 0
+      damage: 10
+      combo: 5
+      vida: 50
     tipoItem: 0
   "TipoSlotPersonalizaci\xF3n": 0
   itemImagen: {fileID: 114314108131528298}
-  desocupado: 1
+  desocupado: 0
 --- !u!222 &222087121986115860
 CanvasRenderer:
   m_ObjectHideFlags: 1

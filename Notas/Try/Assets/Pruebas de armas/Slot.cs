@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour {
 
-
-
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
@@ -47,7 +45,6 @@ public class Slot : MonoBehaviour {
 
         }
     }
-
 
 }
 [System.Serializable]
