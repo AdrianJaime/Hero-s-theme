@@ -31,8 +31,8 @@ public class Player : MonoBehaviour {
     {
         SetValueOfItems();
     }
-
-
+    
+    
     public void SetValueOfItems()
     {
         totalDamage = slotPersonalizacionArma.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionPies.itemSlotPersonalizacion.stats.damage;
@@ -42,6 +42,6 @@ public class Player : MonoBehaviour {
 
     public void Atack()
     {
-        enemySpawnController.actualEnemy.enemyInfo.vida -= totalDamage;
+        enemySpawnController.actualEnemy.stats.vidaMax -= totalDamage;
     }
 }

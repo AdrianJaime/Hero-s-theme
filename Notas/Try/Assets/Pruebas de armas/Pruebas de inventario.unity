@@ -487,6 +487,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595934295}
+--- !u!224 &640615365 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224817786724471338, guid: dcbf1d0371bc19c469d46ddd45aead91,
+    type: 2}
+  m_PrefabInternal: {fileID: 1510901526}
 --- !u!1 &694992347
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +940,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114857061117178434, guid: dcbf1d0371bc19c469d46ddd45aead91,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
+        type: 2}
+      propertyPath: panelPersonalizacion
+      value: 
+      objectReference: {fileID: 640615365}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbf1d0371bc19c469d46ddd45aead91, type: 2}
   m_IsPrefabParent: 0
