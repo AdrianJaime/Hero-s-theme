@@ -14,23 +14,23 @@ public class play : MonoBehaviour
 
     public IEnumerator Yellow(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.5f);
+        yield return new WaitForSeconds(tme - 0.56f);
         Instantiate(Yellowobject, new Vector2(2, 1), Quaternion.Euler(0, 0, 0));
 
     }
     public IEnumerator Red(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.5f);
+        yield return new WaitForSeconds(tme - 0.56f);
         Instantiate(Redobject, new Vector2(-2, 1), Quaternion.Euler(0, 0, 0));
     }
     public IEnumerator Blue(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.5f);
+        yield return new WaitForSeconds(tme - 0.56f);
         Instantiate(Blueobject, new Vector2(-0.7f, 1), Quaternion.Euler(0, 0, 0));
     }
     public IEnumerator Green(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.5f);
+        yield return new WaitForSeconds(tme - 0.56f);
         Instantiate(Greenobject, new Vector2(0.7f, 1), Quaternion.Euler(0, 0, 0));
     }
 
