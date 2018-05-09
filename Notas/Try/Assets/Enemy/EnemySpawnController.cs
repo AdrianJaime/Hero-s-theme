@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemySpawnController : MonoBehaviour {
-
+    public BarraVidaEnemigo vidaEnemigo;
     public BarraVida vidaPlayer;      
     [SerializeField]
     public EnemyCode enemyCode;
@@ -21,6 +21,8 @@ public class EnemySpawnController : MonoBehaviour {
     {
         primerIdentificadorEnemigo = 0;
         SetFirtsEnemy();
+        vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
+
     }
     void Update()
     {
@@ -31,6 +33,7 @@ public class EnemySpawnController : MonoBehaviour {
         {
 
             SpawnEnemy();
+            vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
     
         }
         
