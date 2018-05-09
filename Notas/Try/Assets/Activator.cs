@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Activator : MonoBehaviour {
+    public Player player;
+    public BarraVidaEnemigo vidaEnemigo;
 
     public PuntosDeJuego PuntosDeJuegoScript;
     public BarraVida BarraVidaScript;
@@ -24,6 +26,8 @@ public class Activator : MonoBehaviour {
                 BarraVidaScript.Curar(BarraVidaScript.vidaCurada);
             }
             PuntosDeJuegoScript.MultiplicadorDeCombo++;
+            player.Atack();
+            vidaEnemigo.Damage();
 
         }
         else if  (Input.GetKeyDown(key) && active==false)

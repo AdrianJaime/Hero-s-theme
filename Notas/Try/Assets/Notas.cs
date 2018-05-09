@@ -9,8 +9,8 @@ public class Notas : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed*-1);
-        BarravidaScript=GameObject.Find("Controlador de Vida").GetComponent<BarraVida>(); //esto se supone que consume muchos recursos
-        PuntosDeJuegoScript = GameObject.Find("Controlador De Puntos").GetComponent<PuntosDeJuego>(); //esto se supone que consume muchos recursos
+        BarravidaScript=GameObject.Find("Controlador de Vida Player").GetComponent<BarraVida>(); //esto se supone que consume muchos recursos
+        PuntosDeJuegoScript = GameObject.Find("Controlador De Puntos Player").GetComponent<PuntosDeJuego>(); //esto se supone que consume muchos recursos
 
     }
 
