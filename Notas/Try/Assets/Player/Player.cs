@@ -5,19 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public EnemySpawnController enemySpawnController;
-    /*
+    
     public PanelPersonalizacion panelPersonalizacion;
 
+    public SlotPersonalización slotPersonalizacionArma;
     public SlotPersonalización slotPersonalizacionCabeza;
     public SlotPersonalización slotPersonalizacionCuerpo;
     public SlotPersonalización slotPersonalizacionPies;
 
-    public SlotPersonalización slotPersonalizacionArma;
-    */
+
+    
     public int totalDamage;
     public int totalVida;
     public int totalCombo;
-    /*
+    
      void Start()
     {
         slotPersonalizacionArma = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)0);
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour {
         totalVida = slotPersonalizacionArma.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.vida  + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionPies.itemSlotPersonalizacion.stats.vida;
         totalCombo = slotPersonalizacionArma.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.combo + slotPersonalizacionPies.itemSlotPersonalizacion.stats.combo;
     }
-    */
+    
     public void Atack()
     {
         enemySpawnController.actualEnemy.stats.vidaMax -= totalDamage;
