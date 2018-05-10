@@ -11,11 +11,11 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public List<SlotInfo> slotInfoList;
     public int capacity;
-    private string saveDataInventario;
+    public string saveDataInventario;
 
     private void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         slotInfoList = new List<SlotInfo>();
         if(PlayerPrefs.HasKey("inventario"))
         {

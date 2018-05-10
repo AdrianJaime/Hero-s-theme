@@ -53,7 +53,7 @@ public class PanelPersonalizacion : MonoBehaviour {
     {
         saveDataPersonalizacion = PlayerPrefs.GetString("equipamiento");
         PersonalizacionGuardada guardarPersonalizacion = JsonUtility.FromJson<PersonalizacionGuardada>(saveDataPersonalizacion);
-        this.slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionInfoList;
+        slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionInfoList;
 
         for (int i = 0; i < 4; i++)
         {
@@ -61,7 +61,7 @@ public class PanelPersonalizacion : MonoBehaviour {
             GameObject slotP = Instantiate<GameObject>(slotPersonalizacionPrefab, panelPersonalizacion);
             SlotPersonalización newSlotP = slotP.GetComponent<SlotPersonalización>();
             newSlotP = slotPersonalizacionListInfo[i]; //El problema esta en el ndice i que no se porque no funca
-            newSlotP.ActualizarInterfazSlotPersonalizacion();
+            //newSlotP.ActualizarInterfazSlotPersonalizacion();
         }
 
     }
@@ -79,10 +79,13 @@ public class PanelPersonalizacion : MonoBehaviour {
         public List<SlotPersonalización> slotPersonalizacionInfoList;
     }
 
-    public void GuardarInventario()
+    public void GuardarPersonalizacion()
     {
         PersonalizacionGuardada guardarPersonalizacion = new PersonalizacionGuardada();
+
         guardarPersonalizacion.slotPersonalizacionInfoList = this.slotPersonalizacionListInfo;
+        
+
         saveDataPersonalizacion = JsonUtility.ToJson(guardarPersonalizacion);
         PlayerPrefs.SetString("equipamiento", saveDataPersonalizacion);
     }
@@ -101,7 +104,15 @@ public class PanelPersonalizacion : MonoBehaviour {
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
            
-            GuardarInventario();
+          
         }
     }
+    [ContextMenu("guardar")]
+    public void guardarInventario()
+    {
+        
+        GuardarPersonalizacion();
+    }
+    
 }
+
