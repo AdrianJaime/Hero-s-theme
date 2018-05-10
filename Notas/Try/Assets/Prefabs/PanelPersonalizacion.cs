@@ -19,9 +19,11 @@ public class PanelPersonalizacion : MonoBehaviour {
 
     void Start () {
         //PlayerPrefs.DeleteAll();
+
+        slotPersonalizacionListInfo = new List<SlotPersonalización>();
         if (PlayerPrefs.HasKey("equipamiento"))
         {
-            
+            CargarSlotsPersonalizacion();
         }
         else
         {
@@ -38,26 +40,27 @@ public class PanelPersonalizacion : MonoBehaviour {
             SlotPersonalización newSlotP = slotP.GetComponent<SlotPersonalización>();
             newSlotP.libre = true;
             newSlotP.TipoSlotPersonalización = (TipoItem)i;
-
+            slotPersonalizacionListInfo.Add(newSlotP);
 
 
             newSlotP.baseDeDatos = BaseDeDatosScript;   
         }
 
     }
+    
 
     private void CargarSlotsPersonalizacion()
     {
         saveDataPersonalizacion = PlayerPrefs.GetString("equipamiento");
         PersonalizacionGuardada guardarPersonalizacion = JsonUtility.FromJson<PersonalizacionGuardada>(saveDataPersonalizacion);
         this.slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionInfoList;
+
         for (int i = 0; i < 4; i++)
         {
 
             GameObject slotP = Instantiate<GameObject>(slotPersonalizacionPrefab, panelPersonalizacion);
             SlotPersonalización newSlotP = slotP.GetComponent<SlotPersonalización>();
-
-            newSlotP = slotPersonalizacionListInfo[i];
+            newSlotP = slotPersonalizacionListInfo[i]; //El problema esta en el ndice i que no se porque no funca
             newSlotP.ActualizarInterfazSlotPersonalizacion();
         }
 
@@ -97,7 +100,8 @@ public class PanelPersonalizacion : MonoBehaviour {
             SlotPersonalizacion.libre = false;
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
-           // GuardarInventario();
+           
+            GuardarInventario();
         }
     }
 }
