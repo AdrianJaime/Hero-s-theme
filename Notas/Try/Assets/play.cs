@@ -4,7 +4,7 @@ using System.Collections;
 public class play : MonoBehaviour
 {
     //bool played;
-    System.IO.StreamReader file = new System.IO.StreamReader(@".\Assets\BS&T.txt");
+    System.IO.StreamReader file = new System.IO.StreamReader(@".\Assets\TXT\BS&T.txt");
     string line;
     public GameObject Redobject;
     public GameObject Blueobject;
