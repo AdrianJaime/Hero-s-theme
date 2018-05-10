@@ -11,7 +11,7 @@ public class PanelPersonalizacion : MonoBehaviour {
     public BaseDeDatos BaseDeDatosScript;
     public GameObject slotPersonalizacionPrefab;
 
-    private string saveDataPersonalizacion;
+    public string saveDataPersonalizacion;
 
     public List<SlotPersonalización> slotPersonalizacionListInfo;
 
@@ -53,7 +53,7 @@ public class PanelPersonalizacion : MonoBehaviour {
     {
         saveDataPersonalizacion = PlayerPrefs.GetString("equipamiento");
         PersonalizacionGuardada guardarPersonalizacion = JsonUtility.FromJson<PersonalizacionGuardada>(saveDataPersonalizacion);
-        slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionInfoList;
+        slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionListInfo;
 
         for (int i = 0; i < 4; i++)
         {
@@ -76,14 +76,14 @@ public class PanelPersonalizacion : MonoBehaviour {
 
     private class PersonalizacionGuardada
     {
-        public List<SlotPersonalización> slotPersonalizacionInfoList;
+        public List<SlotPersonalización> slotPersonalizacionListInfo;
     }
 
     public void GuardarPersonalizacion()
     {
         PersonalizacionGuardada guardarPersonalizacion = new PersonalizacionGuardada();
 
-        guardarPersonalizacion.slotPersonalizacionInfoList = this.slotPersonalizacionListInfo;
+        guardarPersonalizacion.slotPersonalizacionListInfo = this.slotPersonalizacionListInfo;
         
 
         saveDataPersonalizacion = JsonUtility.ToJson(guardarPersonalizacion);
