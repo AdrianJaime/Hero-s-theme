@@ -10,11 +10,11 @@ public class SlotPersonalización : MonoBehaviour {
     public Item itemSlotPersonalizacion;
     public TipoItem TipoSlotPersonalización;
     public Image itemImagen;
-    public bool desocupado=true;
+    public bool libre=true;
     
     public void ActualizarInterfazSlotPersonalizacion()
     {
-        if (desocupado)
+        if (!libre)
         {
             itemImagen.enabled = true;
             itemImagen.sprite = baseDeDatos.FindItem(itemSlotPersonalizacion.identificador).imagenItem;
