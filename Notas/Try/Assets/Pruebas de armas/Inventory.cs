@@ -156,14 +156,19 @@ public class Inventory : MonoBehaviour
     [ContextMenu("Instrucción_1")]
     public void Instrucción_1()
     {
-        AñadirItem(1);
+        AñadirItem(2);
     }
 
     [ContextMenu("Instrucción_3")]
     public void AlmacenarInventario()
     {
-        GuardarInventario();
+        AñadirItem(3);
     }
 
+    [ContextMenu("Instrucción_4")]
+    public void AlmacenarInventario_()
+    {
+        AñadirItem(4);
+    }
 }
 

@@ -70,6 +70,24 @@ public class Slot : MonoBehaviour {
 
     }
 
+    public void SetItemInSlotPersonalizacion()
+    {
+
+        SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+        if (SlotPersonalizacion.personalizacionInfo.libre)
+        {
+            SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
+            SlotPersonalizacion.personalizacionInfo.libre = false;
+            SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
+            SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
+
+            SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
+
+
+
+        }
+
+    }
 }
 [System.Serializable]
 public class SlotInfo

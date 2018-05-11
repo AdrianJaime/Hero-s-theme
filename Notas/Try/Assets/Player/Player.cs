@@ -15,9 +15,9 @@ public class Player : MonoBehaviour {
 
 
     
-    public int totalDamage;
-   /* public int totalVida;
-    public int totalCombo;
+    public int totalDamage=0;
+    public int totalVida=0;
+    public int totalCombo=0;
     
      void Start()
     {
@@ -27,11 +27,6 @@ public class Player : MonoBehaviour {
         slotPersonalizacionPies = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3);
 
     }
-
-    private void Update()
-    {
-        SetValueOfItems();
-    }
     
     
     public void SetValueOfItems()
@@ -40,7 +35,7 @@ public class Player : MonoBehaviour {
         totalVida = slotPersonalizacionArma.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.vida  + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionPies.itemSlotPersonalizacion.stats.vida;
         totalCombo = slotPersonalizacionArma.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCabeza.itemSlotPersonalizacion.stats.combo + slotPersonalizacionCuerpo.itemSlotPersonalizacion.stats.combo + slotPersonalizacionPies.itemSlotPersonalizacion.stats.combo;
     }
-    */
+    
     public void Atack()
     {
         enemySpawnController.actualEnemy.stats.vidaMax -= totalDamage;

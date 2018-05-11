@@ -104,40 +104,6 @@ public class PanelPersonalizacion : MonoBehaviour {
         PlayerPrefs.SetString("equipamiento", saveDataPersonalizacion);
     }
 
-
-
-
-    public void SetItemInSlotPersonalizacion() //Lo que quiero es que al puslar un botón del inventrio se encuentre 
-    {//comparar el item tipo con el del slotpersonalizacion
-
-        SlotPersonalización SlotPersonalizacion = EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).tipoItem);
-        if (SlotPersonalizacion.personalizacionInfo.libre)
-        {
-            SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem);
-            SlotPersonalizacion.personalizacionInfo.libre = false;
-            SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).identificador;
-            SlotPersonalizacion.personalizacionInfo.tipoItem =(int) baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).tipoItem;
-
-            SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
-
-           
-          
-        }
-
-
-
-
-
-
-
-
-    }
-    [ContextMenu("guardar")]
-    public void GuardarInventario_Instruccion()
-    {
-        
-        GuardarPersonalizacion();
-    }
     
 }
 
