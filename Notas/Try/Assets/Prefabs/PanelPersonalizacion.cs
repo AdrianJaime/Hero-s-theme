@@ -13,14 +13,14 @@ public class PanelPersonalizacion : MonoBehaviour {
 
     public string saveDataPersonalizacion;
 
-    public List<SlotPersonalizacionInfo> list;
     [SerializeField]
     public List<SlotPersonalizacionInfo> slotPersonalizacionInfo;
 
 
 
     void Start () {
-        PlayerPrefs.DeleteAll();
+
+        //PlayerPrefs.DeleteAll();
 
         slotPersonalizacionInfo = new List<SlotPersonalizacionInfo>();
         if (PlayerPrefs.HasKey("equipamiento"))
@@ -31,6 +31,11 @@ public class PanelPersonalizacion : MonoBehaviour {
         {
             CrearSlotsVacíos();
         }
+    }
+
+    private void Update()
+    {
+        GuardarPersonalizacion();
     }
 
     private void CrearSlotsVacíos()
@@ -45,9 +50,10 @@ public class PanelPersonalizacion : MonoBehaviour {
 
             SlotPersonalizacionInfo persInfo = newSlotP.personalizacionInfo;
             slotPersonalizacionInfo.Add(persInfo);
+            
 
-
-            newSlotP.baseDeDatos = baseDeDatos;   
+            newSlotP.baseDeDatos = baseDeDatos;
+            newSlotP.ActualizarInterfazSlotPersonalizacion();
         }
 
     }
@@ -109,14 +115,25 @@ public class PanelPersonalizacion : MonoBehaviour {
         {
             SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem);
             SlotPersonalizacion.personalizacionInfo.libre = false;
+            SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).identificador;
+            SlotPersonalizacion.personalizacionInfo.tipoItem =(int) baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).tipoItem;
+
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
            
           
         }
+
+
+
+
+
+
+
+
     }
     [ContextMenu("guardar")]
-    public void guardarInventario()
+    public void GuardarInventario_Instruccion()
     {
         
         GuardarPersonalizacion();

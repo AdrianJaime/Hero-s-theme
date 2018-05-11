@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public PanelPersonalizacion panelPersonalizacion;
     public Transform panelInventrio;
     public BaseDeDatos BaseDeDatosScript;
     public GameObject slotPrefab;
@@ -26,6 +27,11 @@ public class Inventory : MonoBehaviour
         {
             CrearInventarioVacío();
         }
+    }
+
+    private void Update()
+    {
+        GuardarInventario();
     }
 
     private void CrearInventarioVacío()
@@ -108,10 +114,18 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
+    /*
     public void EliminarItem(int _identificadorItem)
     {
         SlotInfo slotInfo = EncontrarItemEnInventario(_identificadorItem);
+        SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(BaseDeDatosScript.FindItem(slotInfo.identificadorItem).tipoItem);
+
+
+        if (auxSlotPers.TipoSlotPersonalización == BaseDeDatosScript.FindItem(slotInfo.identificadorItem).tipoItem)
+        {
+            auxSlotPers.DeleteItemInSlotPersonalizacion();
+        }
+
         if (slotInfo != null)
         {
             if (slotInfo.cantidad == 1)
@@ -120,8 +134,9 @@ public class Inventory : MonoBehaviour
                 slotInfo.cantidad--;
         }
         EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();
-    }
 
+    }
+    */
 
     private class InventarioGuardado
     {
@@ -143,11 +158,7 @@ public class Inventory : MonoBehaviour
     {
         AñadirItem(1);
     }
-    [ContextMenu("Instrucción_2")]
-    public void Instrucción_2()
-    {
-        EliminarItem(1);
-    }
+
     [ContextMenu("Instrucción_3")]
     public void AlmacenarInventario()
     {

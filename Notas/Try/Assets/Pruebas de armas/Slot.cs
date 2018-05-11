@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour {
 
-
+    public PanelPersonalizacion panelPersonalizacion;
 
     public SlotInfo slotInfo;
 
@@ -48,6 +48,27 @@ public class Slot : MonoBehaviour {
         }
     }
 
+    public void EliminarSlot()
+    {
+      
+        SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+
+
+        if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+        {
+            auxSlotPers.DeleteItemInSlotPersonalizacion();
+        }
+
+        if (slotInfo != null)
+        {
+            if (slotInfo.cantidad == 1)
+                slotInfo.SetEmptySlot();
+            else
+                slotInfo.cantidad--;
+        }
+        ActualizarInterfaz();
+
+    }
 
 }
 [System.Serializable]

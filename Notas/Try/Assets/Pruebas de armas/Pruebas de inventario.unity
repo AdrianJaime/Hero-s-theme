@@ -301,8 +301,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 144798409}
   - {fileID: 389794780}
+  - {fileID: 144798409}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,7 +342,7 @@ RectTransform:
   - {fileID: 1580530522}
   - {fileID: 595934296}
   m_Father: {fileID: 287266745}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -360,11 +360,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378298b8a5d409841ac413bd697690d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelPersonalizacion: {fileID: 144798412}
   panelInventrio: {fileID: 120710060}
   BaseDeDatosScript: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   slotPrefab: {fileID: 1969822519845130, guid: 0750edd079807e74b9bad9edbfa3540f, type: 2}
   slotInfoList: []
   capacity: 24
+  saveDataInventario: 
 --- !u!1 &595934295
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +888,7 @@ Prefab:
     - target: {fileID: 224597741567685592, guid: dcbf1d0371bc19c469d46ddd45aead91,
         type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224597741567685592, guid: dcbf1d0371bc19c469d46ddd45aead91,
         type: 2}
