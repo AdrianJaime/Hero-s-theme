@@ -24,6 +24,13 @@ public class Item
         public int damage;
         public int combo;
         public int vida;
+
+        public void StatsAcero()
+        {
+            damage = 0;
+            combo = 0;
+            vida = 0;
+        }
     }
 }
 

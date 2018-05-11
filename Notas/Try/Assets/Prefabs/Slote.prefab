@@ -309,8 +309,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
-          type: 2}
+      - m_Target: {fileID: 114394399146361054}
         m_MethodName: SetItemInSlotPersonalizacion
         m_Mode: 1
         m_Arguments:

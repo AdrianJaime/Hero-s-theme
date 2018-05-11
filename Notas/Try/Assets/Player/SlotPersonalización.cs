@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlotPersonalización : MonoBehaviour {
 
+
+    [SerializeField]
     public SlotPersonalizacionInfo personalizacionInfo;
     public BaseDeDatos baseDeDatos;
     public PanelPersonalizacion panelPersonalizacion;
@@ -19,10 +21,7 @@ public class SlotPersonalización : MonoBehaviour {
     {
         personalizacionInfo = new SlotPersonalizacionInfo();
         personalizacionInfo.SlotPersonalizacionInfoDefault(tipoSlot);
-    }
-    
-
-    
+    }  
 
     public void ActualizarInterfazSlotPersonalizacion()
     {
@@ -46,7 +45,9 @@ public class SlotPersonalización : MonoBehaviour {
 
     public void DeleteItemInSlotPersonalizacion()
     {
+
         this.personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
+        personalizacionInfo.statsInfo.StatsACero();
 
         ActualizarInterfazSlotPersonalizacion();
 
@@ -59,14 +60,31 @@ public class SlotPersonalización : MonoBehaviour {
 [System.Serializable]
 public class SlotPersonalizacionInfo
 {
+    [System.Serializable]
+    public struct Stats
+    {
+        public int combo;
+        public int vida;
+        public int damage;
+
+        public void StatsACero()
+        {
+            combo = 0;
+            vida = 0;
+            damage = 0;
+        }
+    }
+
     public int tipoItem;
     public int itemIdentificador;
     public bool libre;
-
+    public Stats statsInfo;
     public void SlotPersonalizacionInfoDefault(int _tipoItem)
     {
         tipoItem = _tipoItem;
         itemIdentificador = -1;
         libre = true;
     }
+
+
 }

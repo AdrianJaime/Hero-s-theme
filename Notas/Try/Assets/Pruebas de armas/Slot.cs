@@ -76,10 +76,15 @@ public class Slot : MonoBehaviour {
         SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
         if (SlotPersonalizacion.personalizacionInfo.libre)
         {
+            slotInfo.equipado = true;
             SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
             SlotPersonalizacion.personalizacionInfo.libre = false;
             SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
             SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
+            SlotPersonalizacion.personalizacionInfo.statsInfo.combo = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.combo;
+            SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
+            SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
+
 
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
@@ -99,6 +104,8 @@ public class SlotInfo
     public int cantidad;
     public int cantidadMax;
 
+    public bool equipado;
+
 
     public void SetEmptySlot()
     {
@@ -106,5 +113,6 @@ public class SlotInfo
         used = false;
         cantidad = 0;
         identificadorItem = -1;
+        equipado = false;
     }
 }
