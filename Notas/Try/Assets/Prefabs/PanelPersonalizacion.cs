@@ -8,19 +8,21 @@ public class PanelPersonalizacion : MonoBehaviour {
     public BaseDeDatos baseDeDatos;
     public Transform panelPersonalizacion;
 
-    public BaseDeDatos BaseDeDatosScript;
     public GameObject slotPersonalizacionPrefab;
+    public Slot slotInventario;
 
     public string saveDataPersonalizacion;
 
-    public List<SlotPersonalización> slotPersonalizacionListInfo;
+    public List<SlotPersonalizacionInfo> list;
+    [SerializeField]
+    public List<SlotPersonalizacionInfo> slotPersonalizacionInfo;
 
-    public Slot slotInventario;
+
 
     void Start () {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
-        slotPersonalizacionListInfo = new List<SlotPersonalización>();
+        slotPersonalizacionInfo = new List<SlotPersonalizacionInfo>();
         if (PlayerPrefs.HasKey("equipamiento"))
         {
             CargarSlotsPersonalizacion();
@@ -38,12 +40,14 @@ public class PanelPersonalizacion : MonoBehaviour {
             
             GameObject slotP = Instantiate<GameObject>(slotPersonalizacionPrefab, panelPersonalizacion);
             SlotPersonalización newSlotP = slotP.GetComponent<SlotPersonalización>();
-            newSlotP.libre = true;
-            newSlotP.TipoSlotPersonalización = (TipoItem)i;
-            slotPersonalizacionListInfo.Add(newSlotP);
+            newSlotP.CrearSlotPersonalizacion(i);
+            newSlotP.TipoSlotPersonalización = (TipoItem)newSlotP.personalizacionInfo.tipoItem;
+
+            SlotPersonalizacionInfo persInfo = newSlotP.personalizacionInfo;
+            slotPersonalizacionInfo.Add(persInfo);
 
 
-            newSlotP.baseDeDatos = BaseDeDatosScript;   
+            newSlotP.baseDeDatos = baseDeDatos;   
         }
 
     }
@@ -53,15 +57,19 @@ public class PanelPersonalizacion : MonoBehaviour {
     {
         saveDataPersonalizacion = PlayerPrefs.GetString("equipamiento");
         PersonalizacionGuardada guardarPersonalizacion = JsonUtility.FromJson<PersonalizacionGuardada>(saveDataPersonalizacion);
-        slotPersonalizacionListInfo = guardarPersonalizacion.slotPersonalizacionListInfo;
+        slotPersonalizacionInfo = guardarPersonalizacion.slotPersonalizacionInfo;
 
         for (int i = 0; i < 4; i++)
         {
 
             GameObject slotP = Instantiate<GameObject>(slotPersonalizacionPrefab, panelPersonalizacion);
             SlotPersonalización newSlotP = slotP.GetComponent<SlotPersonalización>();
-            newSlotP = slotPersonalizacionListInfo[i]; //El problema esta en el ndice i que no se porque no funca
-            //newSlotP.ActualizarInterfazSlotPersonalizacion();
+
+            newSlotP.personalizacionInfo = slotPersonalizacionInfo[i];//El problema esta en el ndice i que no se porque no funca
+
+            newSlotP.itemSlotPersonalizacion = baseDeDatos.FindItem(newSlotP.personalizacionInfo.itemIdentificador);
+            newSlotP.TipoSlotPersonalización = (TipoItem)newSlotP.personalizacionInfo.tipoItem;
+            newSlotP.ActualizarInterfazSlotPersonalizacion();
         }
 
     }
@@ -76,14 +84,14 @@ public class PanelPersonalizacion : MonoBehaviour {
 
     private class PersonalizacionGuardada
     {
-        public List<SlotPersonalización> slotPersonalizacionListInfo;
+        public List<SlotPersonalizacionInfo> slotPersonalizacionInfo;
     }
 
     public void GuardarPersonalizacion()
     {
         PersonalizacionGuardada guardarPersonalizacion = new PersonalizacionGuardada();
 
-        guardarPersonalizacion.slotPersonalizacionListInfo = this.slotPersonalizacionListInfo;
+        guardarPersonalizacion.slotPersonalizacionInfo = this.slotPersonalizacionInfo;
         
 
         saveDataPersonalizacion = JsonUtility.ToJson(guardarPersonalizacion);
@@ -97,10 +105,10 @@ public class PanelPersonalizacion : MonoBehaviour {
     {//comparar el item tipo con el del slotpersonalizacion
 
         SlotPersonalización SlotPersonalizacion = EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem).tipoItem);
-        if (SlotPersonalizacion.libre)
+        if (SlotPersonalizacion.personalizacionInfo.libre)
         {
             SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInventario.slotInfo.identificadorItem);
-            SlotPersonalizacion.libre = false;
+            SlotPersonalizacion.personalizacionInfo.libre = false;
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
            

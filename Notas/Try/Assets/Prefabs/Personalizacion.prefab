@@ -88,6 +88,7 @@ MonoBehaviour:
     type: 2}
   slotInventario: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
     type: 2}
+  saveDataPersonalizacion: 
 --- !u!114 &114566266923806104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,10 +169,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 360, y: -0.000005722}
-  m_SizeDelta: {x: -782.7, y: -201}
+  m_AnchoredPosition: {x: -178, y: -300}
+  m_SizeDelta: {x: 241.30005, y: 567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224817786724471338
 RectTransform:
