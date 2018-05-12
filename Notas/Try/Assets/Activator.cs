@@ -42,7 +42,11 @@ public class Activator : MonoBehaviour {
     {
         active = true;
         if (col.gameObject.tag == "Note")
+        {
+
             Note = col.gameObject;
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D col)

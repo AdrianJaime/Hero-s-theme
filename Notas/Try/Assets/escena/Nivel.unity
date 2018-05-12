@@ -446,6 +446,8 @@ MonoBehaviour:
   slotPersonalizacionCuerpo: {fileID: 0}
   slotPersonalizacionPies: {fileID: 0}
   totalDamage: 2
+  totalVida: 0
+  totalCombo: 0
 --- !u!1 &241275622
 GameObject:
   m_ObjectHideFlags: 0
