@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
         slotPersonalizacionCuerpo = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)2);
         slotPersonalizacionPies = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3);
 
+        SetValueOfItems();
     }
     
     

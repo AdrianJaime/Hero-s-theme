@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SlotPersonalización : MonoBehaviour {
 
+    public Inventory inventory;
 
     [SerializeField]
     public SlotPersonalizacionInfo personalizacionInfo;
@@ -48,6 +49,8 @@ public class SlotPersonalización : MonoBehaviour {
 
         this.personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
         personalizacionInfo.statsInfo.StatsACero();
+        inventory.EncontrarSlot(personalizacionInfo.statsInfo.identificadorSlotInventario).slotInfo.equipado = false;
+        
 
         ActualizarInterfazSlotPersonalizacion();
 
@@ -66,12 +69,14 @@ public class SlotPersonalizacionInfo
         public int combo;
         public int vida;
         public int damage;
+        public int identificadorSlotInventario;
 
         public void StatsACero()
         {
             combo = 0;
             vida = 0;
             damage = 0;
+            identificadorSlotInventario = -1;
         }
     }
 

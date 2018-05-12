@@ -50,24 +50,36 @@ public class Slot : MonoBehaviour {
 
     public void EliminarSlot()
     {
-      
-        SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
-
-
-        if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+        
+        if (slotInfo.equipado)
         {
-            auxSlotPers.DeleteItemInSlotPersonalizacion();
-        }
+            SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
 
-        if (slotInfo != null)
+            if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+            {
+                auxSlotPers.DeleteItemInSlotPersonalizacion();
+            }
+
+            if (slotInfo != null)
+            {
+                if (slotInfo.cantidad == 1)
+                    slotInfo.SetEmptySlot();
+                else
+                    slotInfo.cantidad--;
+            }
+            ActualizarInterfaz();
+        }
+        else
         {
-            if (slotInfo.cantidad == 1)
-                slotInfo.SetEmptySlot();
-            else
-                slotInfo.cantidad--;
+            if (slotInfo != null)
+            {
+                if (slotInfo.cantidad == 1)
+                    slotInfo.SetEmptySlot();
+                else
+                    slotInfo.cantidad--;
+            }
+            ActualizarInterfaz();
         }
-        ActualizarInterfaz();
-
     }
 
     public void SetItemInSlotPersonalizacion()
@@ -84,11 +96,9 @@ public class Slot : MonoBehaviour {
             SlotPersonalizacion.personalizacionInfo.statsInfo.combo = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.combo;
             SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
             SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
-
+            SlotPersonalizacion.personalizacionInfo.statsInfo.identificadorSlotInventario = slotInfo.identificador;
 
             SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
-
-
 
         }
 

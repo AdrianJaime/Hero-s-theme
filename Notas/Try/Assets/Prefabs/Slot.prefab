@@ -208,10 +208,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8fa08dccbaeb346ae0c326fd0fbbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
   personalizacionInfo:
     tipoItem: 0
     itemIdentificador: 0
     libre: 0
+    statsInfo:
+      combo: 0
+      vida: 0
+      damage: 0
+      identificadorSlotInventario: 0
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   panelPersonalizacion: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
     type: 2}
