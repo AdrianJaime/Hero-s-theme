@@ -81,6 +81,7 @@ public class Inventory : MonoBehaviour
     public Slot EncontrarSlot(int _identificador)
     {
         panelInventrio = GameObject.Find("Invenatrio Panel").transform;
+
         return panelInventrio.GetChild(_identificador).GetComponent<Slot>(); //getchild lo que hace es buscar en el panale de inventario el componente con el identificador, hijo del panel. En este caso tanto el identificador del slot como idenificador hijo concuerdan por lo que de puta madre.Delvolviendo el slot
     }
 

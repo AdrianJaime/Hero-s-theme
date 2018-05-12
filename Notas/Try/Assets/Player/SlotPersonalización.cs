@@ -76,7 +76,7 @@ public class SlotPersonalizacionInfo
             combo = 0;
             vida = 0;
             damage = 0;
-            identificadorSlotInventario = -1;
+            //identificadorSlotInventario = -1;
         }
     }
 
