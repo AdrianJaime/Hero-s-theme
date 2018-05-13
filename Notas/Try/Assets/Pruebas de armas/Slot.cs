@@ -52,12 +52,15 @@ public class Slot : MonoBehaviour {
     {
         
         if (slotInfo.equipado)
+
         {
+            panelPersonalizacion = GameObject.Find("Personalizacion").GetComponent<PanelPersonalizacion>();
             SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
 
             if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
             {
                 auxSlotPers.DeleteItemInSlotPersonalizacion();
+                panelPersonalizacion.GuardarPersonalizacion();
             }
 
             if (slotInfo != null)
@@ -67,6 +70,9 @@ public class Slot : MonoBehaviour {
                 else
                     slotInfo.cantidad--;
             }
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.SetValueOfItems();
+
             ActualizarInterfaz();
         }
         else

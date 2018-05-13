@@ -33,10 +33,8 @@ public class PanelPersonalizacion : MonoBehaviour {
         }
     }
 
-    private void Update()
-    {
-        GuardarPersonalizacion();
-    }
+
+
 
     private void CrearSlotsVacíos()
     {
