@@ -434,6 +434,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+--- !u!1 &199212723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 199212724}
+  - component: {fileID: 199212725}
+  m_Layer: 0
+  m_Name: player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199212724
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199212723}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -133, y: -275, z: 149.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1099362944}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199212725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199212723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d760c5953a64a3d4a95dd80229c9a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorDeTextos: {fileID: 0}
+  panelPersonalizacion: {fileID: 0}
+  slotPersonalizacionArma: {fileID: 0}
+  slotPersonalizacionCabeza: {fileID: 0}
+  slotPersonalizacionCuerpo: {fileID: 0}
+  slotPersonalizacionPies: {fileID: 0}
+  totalDamage: 2
+  totalVida: 0
+  totalCombo: 0
+>>>>>>> 1b8ab5f50f7056060bce35be730af607a4cf539c
 --- !u!1 &241275622
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   playerStats: {fileID: 1844520582}
+=======
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
+  player: {fileID: 199212725}
+>>>>>>> 1b8ab5f50f7056060bce35be730af607a4cf539c
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
@@ -1038,7 +1096,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   playerStats: {fileID: 1844520582}
+=======
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
+  player: {fileID: 199212725}
+>>>>>>> 1b8ab5f50f7056060bce35be730af607a4cf539c
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
@@ -1560,7 +1624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   playerStats: {fileID: 1844520582}
+=======
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
+  player: {fileID: 199212725}
+>>>>>>> 1b8ab5f50f7056060bce35be730af607a4cf539c
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
@@ -1906,7 +1976,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   playerStats: {fileID: 1844520582}
+=======
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
+  player: {fileID: 199212725}
+>>>>>>> 1b8ab5f50f7056060bce35be730af607a4cf539c
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
