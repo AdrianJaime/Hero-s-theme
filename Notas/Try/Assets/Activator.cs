@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 
 public class Activator : MonoBehaviour {
 
@@ -11,6 +11,7 @@ public class Activator : MonoBehaviour {
     public PuntosDeJuego PuntosDeJuegoScript;
     public BarraVida BarraVidaScript;
 
+    public Text InfoText;
     public KeyCode key;
     bool active = false;
     GameObject Note;
@@ -29,12 +30,19 @@ public class Activator : MonoBehaviour {
                     if (Mathf.Abs(Note.transform.position.y) - 3.54 <= 0.1)
                     {
                         PuntosDeJuegoScript.PuntosTotales += sPerfect();
+                        InfoText.text = "Super Perfect!";
                     }
                     else
+                    {
                         PuntosDeJuegoScript.PuntosTotales += perfect();
+                        InfoText.text = "Perfect!";
+                    }
                 }
                 else
+                {
                     PuntosDeJuegoScript.PuntosTotales += good();
+                    InfoText.text = "Good!";
+                }
             }
             else
             {
