@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour {
 
     public int totalDamage = 0;
     public int totalVida = 0;
-    public int totalCombo = 0;
+    public int curacion = 0;
 
 
     private void Update()
@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour {
             counter++;
         }
         totalDamage = int.Parse(stats[0]);
-        totalCombo = int.Parse(stats[1]);
+        curacion = int.Parse(stats[1]);
         totalVida = int.Parse(stats[2]);
 
         reader.Close();

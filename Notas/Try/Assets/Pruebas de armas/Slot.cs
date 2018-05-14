@@ -99,7 +99,7 @@ public class Slot : MonoBehaviour {
             SlotPersonalizacion.personalizacionInfo.libre = false;
             SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
             SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
-            SlotPersonalizacion.personalizacionInfo.statsInfo.combo = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.combo;
+            SlotPersonalizacion.personalizacionInfo.statsInfo.curacion = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.curacion;
             SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
             SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
             SlotPersonalizacion.personalizacionInfo.statsInfo.identificadorSlotInventario = slotInfo.identificador;

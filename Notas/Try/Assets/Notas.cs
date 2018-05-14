@@ -19,7 +19,7 @@ public class Notas : MonoBehaviour {
         if (!GetComponent< Renderer >().isVisible)
         {
             Destroy(gameObject);
-            BarravidaScript.Damage(BarravidaScript.damageValue);
+            BarravidaScript.Damage();
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
         }
     }
