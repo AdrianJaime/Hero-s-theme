@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.IO;
 
 public class Player : MonoBehaviour {
 
-    public EnemySpawnController enemySpawnController;
+    public ControladorDeTextos controladorDeTextos;
     
     public PanelPersonalizacion panelPersonalizacion;
 
@@ -14,8 +16,8 @@ public class Player : MonoBehaviour {
     public SlotPersonalización slotPersonalizacionPies;
 
 
-    
-    public int totalDamage=0;
+    string line;
+    public int totalDamage=50;
     public int totalVida=0;
     public int totalCombo=0;
     
@@ -27,19 +29,33 @@ public class Player : MonoBehaviour {
         slotPersonalizacionPies = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3);
 
         SetValueOfItems();
+
+
     }
-    
-    
+
+
     public void SetValueOfItems()
     {
         totalDamage = slotPersonalizacionArma.personalizacionInfo.statsInfo.damage + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.damage + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.damage + slotPersonalizacionPies.personalizacionInfo.statsInfo.damage;
         totalVida = slotPersonalizacionArma.personalizacionInfo.statsInfo.vida + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.vida  + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.vida + slotPersonalizacionPies.personalizacionInfo.statsInfo.vida;
         totalCombo = slotPersonalizacionArma.personalizacionInfo.statsInfo.combo + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.combo + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.combo + slotPersonalizacionPies.personalizacionInfo.statsInfo.combo;
+
+        //Actualizar las variables i meterlas en el archivo de texto
+        WriteString();
     }
-    
-    public void Atack()
+
+    [MenuItem("Tools/Write file")]
+    public void WriteString()
     {
-        enemySpawnController.actualEnemy.stats.vidaMax -= totalDamage;
+        string path = @".\Assets\TXT\Player_info\PlayerStats.txt";
+
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(path, false);
+        writer.WriteLine(totalDamage);
+        writer.WriteLine(totalCombo);
+        writer.WriteLine(totalVida);
+        
+        writer.Close();
     }
-    
+
 }

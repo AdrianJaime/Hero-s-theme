@@ -26,7 +26,7 @@ public class Activator : MonoBehaviour {
                 BarraVidaScript.Curar(BarraVidaScript.vidaCurada);
             }
             PuntosDeJuegoScript.MultiplicadorDeCombo++;
-            player.Atack();
+            //player.Atack();
             vidaEnemigo.Damage();
 
         }
