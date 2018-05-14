@@ -66,14 +66,14 @@ public class SlotPersonalizacionInfo
     [System.Serializable]
     public struct Stats
     {
-        public int combo;
+        public int curacion;
         public int vida;
         public int damage;
         public int identificadorSlotInventario;
 
         public void StatsACero()
         {
-            combo = 0;
+            curacion = 0;
             vida = 0;
             damage = 0;
             //identificadorSlotInventario = -1;
