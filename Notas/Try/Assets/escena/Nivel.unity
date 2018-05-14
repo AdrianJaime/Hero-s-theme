@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d760c5953a64a3d4a95dd80229c9a367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnController: {fileID: 1798983486}
+  controladorDeTextos: {fileID: 0}
   panelPersonalizacion: {fileID: 0}
   slotPersonalizacionArma: {fileID: 0}
   slotPersonalizacionCabeza: {fileID: 0}
@@ -749,6 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
   player: {fileID: 199212725}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
@@ -1086,6 +1088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
   player: {fileID: 199212725}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
@@ -1609,6 +1613,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
   player: {fileID: 199212725}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
@@ -1911,6 +1917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef2b465b3135a4ea125450864a8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DMGText: {fileID: 447604103}
+  InfoText: {fileID: 1955878388}
   player: {fileID: 199212725}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}

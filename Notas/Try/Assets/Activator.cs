@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 
 public class Activator : MonoBehaviour {
+
+    public Text DMGText;
+    public Text InfoText;
     public Player player;
     public BarraVidaEnemigo vidaEnemigo;
 
@@ -27,12 +30,19 @@ public class Activator : MonoBehaviour {
                     if (Mathf.Abs(Note.transform.position.y) - 3.54 <= 0.1)
                     {
                         PuntosDeJuegoScript.PuntosTotales += sPerfect();
+                        InfoText.text = "Super Perfect!";
                     }
                     else
+                    {
                         PuntosDeJuegoScript.PuntosTotales += perfect();
+                        InfoText.text = "Perfect!";
+                    }
                 }
                 else
+                {
                     PuntosDeJuegoScript.PuntosTotales += good();
+                    InfoText.text = "Good!";
+                }
             }
             else
             {
@@ -55,7 +65,6 @@ public class Activator : MonoBehaviour {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
             BarraVidaScript.Damage(BarraVidaScript.damageValue);
             }
-
     }
 
     void OnTriggerEnter2D(Collider2D col)
