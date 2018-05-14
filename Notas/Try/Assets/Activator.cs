@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Activator : MonoBehaviour {
     public Player player;
     public BarraVidaEnemigo vidaEnemigo;
@@ -13,14 +14,33 @@ public class Activator : MonoBehaviour {
     GameObject Note;
 
 
-
 	
 	// Update is called once per frame
 	void Update () {
 	    if(Input.GetKeyDown(key) && active)
         {
+
+            if (Mathf.Abs(Note.transform.position.y) - 3.54 <= 0.5)
+            {
+                if (Mathf.Abs(Note.transform.position.y) - 3.54 <= 0.25)
+                {
+                    if (Mathf.Abs(Note.transform.position.y) - 3.54 <= 0.1)
+                    {
+                        PuntosDeJuegoScript.PuntosTotales += sPerfect();
+                    }
+                    else
+                        PuntosDeJuegoScript.PuntosTotales += perfect();
+                }
+                else
+                    PuntosDeJuegoScript.PuntosTotales += good();
+            }
+            else
+            {
+                //BarraVidaScript.Damage(BarraVidaScript.damageValue);
+                PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
+            }
             Destroy(Note);
-            PuntosDeJuegoScript.PuntosTotales += (PuntosDeJuegoScript.MultiplicadorDeCombo * PuntosDeJuegoScript.PuntosPorNota);
+            
             if (PuntosDeJuegoScript.MultiplicadorDeCombo % 5 == 00) //cada combo de 5...
             {
                 BarraVidaScript.Curar(BarraVidaScript.vidaCurada);
@@ -53,4 +73,20 @@ public class Activator : MonoBehaviour {
     {
         active = false;
     }
+
+    int sPerfect()
+    {
+        return  2 * (PuntosDeJuegoScript.MultiplicadorDeCombo * PuntosDeJuegoScript.PuntosPorNota);
+    }
+
+    int perfect()
+    {
+        return (int)(1.5 * (PuntosDeJuegoScript.MultiplicadorDeCombo * PuntosDeJuegoScript.PuntosPorNota));
+    }
+
+    int good()
+    {
+        return PuntosDeJuegoScript.MultiplicadorDeCombo * PuntosDeJuegoScript.PuntosPorNota;
+    }
+
 }
