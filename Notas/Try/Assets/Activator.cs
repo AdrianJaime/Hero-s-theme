@@ -3,9 +3,7 @@ using System.Collections;
 
 
 public class Activator : MonoBehaviour {
-
-    public PlayerStats playerStats;
-
+    public Player player;
     public BarraVidaEnemigo vidaEnemigo;
 
     public PuntosDeJuego PuntosDeJuegoScript;
@@ -38,24 +36,24 @@ public class Activator : MonoBehaviour {
             }
             else
             {
-                BarraVidaScript.Damage();
+                //BarraVidaScript.Damage(BarraVidaScript.damageValue);
                 PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
             }
             Destroy(Note);
             
             if (PuntosDeJuegoScript.MultiplicadorDeCombo % 5 == 00) //cada combo de 5...
             {
-                BarraVidaScript.Curar();
+                BarraVidaScript.Curar(BarraVidaScript.vidaCurada);
             }
             PuntosDeJuegoScript.MultiplicadorDeCombo++;
-            playerStats.Atack();
+            //player.Atack();
             vidaEnemigo.Damage();
 
         }
         else if  (Input.GetKeyDown(key) && active==false)
             {
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
-            BarraVidaScript.Damage();
+            BarraVidaScript.Damage(BarraVidaScript.damageValue);
             }
 
     }

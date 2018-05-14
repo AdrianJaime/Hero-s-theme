@@ -78,7 +78,14 @@ public class EnemySpawnController : MonoBehaviour {
         
     }
 
+    public void enemyAtack()
+    {
+        vidaPlayer.Health -= actualEnemy.stats.damage;
+        //opcional curarse al atacar.
 
+        
+        //actualEnemy.stats.vidaMax
+    }
 
 
 

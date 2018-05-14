@@ -22,13 +22,13 @@ public class Item
     public struct Stats
     {
         public int damage;
-        public int curacion;
+        public int combo;
         public int vida;
 
         public void StatsAcero()
         {
             damage = 0;
-            curacion = 0;
+            combo = 0;
             vida = 0;
         }
     }

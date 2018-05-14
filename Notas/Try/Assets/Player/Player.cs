@@ -6,7 +6,7 @@ using System.IO;
 
 public class Player : MonoBehaviour {
 
-
+    public ControladorDeTextos controladorDeTextos;
     
     public PanelPersonalizacion panelPersonalizacion;
 
@@ -16,10 +16,10 @@ public class Player : MonoBehaviour {
     public SlotPersonalización slotPersonalizacionPies;
 
 
-
-    public int totalDamage=0;
+    string line;
+    public int totalDamage=50;
     public int totalVida=0;
-    public int curacion=0;
+    public int totalCombo=0;
     
      void Start()
     {
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
     {
         totalDamage = slotPersonalizacionArma.personalizacionInfo.statsInfo.damage + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.damage + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.damage + slotPersonalizacionPies.personalizacionInfo.statsInfo.damage;
         totalVida = slotPersonalizacionArma.personalizacionInfo.statsInfo.vida + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.vida  + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.vida + slotPersonalizacionPies.personalizacionInfo.statsInfo.vida;
-        curacion = slotPersonalizacionArma.personalizacionInfo.statsInfo.curacion + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.curacion + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.curacion + slotPersonalizacionPies.personalizacionInfo.statsInfo.curacion;
+        totalCombo = slotPersonalizacionArma.personalizacionInfo.statsInfo.combo + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.combo + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.combo + slotPersonalizacionPies.personalizacionInfo.statsInfo.combo;
 
         //Actualizar las variables i meterlas en el archivo de texto
         WriteString();
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(totalDamage);
-        writer.WriteLine(curacion);
+        writer.WriteLine(totalCombo);
         writer.WriteLine(totalVida);
         
         writer.Close();

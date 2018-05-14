@@ -3,46 +3,36 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class BarraVida : MonoBehaviour {
-    public EnemySpawnController enemySpawnController;
-    public PlayerStats playerStats;
-	public Scrollbar HealthBar;
 
+	public Scrollbar HealthBar;
     float HealthMax;
-    public float vidaTotalPlayer;
-    public float vidaCurada;
+    public float Health = 100.0f;
+    public float damageValue=10.0f;
+    public float vidaCurada = 5.0f;
     private void Start()
     {
-     playerStats.ReadString();
-     SetValueOfStats();
-     HealthMax = vidaTotalPlayer;
+     HealthMax = Health;
     }
 
 
-    public void Damage()
+    public void Damage(float value)
 	{
-        vidaTotalPlayer -= enemySpawnController.actualEnemy.stats.damage ;
-		HealthBar.size = vidaTotalPlayer / HealthMax;
+		Health -= value;
+		HealthBar.size = Health / HealthMax;
 	}
-    public void Curar()
+    public void Curar(float value)
     {
-        vidaTotalPlayer += vidaCurada;
-        if (vidaTotalPlayer >= HealthMax)
-            vidaTotalPlayer = HealthMax;
-        HealthBar.size = vidaTotalPlayer / HealthMax;
+        Health += value;
+        if (Health >= HealthMax)
+            Health = HealthMax;
+        HealthBar.size = Health / HealthMax;
     }
 
     public bool NoSalud()
     {
-        if (vidaTotalPlayer <= 0)
+        if (Health <= 0)
             return true;
         else
             return false;
-    }
-
-    void SetValueOfStats()
-    {
-        vidaCurada = playerStats.curacion;
-        vidaTotalPlayer = playerStats.totalVida;
-
     }
 }
