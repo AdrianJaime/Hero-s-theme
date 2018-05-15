@@ -14,6 +14,16 @@ public class Inventory : MonoBehaviour
     public int capacity;
     public string saveDataInventario;
 
+    private bool created;
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject.transform.root);
+            created = true;
+        }
+    }
+
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
