@@ -19,6 +19,7 @@ MonoBehaviour:
     nivel: 0
     rango: 0
     expAcumulada: 0
+    dineroAlVender: 0
     stats:
       damage: 10
       curacion: 1
@@ -31,6 +32,7 @@ MonoBehaviour:
     nivel: 80
     rango: 0
     expAcumulada: 0
+    dineroAlVender: 0
     stats:
       damage: 232
       curacion: 50
@@ -43,6 +45,7 @@ MonoBehaviour:
     nivel: 80
     rango: 0
     expAcumulada: 0
+    dineroAlVender: 0
     stats:
       damage: 234
       curacion: 10
@@ -55,6 +58,7 @@ MonoBehaviour:
     nivel: 80
     rango: 0
     expAcumulada: 0
+    dineroAlVender: 60
     stats:
       damage: 10
       curacion: 20

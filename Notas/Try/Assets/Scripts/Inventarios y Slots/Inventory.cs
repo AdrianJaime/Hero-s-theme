@@ -15,14 +15,9 @@ public class Inventory : MonoBehaviour
     public string saveDataInventario;
 
     private bool created;
-    void Awake()
-    {
-        if (!created)
-        {
-            DontDestroyOnLoad(this.gameObject.transform.root);
-            created = true;
-        }
-    }
+
+    public bool isOnEquipMenu=false;
+    public bool isOnSellMenu=false;
 
     private void Start()
     {

@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour {
-
+public class Slot : MonoBehaviour
+{
+    public Monedero monedero;
+     Inventory inventory;
     public PanelPersonalizacion panelPersonalizacion;
 
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
 
+    public Image eliminarSlot;
     public Image representacionItem; //Atributos refernetes al aspecto visual del slot
     public Text nivel;
     public Text rango;
-
+    private void Start()
+    {
+        inventory = GameObject.Find("Inventario").GetComponent<Inventory>();
+    }
     public void CreateSlot(int _identificador)
     {
         slotInfo = new SlotInfo();
@@ -28,6 +34,7 @@ public class Slot : MonoBehaviour {
         {
             representacionItem.sprite = null;
             representacionItem.enabled = false;
+            eliminarSlot.enabled = false;
 
             nivel.gameObject.SetActive(false);
 
@@ -39,6 +46,8 @@ public class Slot : MonoBehaviour {
             representacionItem.sprite = baseDeDatos.FindItem(slotInfo.identificadorItem).imagenItem;//Imagen
             representacionItem.enabled = true;
 
+            eliminarSlot.enabled = true;
+
             nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
@@ -48,43 +57,57 @@ public class Slot : MonoBehaviour {
         }
     }
 
-    public void EliminarSlot()
+    public void EliminarSlot_VenderSlot()
     {
-        
-        if (slotInfo.equipado)
-
+        if (inventory.isOnEquipMenu == true)
         {
-            panelPersonalizacion = GameObject.Find("Personalizacion").GetComponent<PanelPersonalizacion>();
-            SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
-
-            if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+            if (slotInfo.equipado)
             {
-                auxSlotPers.DeleteItemInSlotPersonalizacion();
-                panelPersonalizacion.GuardarPersonalizacion();
+                panelPersonalizacion = GameObject.Find("Personalizacion").GetComponent<PanelPersonalizacion>();
+                SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+
+                if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+                {
+                    auxSlotPers.DeleteItemInSlotPersonalizacion();
+                    panelPersonalizacion.GuardarPersonalizacion();
+                }
+
+                if (slotInfo != null)
+                {
+                    if (slotInfo.cantidad == 1)
+                        slotInfo.SetEmptySlot();
+                    else
+                        slotInfo.cantidad--;
+                }
+                Player player = GameObject.Find("Player").GetComponent<Player>();
+                player.SetValueOfItems();
+
+                ActualizarInterfaz();
+            }
+            else
+            {
+                if (slotInfo != null)
+                {
+                    if (slotInfo.cantidad == 1)
+                        slotInfo.SetEmptySlot();
+                    else
+                        slotInfo.cantidad--;
+                }
+                ActualizarInterfaz();
             }
 
-            if (slotInfo != null)
-            {
-                if (slotInfo.cantidad == 1)
-                    slotInfo.SetEmptySlot();
-                else
-                    slotInfo.cantidad--;
-            }
-            Player player = GameObject.Find("Player").GetComponent<Player>();
-            player.SetValueOfItems();
-
-            ActualizarInterfaz();
         }
-        else
+        if (inventory.isOnSellMenu == true)
         {
-            if (slotInfo != null)
+            if (!slotInfo.equipado)
             {
+                monedero.AñadirMonedasNormales(baseDeDatos.FindItem(slotInfo.identificadorItem).dineroAlVender);
                 if (slotInfo.cantidad == 1)
                     slotInfo.SetEmptySlot();
                 else
                     slotInfo.cantidad--;
+                ActualizarInterfaz();
             }
-            ActualizarInterfaz();
         }
     }
 
@@ -109,26 +132,27 @@ public class Slot : MonoBehaviour {
         }
 
     }
+
 }
-[System.Serializable]
-public class SlotInfo
-{
-    public int identificador;
-    public bool isEmpty;
-    public bool used;
-    public int identificadorItem;
-    public int cantidad;
-    public int cantidadMax;
-
-    public bool equipado;
-
-
-    public void SetEmptySlot()
+    [System.Serializable]
+    public class SlotInfo
     {
-        isEmpty = true;
-        used = false;
-        cantidad = 0;
-        identificadorItem = -1;
-        equipado = false;
+        public int identificador;
+        public bool isEmpty;
+        public bool used;
+        public int identificadorItem;
+        public int cantidad;
+        public int cantidadMax;
+
+        public bool equipado;
+
+
+        public void SetEmptySlot()
+        {
+            isEmpty = true;
+            used = false;
+            cantidad = 0;
+            identificadorItem = -1;
+            equipado = false;
+        }
     }
-}

@@ -13,7 +13,7 @@ public class Item
     public int nivel;//Asignación del calculo hecho a partir de la experiencia acumulada
     public int rango;//Nivel de rngo == al nivel de fusión de armas (creo, o de veces evolucionada).
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
-
+    public int dineroAlVender;
     public Stats stats;
   
     public TipoItem tipoItem ;
