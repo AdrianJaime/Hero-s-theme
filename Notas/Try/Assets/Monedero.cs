@@ -9,7 +9,6 @@ public class Monedero : MonoBehaviour
     public int monedasEspeciales;
 
     public string saveDataMonedero;
-
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
@@ -19,12 +18,12 @@ public class Monedero : MonoBehaviour
         }
         else
         {
-            monedasEspeciales = 0;
             monedasNormales = 0;
+            monedasEspeciales = 0;
             GuardarMonedero();
         }
-
     }
+
     private void Update()
     {
         if (PlayerPrefs.HasKey("monedero"))

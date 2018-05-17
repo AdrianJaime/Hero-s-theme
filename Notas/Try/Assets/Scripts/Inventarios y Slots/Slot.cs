@@ -6,20 +6,33 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     public Monedero monedero;
-     Inventory inventory;
+    Inventory inventory;
     public PanelPersonalizacion panelPersonalizacion;
+
 
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
 
+    public GameObject panelConfirmarVenta;
+
     public Image eliminarSlot;
     public Image representacionItem; //Atributos refernetes al aspecto visual del slot
     public Text nivel;
     public Text rango;
+
     private void Start()
     {
         inventory = GameObject.Find("Inventario").GetComponent<Inventory>();
+
+        if (inventory.isOnSellMenu)
+        {
+            panelConfirmarVenta = GameObject.Find("PanelConfirmar");
+            //panelConfirmarVenta.SetActive(false); //error no lo desactiva
+
+        }
+
+
     }
     public void CreateSlot(int _identificador)
     {
@@ -113,25 +126,38 @@ public class Slot : MonoBehaviour
 
     public void SetItemInSlotPersonalizacion()
     {
-
-        SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
-        if (SlotPersonalizacion.personalizacionInfo.libre)
+        if (inventory.isOnEquipMenu)
         {
-            slotInfo.equipado = true;
-            SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
-            SlotPersonalizacion.personalizacionInfo.libre = false;
-            SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
-            SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
-            SlotPersonalizacion.personalizacionInfo.statsInfo.curacion = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.curacion;
-            SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
-            SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
-            SlotPersonalizacion.personalizacionInfo.statsInfo.identificadorSlotInventario = slotInfo.identificador;
+            SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+            if (SlotPersonalizacion.personalizacionInfo.libre)
+            {
+                slotInfo.equipado = true;
+                SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
+                SlotPersonalizacion.personalizacionInfo.libre = false;
+                SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
+                SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
+                SlotPersonalizacion.personalizacionInfo.statsInfo.curacion = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.curacion;
+                SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
+                SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
+                SlotPersonalizacion.personalizacionInfo.statsInfo.identificadorSlotInventario = slotInfo.identificador;
 
-            SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
+                SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
+            }
         }
 
     }
+    
+    public void MostrarPanelVenta(bool activar)
+    {
+        panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().SetActiveMIO(activar);
+        if (activar)
+        {
+            panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>()._identifadorSlot = slotInfo.identificador;
+            panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().setInfoSlotVenta();
+        }
+    }
+
 
 }
     [System.Serializable]
