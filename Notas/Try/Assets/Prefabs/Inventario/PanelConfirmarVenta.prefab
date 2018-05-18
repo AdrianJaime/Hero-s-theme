@@ -296,6 +296,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114743900538472092}
+        m_MethodName: MostrarPanel
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114301235659248626
@@ -424,7 +435,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
-  inventory: {fileID: 0}
+  inventory: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
   dineroDelItem: {fileID: 114079460483843738}
   imagenItem: {fileID: 114671568314297098}
   _identifadorSlot: 0
@@ -503,6 +515,29 @@ MonoBehaviour:
       - m_Target: {fileID: 114743900538472092}
         m_MethodName: EliminarDesdeElPanel
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+          type: 2}
+        m_MethodName: MostrarPanelVenta
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114743900538472092}
+        m_MethodName: MostrarPanel
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

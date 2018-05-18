@@ -150,7 +150,8 @@ public class Slot : MonoBehaviour
     
     public void MostrarPanelVenta(bool activar)
     {
-        panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().SetActiveMIO(activar);
+
+
         if (activar)
         {
             panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>()._identifadorSlot = slotInfo.identificador;

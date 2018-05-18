@@ -14,7 +14,7 @@ public class PanelConfirmacionVenta : MonoBehaviour {
 
     private void Start()
     {
-        this.SetActiveMIO(false);
+        
     }
     public void setInfoSlotVenta()
     {
@@ -28,9 +28,10 @@ public class PanelConfirmacionVenta : MonoBehaviour {
         Slot slotAux = inventory.EncontrarSlot(_identifadorSlot);
         slotAux.EliminarSlot_VenderSlot();
     }
-    public void SetActiveMIO(bool _value)
+
+    public void MostrarPanel(bool _value)
     {
-        this.enabled = _value;      
+        this.gameObject.SetActive(_value);
     }
 
 }
