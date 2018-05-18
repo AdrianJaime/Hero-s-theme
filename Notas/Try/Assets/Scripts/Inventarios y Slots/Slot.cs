@@ -159,6 +159,10 @@ public class Slot : MonoBehaviour
         }
     }
 
+    public void AbrirPanelVenta()
+    {
+        panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
+    }
 
 }
     [System.Serializable]

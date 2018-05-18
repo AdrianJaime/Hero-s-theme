@@ -14,7 +14,7 @@ public class PanelConfirmacionVenta : MonoBehaviour {
 
     private void Start()
     {
-        
+       // this.gameObject.SetActive(false);
     }
     public void setInfoSlotVenta()
     {
