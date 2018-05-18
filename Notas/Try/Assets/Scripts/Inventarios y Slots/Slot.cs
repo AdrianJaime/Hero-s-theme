@@ -21,7 +21,7 @@ public class Slot : MonoBehaviour
     public Text nivel;
     public Text rango;
 
-    private void Start()
+    private void Awake() 
     {
         inventory = GameObject.Find("Inventario").GetComponent<Inventory>();
 
@@ -31,8 +31,10 @@ public class Slot : MonoBehaviour
             //panelConfirmarVenta.SetActive(false); //error no lo desactiva
 
         }
-
-
+    }
+    private void Start()
+    {
+        panelConfirmarVenta.SetActive(false);
     }
     public void CreateSlot(int _identificador)
     {
