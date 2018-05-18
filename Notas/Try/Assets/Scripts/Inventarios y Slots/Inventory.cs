@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
 
     public bool isOnEquipMenu=false;
     public bool isOnSellMenu=false;
+    public bool isOnSummonMenu = false;
 
     private void Start()
     {

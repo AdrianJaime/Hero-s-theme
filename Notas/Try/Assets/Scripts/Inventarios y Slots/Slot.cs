@@ -34,7 +34,9 @@ public class Slot : MonoBehaviour
     }
     private void Start()
     {
-        panelConfirmarVenta.SetActive(false);
+        if(inventory.isOnSellMenu)
+            panelConfirmarVenta.SetActive(false);
+
     }
     public void CreateSlot(int _identificador)
     {

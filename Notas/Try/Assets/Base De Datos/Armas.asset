@@ -12,46 +12,46 @@ MonoBehaviour:
   m_Name: Armas
   m_EditorClassIdentifier: 
   items:
-  - imagenItem: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
+  - imagenItem: {fileID: 21300000, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 1
     name: 
     rareza: 0
     nivel: 0
     rango: 0
     expAcumulada: 0
-    dineroAlVender: 0
+    dineroAlVender: 69
     stats:
       damage: 10
       curacion: 1
       vida: 50
     tipoItem: 0
-  - imagenItem: {fileID: 21300000, guid: 46325e6cb5faef841b5d3eb9ca9c2196, type: 3}
+  - imagenItem: {fileID: 21300002, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 2
     name: Polla
     rareza: 100
     nivel: 80
     rango: 0
     expAcumulada: 0
-    dineroAlVender: 0
+    dineroAlVender: 160
     stats:
       damage: 232
       curacion: 50
       vida: 234
     tipoItem: 2
-  - imagenItem: {fileID: 21300000, guid: 7ba3f25f451da3946addb1a8b81e3258, type: 3}
+  - imagenItem: {fileID: 21300004, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 3
     name: Polla
     rareza: 100
     nivel: 80
     rango: 0
     expAcumulada: 0
-    dineroAlVender: 0
+    dineroAlVender: 400
     stats:
       damage: 234
       curacion: 10
       vida: 546
     tipoItem: 3
-  - imagenItem: {fileID: 21300000, guid: 801bb635dbbf2294ea8061638373b919, type: 3}
+  - imagenItem: {fileID: 21300006, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 4
     name: Polla
     rareza: 100
