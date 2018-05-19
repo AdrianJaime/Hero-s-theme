@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Summons : MonoBehaviour {
 
+    public Text dineroBanner;
     public Inventory inventory;
     public Monedero monedero;
 
     public int costeDeSummon;
 
+    private void Start()
+    {
+        dineroBanner.text = costeDeSummon.ToString()+ "€";
+    }
     public void Summon()
     {
         if (inventory.EspaciosVacios() >= 1)

@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d07b40f024aba43b798cb93b2c08ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dineroBanner: {fileID: 129436916}
   inventory: {fileID: 847530248}
   monedero: {fileID: 493612662}
   costeDeSummon: 500
