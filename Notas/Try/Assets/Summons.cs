@@ -11,23 +11,26 @@ public class Summons : MonoBehaviour {
 
     public void Summon()
     {
-        if (monedero.monedasNormales >= costeDeSummon)
+        if (inventory.EspaciosVacios() >= 1)
         {
-            monedero.EliminarMonedasNormales(costeDeSummon);
-            int a = Random.Range(0, 100);
-            if (a <= 90)
+            if (monedero.monedasNormales >= costeDeSummon)
             {
-                if (a <= 80)
+                monedero.EliminarMonedasNormales(costeDeSummon);
+                int a = Random.Range(0, 100);
+                if (a <= 90)
                 {
-                    if (a <= 60)
-                        inventory.AñadirItem(1);
-                    else
-                        inventory.AñadirItem(2);
+                    if (a <= 80)
+                    {
+                        if (a <= 60)
+                            inventory.AñadirItem(1);
+                        else
+                            inventory.AñadirItem(2);
+                    }
+                    else inventory.AñadirItem(3);
                 }
-                else inventory.AñadirItem(3);
+                else
+                    inventory.AñadirItem(4);
             }
-            else
-                inventory.AñadirItem(4);
         }
     }
 
