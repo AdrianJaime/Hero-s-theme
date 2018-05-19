@@ -121,29 +121,17 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    /*
-    public void EliminarItem(int _identificadorItem)
+
+    public int EspaciosVacios()
     {
-        SlotInfo slotInfo = EncontrarItemEnInventario(_identificadorItem);
-        SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(BaseDeDatosScript.FindItem(slotInfo.identificadorItem).tipoItem);
-
-
-        if (auxSlotPers.TipoSlotPersonalización == BaseDeDatosScript.FindItem(slotInfo.identificadorItem).tipoItem)
+        int contador = 0;
+        foreach (SlotInfo slotinfo in slotInfoList) //si ese slot no existe o esta ocupado con su maxima capacidad encuentra otro vacío
         {
-            auxSlotPers.DeleteItemInSlotPersonalizacion();
+            if (slotinfo.isEmpty)
+                contador++;
         }
-
-        if (slotInfo != null)
-        {
-            if (slotInfo.cantidad == 1)
-                slotInfo.SetEmptySlot();
-            else
-                slotInfo.cantidad--;
-        }
-        EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();
-
+        return contador;
     }
-    */
 
     private class InventarioGuardado
     {

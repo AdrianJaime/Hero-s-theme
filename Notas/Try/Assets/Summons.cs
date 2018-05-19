@@ -13,14 +13,14 @@ public class Summons : MonoBehaviour {
     {
         if (monedero.monedasNormales >= costeDeSummon)
         {
-            monedero.monedasNormales = monedero.monedasNormales - costeDeSummon;
+            monedero.EliminarMonedasNormales(costeDeSummon);
             int a = Random.Range(0, 100);
             if (a <= 90)
             {
                 if (a <= 80)
                 {
                     if (a <= 60)
-                        inventory.AñadirItem(1);//4 es el numero maximo de items en la base de datos
+                        inventory.AñadirItem(1);
                     else
                         inventory.AñadirItem(2);
                 }
@@ -28,6 +28,17 @@ public class Summons : MonoBehaviour {
             }
             else
                 inventory.AñadirItem(4);
+        }
+    }
+
+    public void SummonXcapacity(int _capacity)
+    {
+        if (inventory.EspaciosVacios() >= _capacity&&monedero.monedasNormales>=costeDeSummon*_capacity)
+        {
+            for (int i = 0; i < _capacity; i++)
+            {
+                Summon();
+            }
         }
     }
 }
