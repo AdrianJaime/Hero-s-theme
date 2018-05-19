@@ -14,7 +14,20 @@ public class Summons : MonoBehaviour {
         if (monedero.monedasNormales >= costeDeSummon)
         {
             monedero.monedasNormales = monedero.monedasNormales - costeDeSummon;
-            inventory.AñadirItem(Random.Range(0, 4));//4 es el numero maximo de items en la base de datos
+            int a = Random.Range(0, 100);
+            if (a <= 90)
+            {
+                if (a <= 80)
+                {
+                    if (a <= 60)
+                        inventory.AñadirItem(1);//4 es el numero maximo de items en la base de datos
+                    else
+                        inventory.AñadirItem(2);
+                }
+                else inventory.AñadirItem(3);
+            }
+            else
+                inventory.AñadirItem(4);
         }
     }
 }
