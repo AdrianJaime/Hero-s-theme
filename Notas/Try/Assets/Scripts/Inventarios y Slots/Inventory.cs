@@ -115,6 +115,8 @@ public class Inventory : MonoBehaviour
             {
                 slotInfo.cantidad++;
                 slotInfo.identificadorItem = _identificadorItem;
+                slotInfo.itemGuardado = item;
+
                 slotInfo.isEmpty = false;
 
                 EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();

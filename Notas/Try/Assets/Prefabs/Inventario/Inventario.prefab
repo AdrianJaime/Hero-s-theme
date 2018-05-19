@@ -96,7 +96,7 @@ MonoBehaviour:
   slotInfoList: []
   capacity: 24
   saveDataInventario: 
-  isOnEquipMenu: 0
+  isOnEquipMenu: 1
   isOnSellMenu: 0
   isOnSummonMenu: 0
 --- !u!114 &114295198373287506
@@ -246,7 +246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215.4516, y: -370.44226}
+  m_AnchoredPosition: {x: 257, y: -385}
   m_SizeDelta: {x: 393.4, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224334217090395576

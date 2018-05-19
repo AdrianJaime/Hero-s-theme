@@ -32,6 +32,18 @@ public class Item
             vida = 0;
         }
     }
+    public void ItemDefault()
+    {
+        identificador = -1;
+        name = "nada";
+        rareza = 0;
+        nivel = 0;
+        rango = 0;
+        expAcumulada = 0;
+        dineroAlVender = 0;
+        imagenItem = null;
+        stats.StatsAcero();
+    }
 }
 
 public enum TipoItem {Arma=0,Cabeza=1,Cuerpo=2,Piernas=3};

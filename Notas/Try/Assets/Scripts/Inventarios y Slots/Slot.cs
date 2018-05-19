@@ -42,6 +42,7 @@ public class Slot : MonoBehaviour
     {
         slotInfo = new SlotInfo();
         slotInfo.identificador = _identificador;
+
         slotInfo.SetEmptySlot();
     }
 
@@ -76,7 +77,7 @@ public class Slot : MonoBehaviour
 
     public void EliminarSlot_VenderSlot()
     {
-        if (inventory.isOnEquipMenu == true)
+        if (inventory.isOnEquipMenu)
         {
             if (slotInfo.equipado)
             {
@@ -136,14 +137,13 @@ public class Slot : MonoBehaviour
             if (SlotPersonalizacion.personalizacionInfo.libre)
             {
                 slotInfo.equipado = true;
-                SlotPersonalizacion.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
+                SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
                 SlotPersonalizacion.personalizacionInfo.libre = false;
-                SlotPersonalizacion.personalizacionInfo.itemIdentificador = baseDeDatos.FindItem(slotInfo.identificadorItem).identificador;
+                SlotPersonalizacion.personalizacionInfo.itemIdentificador = slotInfo.identificadorItem;
                 SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
-                SlotPersonalizacion.personalizacionInfo.statsInfo.curacion = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.curacion;
-                SlotPersonalizacion.personalizacionInfo.statsInfo.vida = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.vida;
-                SlotPersonalizacion.personalizacionInfo.statsInfo.damage = baseDeDatos.FindItem(slotInfo.identificadorItem).stats.damage;
-                SlotPersonalizacion.personalizacionInfo.statsInfo.identificadorSlotInventario = slotInfo.identificador;
+
+
+                SlotPersonalizacion.personalizacionInfo.identificadorSlotInventario = slotInfo.identificador;
 
                 SlotPersonalizacion.ActualizarInterfazSlotPersonalizacion();
 
@@ -155,39 +155,46 @@ public class Slot : MonoBehaviour
     public void MostrarPanelVenta(bool activar)
     {
 
-
-        if (activar)
+        if (inventory.isOnSellMenu)
         {
-            panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>()._identifadorSlot = slotInfo.identificador;
-            panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().setInfoSlotVenta();
+            if (activar)
+            {
+                panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>()._identifadorSlot = slotInfo.identificador;
+                panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().setInfoSlotVenta();
+            }
         }
     }
 
     public void AbrirPanelVenta()
     {
+        if(inventory.isOnSellMenu)
         panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
 }
-    [System.Serializable]
-    public class SlotInfo
-    {
+[System.Serializable]
+public class SlotInfo
+{
+  
         public int identificador;
         public bool isEmpty;
-        public bool used;
+       // public bool used; //no recuerdo para que se usa esto, y piesno que se utilizaba para lo que utilizo ahora el equipado. Hay que comprobar si se utiliza de lo contrario borrarlo
         public int identificadorItem;
         public int cantidad;
         public int cantidadMax;
 
         public bool equipado;
-
+        public Item itemGuardado;
 
         public void SetEmptySlot()
         {
             isEmpty = true;
-            used = false;
+           // used = false;
             cantidad = 0;
             identificadorItem = -1;
             equipado = false;
+            itemGuardado= new Item();
+
         }
-    }
+    
+}

@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 597138359}
   - component: {fileID: 597138361}
   - component: {fileID: 597138360}
+  - component: {fileID: 597138362}
   m_Layer: 0
   m_Name: MejoraDeArmasPanel
   m_TagString: Untagged
@@ -796,6 +797,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597138358}
+--- !u!114 &597138362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597138358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b1ca09cbf72b94eaca9b33d943ae1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &647665963
 GameObject:
   m_ObjectHideFlags: 0

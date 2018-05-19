@@ -36,9 +36,9 @@ public class Player : MonoBehaviour {
 
     public void SetValueOfItems()
     {
-        totalDamage = slotPersonalizacionArma.personalizacionInfo.statsInfo.damage + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.damage + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.damage + slotPersonalizacionPies.personalizacionInfo.statsInfo.damage;
-        totalVida = slotPersonalizacionArma.personalizacionInfo.statsInfo.vida + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.vida  + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.vida + slotPersonalizacionPies.personalizacionInfo.statsInfo.vida;
-        curacion = slotPersonalizacionArma.personalizacionInfo.statsInfo.curacion + slotPersonalizacionCabeza.personalizacionInfo.statsInfo.curacion + slotPersonalizacionCuerpo.personalizacionInfo.statsInfo.curacion + slotPersonalizacionPies.personalizacionInfo.statsInfo.curacion;
+        totalDamage = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.damage;
+        totalVida = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.vida;
+        curacion = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.curacion;
 
         //Actualizar las variables i meterlas en el archivo de texto
         WriteString();
