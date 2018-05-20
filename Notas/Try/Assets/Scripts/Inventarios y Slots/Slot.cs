@@ -82,9 +82,9 @@ public class Slot : MonoBehaviour
             if (slotInfo.equipado)
             {
                 panelPersonalizacion = GameObject.Find("Personalizacion").GetComponent<PanelPersonalizacion>();
-                SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+                SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(slotInfo.itemGuardado.tipoItem);
 
-                if (auxSlotPers.TipoSlotPersonalización == baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem)
+                if (auxSlotPers.personalizacionInfo.itemSlotPersonalizacion.identificador == slotInfo.itemGuardado.identificador)
                 {
                     auxSlotPers.DeleteItemInSlotPersonalizacion();
                     panelPersonalizacion.GuardarPersonalizacion();
@@ -98,6 +98,7 @@ public class Slot : MonoBehaviour
                         slotInfo.cantidad--;
                 }
                 Player player = GameObject.Find("Player").GetComponent<Player>();
+                player.LeerYGuardarItems();
                 player.SetValueOfItems();
 
                 ActualizarInterfaz();
@@ -139,7 +140,7 @@ public class Slot : MonoBehaviour
                 slotInfo.equipado = true;
                 SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
                 SlotPersonalizacion.personalizacionInfo.libre = false;
-                SlotPersonalizacion.personalizacionInfo.itemIdentificador = slotInfo.identificadorItem;
+                SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion.identificador = slotInfo.identificadorItem;
                 SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
 
 

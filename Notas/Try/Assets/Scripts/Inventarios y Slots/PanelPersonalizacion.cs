@@ -72,7 +72,6 @@ public class PanelPersonalizacion : MonoBehaviour {
 
             newSlotP.personalizacionInfo = slotPersonalizacionInfo[i];//El problema esta en el ndice i que no se porque no funca
 
-            newSlotP.personalizacionInfo.itemSlotPersonalizacion = baseDeDatos.FindItem(newSlotP.personalizacionInfo.itemIdentificador);
             newSlotP.TipoSlotPersonalización = (TipoItem)newSlotP.personalizacionInfo.tipoItem;
             newSlotP.ActualizarInterfazSlotPersonalizacion();
         }
@@ -96,7 +95,7 @@ public class PanelPersonalizacion : MonoBehaviour {
     {
         PersonalizacionGuardada guardarPersonalizacion = new PersonalizacionGuardada();
 
-        guardarPersonalizacion.slotPersonalizacionInfo = this.slotPersonalizacionInfo;
+        guardarPersonalizacion.slotPersonalizacionInfo = slotPersonalizacionInfo;
         
 
         saveDataPersonalizacion = JsonUtility.ToJson(guardarPersonalizacion);

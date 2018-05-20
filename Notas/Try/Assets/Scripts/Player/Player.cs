@@ -10,11 +10,7 @@ public class Player : MonoBehaviour {
     
     public PanelPersonalizacion panelPersonalizacion;
 
-    public SlotPersonalización slotPersonalizacionArma;
-    public SlotPersonalización slotPersonalizacionCabeza;
-    public SlotPersonalización slotPersonalizacionCuerpo;
-    public SlotPersonalización slotPersonalizacionPies;
-
+    public Item itemArma, ItemCabeza, ItemCuerpo, ItemPiernas;
 
 
     public int totalDamage=0;
@@ -23,25 +19,30 @@ public class Player : MonoBehaviour {
     
      void Start()
     {
-        slotPersonalizacionArma = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)0);
-        slotPersonalizacionCabeza = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)1);
-        slotPersonalizacionCuerpo = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)2);
-        slotPersonalizacionPies = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3);
-
+        LeerYGuardarItems();
         SetValueOfItems();
-
-
+    }
+    private void Update()
+    {
+        LeerYGuardarItems();//para acceder a los items de los slots continuamente y tener actualizadas las variables del player
     }
 
 
     public void SetValueOfItems()
     {
-        totalDamage = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.damage + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.damage;
-        totalVida = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.vida + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.vida;
-        curacion = slotPersonalizacionArma.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionCabeza.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionCuerpo.personalizacionInfo.itemSlotPersonalizacion.stats.curacion + slotPersonalizacionPies.personalizacionInfo.itemSlotPersonalizacion.stats.curacion;
+        totalDamage = itemArma.stats.damage + ItemCabeza.stats.damage + ItemCuerpo.stats.damage + ItemPiernas.stats.damage;
+        totalVida = itemArma.stats.vida + ItemCabeza.stats.vida + ItemCuerpo.stats.vida + ItemPiernas.stats.vida;
+        curacion = itemArma.stats.curacion + ItemCabeza.stats.curacion + ItemCuerpo.stats.curacion + ItemPiernas.stats.curacion;
 
         //Actualizar las variables i meterlas en el archivo de texto
         WriteString();
+    }
+    public void LeerYGuardarItems()
+    {
+        itemArma = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)0).personalizacionInfo.itemSlotPersonalizacion;
+        ItemCabeza = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)1).personalizacionInfo.itemSlotPersonalizacion;
+        ItemCuerpo = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)2).personalizacionInfo.itemSlotPersonalizacion;
+        ItemPiernas = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3).personalizacionInfo.itemSlotPersonalizacion;
     }
 
     [MenuItem("Tools/Write file")]

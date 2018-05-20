@@ -25,18 +25,18 @@ MonoBehaviour:
       curacion: 1
       vida: 50
     tipoItem: 0
-  - imagenItem: {fileID: 0}
-    identificador: -1
+  - imagenItem: {fileID: 21300002, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    identificador: 2
     name: nada
     rareza: 0
     nivel: 0
     rango: 0
     expAcumulada: 0
-    dineroAlVender: 0
+    dineroAlVender: 300
     stats:
-      damage: 0
-      curacion: 0
-      vida: 0
+      damage: 34
+      curacion: 21
+      vida: 24
     tipoItem: 2
   - imagenItem: {fileID: 21300004, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 3
@@ -63,4 +63,4 @@ MonoBehaviour:
       damage: 10
       curacion: 20
       vida: 30
-    tipoItem: 2
+    tipoItem: 1

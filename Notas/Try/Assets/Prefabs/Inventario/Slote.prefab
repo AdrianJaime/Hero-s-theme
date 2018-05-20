@@ -230,11 +230,24 @@ MonoBehaviour:
   slotInfo:
     identificador: 0
     isEmpty: 0
-    used: 0
     identificadorItem: 1
     cantidad: 0
     cantidadMax: 1
     equipado: 0
+    itemGuardado:
+      imagenItem: {fileID: 0}
+      identificador: 0
+      name: 
+      rareza: 0
+      nivel: 0
+      rango: 0
+      expAcumulada: 0
+      dineroAlVender: 0
+      stats:
+        damage: 0
+        curacion: 0
+        vida: 0
+      tipoItem: 0
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   panelConfirmarVenta: {fileID: 0}
   eliminarSlot: {fileID: 114120157700929348}
@@ -378,6 +391,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114394399146361054}
         m_MethodName: AbrirPanelVenta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114394399146361054}
+        m_MethodName: EliminarSlot_VenderSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

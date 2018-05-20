@@ -48,8 +48,7 @@ public class SlotPersonalización : MonoBehaviour {
     public void DeleteItemInSlotPersonalizacion()
     {
 
-        this.personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
-        personalizacionInfo.itemSlotPersonalizacion = null;
+        personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
         inventory.EncontrarSlot(personalizacionInfo.identificadorSlotInventario).slotInfo.equipado = false;
         
 
@@ -69,16 +68,17 @@ public class SlotPersonalizacionInfo
 
     public int identificadorSlotInventario;
     public int tipoItem;
-    public int itemIdentificador;
+
     public bool libre;
 
     public void SlotPersonalizacionInfoDefault(int _tipoItem)
     {
 
         tipoItem = _tipoItem;
-        itemIdentificador = -1;
+
         libre = true;
         itemSlotPersonalizacion= new Item();
+        
     }
 
 

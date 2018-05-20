@@ -432,10 +432,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelPersonalizacion: {fileID: 144798412}
-  slotPersonalizacionArma: {fileID: 0}
-  slotPersonalizacionCabeza: {fileID: 0}
-  slotPersonalizacionCuerpo: {fileID: 0}
-  slotPersonalizacionPies: {fileID: 0}
+  itemArma:
+    imagenItem: {fileID: 0}
+    identificador: 0
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 0
+    stats:
+      damage: 0
+      curacion: 0
+      vida: 0
+    tipoItem: 0
+  ItemCabeza:
+    imagenItem: {fileID: 0}
+    identificador: 0
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 0
+    stats:
+      damage: 0
+      curacion: 0
+      vida: 0
+    tipoItem: 0
+  ItemCuerpo:
+    imagenItem: {fileID: 0}
+    identificador: 0
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 0
+    stats:
+      damage: 0
+      curacion: 0
+      vida: 0
+    tipoItem: 0
+  ItemPiernas:
+    imagenItem: {fileID: 0}
+    identificador: 0
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 0
+    stats:
+      damage: 0
+      curacion: 0
+      vida: 0
+    tipoItem: 0
   totalDamage: 0
   totalVida: 0
   curacion: 0
