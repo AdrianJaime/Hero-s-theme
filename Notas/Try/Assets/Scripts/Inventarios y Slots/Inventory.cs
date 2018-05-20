@@ -19,6 +19,7 @@ public class Inventory : MonoBehaviour
     public bool isOnEquipMenu=false;
     public bool isOnSellMenu=false;
     public bool isOnSummonMenu = false;
+    public bool isOnMejoraMenu = false;
 
     private void Start()
     {
@@ -32,6 +33,8 @@ public class Inventory : MonoBehaviour
         {
             CrearInventarioVacío();
         }
+        if (isOnMejoraMenu)
+            SetAllItemsNoSeleccionadosComoMejora();
     }
 
     private void Update()
@@ -148,7 +151,15 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetString("inventario", saveDataInventario);
     }
 
-    
+    public void SetAllItemsNoSeleccionadosComoMejora()
+    {
+        foreach (SlotInfo slotInfo in slotInfoList)
+        {
+            if (slotInfo.seleccionadoParaMejorar)
+                slotInfo.seleccionadoParaMejorar = false;
+        }
+    }
+
 
     [ContextMenu("Instrucción_1")]
     public void Instrucción_1()

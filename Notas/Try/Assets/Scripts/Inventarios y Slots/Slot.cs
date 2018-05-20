@@ -172,6 +172,39 @@ public class Slot : MonoBehaviour
         panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
+    public void pulsarEnMejorarDeEquipo()
+    {
+        if (inventory.isOnMejoraMenu)
+        {
+            MejoraArmas mejoraArmas = GameObject.Find("MejoraDeArmasPanel").GetComponent<MejoraArmas>();
+            if (mejoraArmas.huecoItemMejorarLibre)
+            {
+                representacionItem.color = new Color(0, 255, 0);
+                mejoraArmas.itemParaMejorar = slotInfo.itemGuardado;
+                mejoraArmas.huecoItemMejorarLibre = false;
+                slotInfo.seleccionadoParaMejorar = true;
+            }
+            else
+            {
+                if (!slotInfo.seleccionadoParaMejorar)
+                {
+                    //añadir el item a una lista de items del mejoraArmas
+                    mejoraArmas.listaItemsParaFusionar.Add(slotInfo);
+                    slotInfo.seleccionadoParaMejorar = true;
+                    representacionItem.color = new Color(255, 0, 0);
+                }
+
+                if (slotInfo.seleccionadoParaMejorar)
+                {
+                    //eliminar el item de la lista de items del mejoraArmas
+                    mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(slotInfo.identificador));
+                    slotInfo.seleccionadoParaMejorar = false;
+                    representacionItem.color = new Color(0, 0, 0);
+                }
+            }
+        }
+    }
+
 }
 [System.Serializable]
 public class SlotInfo
@@ -184,11 +217,14 @@ public class SlotInfo
         public int cantidad;
         public int cantidadMax;
 
+        public bool seleccionadoParaMejorar;
+
         public bool equipado;
         public Item itemGuardado;
 
         public void SetEmptySlot()
         {
+            seleccionadoParaMejorar = false;
             isEmpty = true;
            // used = false;
             cantidad = 0;

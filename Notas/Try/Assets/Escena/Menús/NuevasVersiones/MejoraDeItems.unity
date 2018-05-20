@@ -808,6 +808,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b1ca09cbf72b94eaca9b33d943ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  monedero: {fileID: 0}
+  itemParaMejorar:
+    imagenItem: {fileID: 0}
+    identificador: 0
+    name: 
+    rareza: 0
+    nivel: 0
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 0
+    stats:
+      damage: 0
+      curacion: 0
+      vida: 0
+    tipoItem: 0
+  atk: {fileID: 0}
+  newAtk: {fileID: 0}
+  curacion: {fileID: 0}
+  newCuracion: {fileID: 0}
+  vida: {fileID: 0}
+  newVida: {fileID: 0}
+  huecoItemMejorarLibre: 1
+  listaItemsParaFusionar: []
 --- !u!1 &647665963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +1977,7 @@ MonoBehaviour:
   isOnEquipMenu: 0
   isOnSellMenu: 0
   isOnSummonMenu: 0
+  isOnMejoraMenu: 1
 --- !u!1 &1620316826
 GameObject:
   m_ObjectHideFlags: 0
