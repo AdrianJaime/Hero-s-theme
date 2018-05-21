@@ -207,9 +207,9 @@ public class Slot : MonoBehaviour
                         if (slot.seleccionadoParaMejorar)
                         {
                             //eliminar el item de la lista de items del mejoraArmas
-                            //SlotInfo newslotInfo = this.slotInfo;
-                            //mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(newslotInfo.identificador));
-                            slotInfo.seleccionadoParaMejorar = false;
+                            SlotInfo newslotInfo = slot;
+                            mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(newslotInfo.identificador));
+                            slot.seleccionadoParaMejorar = false;
                             inventory.EncontrarSlot(slot.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
                         }
 

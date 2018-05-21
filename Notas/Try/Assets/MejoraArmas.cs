@@ -10,6 +10,7 @@ public class MejoraArmas : MonoBehaviour {
     public Item itemParaMejorar;
 
     public Text atk, newAtk, curacion, newCuracion, vida, newVida;
+    public int  valorNewAtk ,valorNewCuracion, valorNewVida;
 
     public bool huecoItemMejorarLibre=true;
 
@@ -30,9 +31,18 @@ public class MejoraArmas : MonoBehaviour {
         return null;
     }
 
-    public void ActualizarValoresNuevos()
+    public void ActualizarValoresNuevos() //por cada slot guardado, coge el valor de cada stat y lo guarda. Esta acción se llama cada vez que se elimina o se guarda un valor en la lista de slots!
     {
-        //por cada slot guardado, coge el valor de cada stat y lo guarda. Esta acción se llama cada vez que se elimina o se guarda un valor en la lista de slots!
+        ValoresNuevosACero();
+        foreach(SlotInfo slotInfo in listaItemsParaFusionar)
+        {
+           // itemParaMejorar.expAcumulada+=
+        }
+    }
+
+    public void ValoresNuevosACero()
+    {
+        valorNewAtk =valorNewCuracion= valorNewVida = 0;
     }
 
     public void SetValoresNuevos()//botón de confirmar.
