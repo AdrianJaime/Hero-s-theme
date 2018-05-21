@@ -233,6 +233,7 @@ MonoBehaviour:
     identificadorItem: 1
     cantidad: 0
     cantidadMax: 1
+    seleccionadoParaMejorarse: 0
     seleccionadoParaMejorar: 0
     equipado: 0
     itemGuardado:
@@ -339,7 +340,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 114394399146361054}
-        m_MethodName: pulsarEnMejorarDeEquipo
+        m_MethodName: PulsarEnMejorarDeEquipo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

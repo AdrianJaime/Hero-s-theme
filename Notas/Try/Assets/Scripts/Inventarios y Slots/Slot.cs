@@ -172,7 +172,7 @@ public class Slot : MonoBehaviour
         panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
-    public void pulsarEnMejorarDeEquipo()
+    public void PulsarEnMejorarDeEquipo()
     {
         if (inventory.isOnMejoraMenu)
         {
@@ -185,6 +185,7 @@ public class Slot : MonoBehaviour
 
                 this.GetComponent<Image>().color = new Color(0, 255, 0);
                 mejoraArmas.itemParaMejorar = slotInfo.itemGuardado;
+                mejoraArmas.imagenItemAMejorar.sprite = slotInfo.itemGuardado.imagenItem;
                 mejoraArmas.huecoItemMejorarLibre = false;
                 slotInfo.seleccionadoParaMejorarse = true;
             }
@@ -198,6 +199,7 @@ public class Slot : MonoBehaviour
 
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
                     mejoraArmas.itemParaMejorar = new Item();
+                    mejoraArmas.imagenItemAMejorar.sprite = null;
                     mejoraArmas.huecoItemMejorarLibre = true;
                     slotInfo.seleccionadoParaMejorarse = false;
 

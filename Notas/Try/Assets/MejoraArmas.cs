@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MejoraArmas : MonoBehaviour {
+
     public Inventory inventory;
     public Monedero monedero;
 
     public Item itemParaMejorar;
 
+    public Image imagenItemAMejorar;
     public Text atk, newAtk, curacion, newCuracion, vida, newVida;
     public int  valorNewAtk ,valorNewCuracion, valorNewVida;
 
