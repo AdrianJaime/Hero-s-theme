@@ -32,12 +32,13 @@ public class MejoraArmas : MonoBehaviour {
 
     public void ActualizarValoresNuevos()
     {
-
+        //por cada slot guardado, coge el valor de cada stat y lo guarda. Esta acción se llama cada vez que se elimina o se guarda un valor en la lista de slots!
     }
 
-    public void SetValoresNuevos()
+    public void SetValoresNuevos()//botón de confirmar.
     {
-
+        //Suma el valor que de los newStats y
+        //busca todos los slots del inventario, con los identificadores guardados en la lista y los elimina.
     }
 
     public void RemoveConfiguracion()

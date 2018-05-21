@@ -179,29 +179,64 @@ public class Slot : MonoBehaviour
             MejoraArmas mejoraArmas = GameObject.Find("MejoraDeArmasPanel").GetComponent<MejoraArmas>();
             if (mejoraArmas.huecoItemMejorarLibre)
             {
-                representacionItem.color = new Color(0, 255, 0);
+                mejoraArmas.atk.text = slotInfo.itemGuardado.stats.damage.ToString();
+                mejoraArmas.curacion.text = slotInfo.itemGuardado.stats.curacion.ToString();
+                mejoraArmas.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
+
+                this.GetComponent<Image>().color = new Color(0, 255, 0);
                 mejoraArmas.itemParaMejorar = slotInfo.itemGuardado;
                 mejoraArmas.huecoItemMejorarLibre = false;
-                slotInfo.seleccionadoParaMejorar = true;
+                slotInfo.seleccionadoParaMejorarse = true;
             }
-            else
+            else 
             {
-                if (!slotInfo.seleccionadoParaMejorar)
+                if (slotInfo.seleccionadoParaMejorarse)
+                {
+                    mejoraArmas.atk.text = 0.ToString();
+                    mejoraArmas.curacion.text = 0.ToString();
+                    mejoraArmas.vida.text = 0.ToString();
+
+                    this.GetComponent<Image>().color = new Color(255, 255, 255);
+                    mejoraArmas.itemParaMejorar = new Item();
+                    mejoraArmas.huecoItemMejorarLibre = true;
+                    slotInfo.seleccionadoParaMejorarse = false;
+
+                    // eliminar el resto 
+                    foreach (SlotInfo slot in inventory.slotInfoList)
+                    {
+                        if (slot.seleccionadoParaMejorar)
+                        {
+                            //eliminar el item de la lista de items del mejoraArmas
+                            //SlotInfo newslotInfo = this.slotInfo;
+                            //mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(newslotInfo.identificador));
+                            slotInfo.seleccionadoParaMejorar = false;
+                            inventory.EncontrarSlot(slot.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
+                        }
+
+                    }
+                }
+                else if (!slotInfo.seleccionadoParaMejorar&&!slotInfo.seleccionadoParaMejorarse)
                 {
                     //añadir el item a una lista de items del mejoraArmas
-                    mejoraArmas.listaItemsParaFusionar.Add(slotInfo);
+                    SlotInfo newslotInfo = this.slotInfo;
+                    mejoraArmas.listaItemsParaFusionar.Add(newslotInfo);
                     slotInfo.seleccionadoParaMejorar = true;
-                    representacionItem.color = new Color(255, 0, 0);
+                    this.GetComponent<Image>().color = new Color(255, 0, 0);
                 }
 
-                if (slotInfo.seleccionadoParaMejorar)
+                else if (slotInfo.seleccionadoParaMejorar&& !slotInfo.seleccionadoParaMejorarse)
                 {
                     //eliminar el item de la lista de items del mejoraArmas
-                    mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(slotInfo.identificador));
+                    SlotInfo newslotInfo = this.slotInfo;
+                    mejoraArmas.listaItemsParaFusionar.Remove(mejoraArmas.EncontarItemEnListaDeFusion(newslotInfo.identificador));
                     slotInfo.seleccionadoParaMejorar = false;
-                    representacionItem.color = new Color(0, 0, 0);
+                    this.GetComponent<Image>().color = new Color(255, 255, 255);
                 }
-            }
+
+
+            } 
+
+           
         }
     }
 
@@ -217,6 +252,7 @@ public class SlotInfo
         public int cantidad;
         public int cantidadMax;
 
+        public bool seleccionadoParaMejorarse;
         public bool seleccionadoParaMejorar;
 
         public bool equipado;
@@ -225,6 +261,8 @@ public class SlotInfo
         public void SetEmptySlot()
         {
             seleccionadoParaMejorar = false;
+            seleccionadoParaMejorarse=false;
+
             isEmpty = true;
            // used = false;
             cantidad = 0;
