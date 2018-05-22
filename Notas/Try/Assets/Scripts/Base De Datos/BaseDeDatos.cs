@@ -13,7 +13,7 @@ public class Item
     public int nivel;//Asignación del calculo hecho a partir de la experiencia acumulada
     public int rango;//Nivel de rngo == al nivel de fusión de armas (creo, o de veces evolucionada).
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
-
+    public int dineroAlVender;
     public Stats stats;
   
     public TipoItem tipoItem ;
@@ -31,6 +31,18 @@ public class Item
             curacion = 0;
             vida = 0;
         }
+    }
+    public void ItemDefault()
+    {
+        identificador = -1;
+        name = "nada";
+        rareza = 0;
+        nivel = 0;
+        rango = 0;
+        expAcumulada = 0;
+        dineroAlVender = 0;
+        imagenItem = null;
+        stats.StatsAcero();
     }
 }
 

@@ -14,7 +14,7 @@ public class SlotPersonalización : MonoBehaviour {
 
     public TipoItem TipoSlotPersonalización;
 
-    public Item itemSlotPersonalizacion;
+  
     public Image itemImagen;
     public Image eliminarSlotBotón;
 
@@ -22,6 +22,7 @@ public class SlotPersonalización : MonoBehaviour {
     {
         personalizacionInfo = new SlotPersonalizacionInfo();
         personalizacionInfo.SlotPersonalizacionInfoDefault(tipoSlot);
+   
     }  
 
     public void ActualizarInterfazSlotPersonalizacion()
@@ -31,7 +32,7 @@ public class SlotPersonalización : MonoBehaviour {
             itemImagen.enabled = true;
             eliminarSlotBotón.enabled = true;
 
-            itemImagen.sprite = baseDeDatos.FindItem(itemSlotPersonalizacion.identificador).imagenItem;
+            itemImagen.sprite = personalizacionInfo.itemSlotPersonalizacion.imagenItem;
 
         }
         else
@@ -47,9 +48,8 @@ public class SlotPersonalización : MonoBehaviour {
     public void DeleteItemInSlotPersonalizacion()
     {
 
-        this.personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
-        personalizacionInfo.statsInfo.StatsACero();
-        inventory.EncontrarSlot(personalizacionInfo.statsInfo.identificadorSlotInventario).slotInfo.equipado = false;
+        personalizacionInfo.SlotPersonalizacionInfoDefault((int)TipoSlotPersonalización);
+        inventory.EncontrarSlot(personalizacionInfo.identificadorSlotInventario).slotInfo.equipado = false;
         
 
         ActualizarInterfazSlotPersonalizacion();
@@ -63,32 +63,22 @@ public class SlotPersonalización : MonoBehaviour {
 [System.Serializable]
 public class SlotPersonalizacionInfo
 {
-    [System.Serializable]
-    public struct Stats
-    {
-        public int curacion;
-        public int vida;
-        public int damage;
-        public int identificadorSlotInventario;
 
-        public void StatsACero()
-        {
-            curacion = 0;
-            vida = 0;
-            damage = 0;
-            //identificadorSlotInventario = -1;
-        }
-    }
+    public Item itemSlotPersonalizacion;
 
+    public int identificadorSlotInventario;
     public int tipoItem;
-    public int itemIdentificador;
+
     public bool libre;
-    public Stats statsInfo;
+
     public void SlotPersonalizacionInfoDefault(int _tipoItem)
     {
+
         tipoItem = _tipoItem;
-        itemIdentificador = -1;
+
         libre = true;
+        itemSlotPersonalizacion= new Item();
+        
     }
 
 
