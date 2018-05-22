@@ -810,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   monedero: {fileID: 0}
-  itemParaMejorar:
+  itemAMejorar:
     imagenItem: {fileID: 0}
     identificador: 0
     name: 
@@ -819,6 +819,7 @@ MonoBehaviour:
     rango: 0
     expAcumulada: 0
     dineroAlVender: 0
+    expProporcionada: 0
     stats:
       damage: 0
       curacion: 0
@@ -831,9 +832,11 @@ MonoBehaviour:
   newCuracion: {fileID: 1226697730}
   vida: {fileID: 2063366587}
   newVida: {fileID: 2076116002}
+  costeAMejorar: {fileID: 2043693878}
   valorNewAtk: 0
   valorNewCuracion: 0
   valorNewVida: 0
+  costeMejora: 0
   huecoItemMejorarLibre: 1
   listaItemsParaFusionar: []
 --- !u!1 &647665963

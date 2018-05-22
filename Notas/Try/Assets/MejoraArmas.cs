@@ -8,20 +8,18 @@ public class MejoraArmas : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
-    public Item itemParaMejorar;
+    public Item itemAMejorar;
 
     public Image imagenItemAMejorar;
-    public Text atk, newAtk, curacion, newCuracion, vida, newVida;
-    public int  valorNewAtk ,valorNewCuracion, valorNewVida;
+    public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
+    public int  valorNewAtk ,valorNewCuracion, valorNewVida,costeMejora;
 
     public bool huecoItemMejorarLibre=true;
 
     public List<SlotInfo> listaItemsParaFusionar;
 
-    private void Start()
-    {
-        listaItemsParaFusionar = new List<SlotInfo>();
-    }
+
+    
     public SlotInfo EncontarItemEnListaDeFusion(int _identificador)
     {
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
@@ -31,6 +29,20 @@ public class MejoraArmas : MonoBehaviour {
 
         }
         return null;
+    }
+    private void Update()
+    {
+        CosteMejora();
+        costeAMejorar.text = costeMejora.ToString();
+    }
+
+    public void CosteMejora()
+    {
+        costeMejora = 0;
+        foreach (SlotInfo slotInfo in listaItemsParaFusionar)
+        {
+            costeMejora += itemAMejorar.rareza * 50;
+        }
     }
 
     public void ActualizarValoresNuevos() //por cada slot guardado, coge el valor de cada stat y lo guarda. Esta acción se llama cada vez que se elimina o se guarda un valor en la lista de slots!

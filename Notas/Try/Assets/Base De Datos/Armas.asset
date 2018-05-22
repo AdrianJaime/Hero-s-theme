@@ -15,11 +15,12 @@ MonoBehaviour:
   - imagenItem: {fileID: 21300000, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 1
     name: 
-    rareza: 0
+    rareza: 1
     nivel: 0
     rango: 0
     expAcumulada: 0
     dineroAlVender: 1000
+    expProporcionada: 0
     stats:
       damage: 10
       curacion: 1
@@ -28,11 +29,12 @@ MonoBehaviour:
   - imagenItem: {fileID: 21300002, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 2
     name: nada
-    rareza: 0
+    rareza: 1
     nivel: 0
     rango: 0
     expAcumulada: 0
     dineroAlVender: 300
+    expProporcionada: 0
     stats:
       damage: 34
       curacion: 21
@@ -41,11 +43,12 @@ MonoBehaviour:
   - imagenItem: {fileID: 21300004, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 3
     name: Polla
-    rareza: 100
+    rareza: 5
     nivel: 80
     rango: 0
-    expAcumulada: 0
-    dineroAlVender: 400
+    expAcumulada: 1000
+    dineroAlVender: 500
+    expProporcionada: 0
     stats:
       damage: 234
       curacion: 10
@@ -54,11 +57,12 @@ MonoBehaviour:
   - imagenItem: {fileID: 21300006, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
     identificador: 4
     name: Polla
-    rareza: 100
+    rareza: 5
     nivel: 80
     rango: 0
-    expAcumulada: 0
-    dineroAlVender: 1000
+    expAcumulada: 20000
+    dineroAlVender: 500
+    expProporcionada: 0
     stats:
       damage: 10
       curacion: 20

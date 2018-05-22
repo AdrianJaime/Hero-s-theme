@@ -14,6 +14,8 @@ public class Item
     public int rango;//Nivel de rngo == al nivel de fusión de armas (creo, o de veces evolucionada).
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
     public int dineroAlVender;
+    public int expProporcionada;
+
     public Stats stats;
   
     public TipoItem tipoItem ;
@@ -36,7 +38,7 @@ public class Item
     {
         identificador = -1;
         name = "nada";
-        rareza = 0;
+        rareza = 1;
         nivel = 0;
         rango = 0;
         expAcumulada = 0;
