@@ -8,7 +8,7 @@ public class MejoraArmas : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
-    public Item itemAMejorar;
+    public SlotInfo SlotInfoItemAMejorar;
 
     public Image imagenItemAMejorar;
     public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
@@ -34,6 +34,7 @@ public class MejoraArmas : MonoBehaviour {
     {
         CosteMejora();
         costeAMejorar.text = costeMejora.ToString();
+        SaveNewStats();
     }
 
     public void CosteMejora()
@@ -41,7 +42,7 @@ public class MejoraArmas : MonoBehaviour {
         costeMejora = 0;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
-            costeMejora += itemAMejorar.rareza * 50;
+            costeMejora += SlotInfoItemAMejorar.itemGuardado.rareza * 50;
         }
     }
 
@@ -59,11 +60,48 @@ public class MejoraArmas : MonoBehaviour {
         valorNewAtk =valorNewCuracion= valorNewVida = 0;
     }
 
-    public void SetValoresNuevos()//botón de confirmar.
+    public void ConfirmarSeleccion()//botón de confirmar.
     {
         //Suma el valor que de los newStats y
-        //busca todos los slots del inventario, con los identificadores guardados en la lista y los elimina.
+
+        foreach(SlotInfo slotInfo in listaItemsParaFusionar)
+        {
+            SlotInfoItemAMejorar.itemGuardado.expAcumulada += slotInfo.itemGuardado.expProporcionada;
+            Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
+            listaItemsParaFusionar.Remove(slotInfo);
+            auxSlot.EliminarSlot_VenderSlot();
+        }
+        Slot _slot = inventory.EncontrarSlot(SlotInfoItemAMejorar.identificador);
+        _slot.slotInfo = SlotInfoItemAMejorar;
     }
+
+     public void CalculoNuevoNivel()
+    {
+
+    }
+
+
+
+
+
+
+
+
+
+public void SaveNewStats()
+    {
+        valorNewAtk = valorNewCuracion = valorNewVida = 0;
+        foreach (SlotInfo slotInfo in listaItemsParaFusionar)
+        {
+            valorNewAtk += slotInfo.itemGuardado.stats.damage;
+            valorNewCuracion += slotInfo.itemGuardado.stats.curacion;
+            valorNewVida += slotInfo.itemGuardado.stats.vida;
+        }
+        newAtk.text = valorNewAtk.ToString();
+        newCuracion.text = valorNewCuracion.ToString();
+        newVida.text = valorNewVida.ToString();
+    }
+
 
     public void RemoveConfiguracion()
     {

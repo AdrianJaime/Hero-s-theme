@@ -22,7 +22,7 @@ public class Slot : MonoBehaviour
     public Text nivel;
     public Text rango;
 
-    private void Awake() 
+    private void Awake()
     {
         inventory = GameObject.Find("Inventario").GetComponent<Inventory>();
 
@@ -36,35 +36,23 @@ public class Slot : MonoBehaviour
     }
     private void Start()
     {
-        if(inventory.isOnSellMenu)
+
+
+
+
+        if (inventory.isOnSellMenu)
             panelConfirmarVenta.SetActive(false);
 
     }
     private void Update()
     {
-        slotInfo.itemGuardado.dineroAlVender = slotInfo.itemGuardado.rareza * 100;
-
-
-
-
-        switch (slotInfo.itemGuardado.rareza)
-        {
-            case (1):
-                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada == 2000);
-                break;
-            case (2):
-                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada == 5000);
-                break;
-            case (3):
-                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada == 9000);
-                break;
-            case (4):
-                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada == 14000);
-                break;
-            case (5):
-                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada == 20000);
-                break;
-        }
+        //comprovar si es nivel max o no.
+        SetValueOfMaxLevel();
+        SetValueOfDineroAlVender();
+        SetValueStatsLevel();
+        SetValueOfLevel();
+        ComprobarSiEsNivelMax();
+        SetValueOfStats();
     }
     public void CreateSlot(int _identificador)
     {
@@ -89,15 +77,15 @@ public class Slot : MonoBehaviour
         }
         else //representacion del slot cuando hay un iteem
         {
-            representacionItem.sprite = baseDeDatos.FindItem(slotInfo.identificadorItem).imagenItem;//Imagen
+            representacionItem.sprite = slotInfo.itemGuardado.imagenItem;//Imagen
             representacionItem.enabled = true;
 
             eliminarSlot.enabled = true;
 
-            nivel.text = baseDeDatos.FindItem(slotInfo.identificadorItem).nivel.ToString();//Nivel
+            nivel.text = slotInfo.itemGuardado.nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
-            rango.text = baseDeDatos.FindItem(slotInfo.identificadorItem).rango.ToString();//Rango
+            rango.text = slotInfo.itemGuardado.rango.ToString();//Rango
             rango.gameObject.SetActive(true);
 
         }
@@ -144,7 +132,7 @@ public class Slot : MonoBehaviour
             }
 
         }
-        if (inventory.isOnSellMenu == true)
+        if (inventory.isOnSellMenu == true || inventory.isOnMejoraMenu)
         {
             if (!slotInfo.equipado)
             {
@@ -180,7 +168,7 @@ public class Slot : MonoBehaviour
         }
 
     }
-    
+
     public void MostrarPanelVenta(bool activar)
     {
 
@@ -197,8 +185,8 @@ public class Slot : MonoBehaviour
 
     public void AbrirPanelVenta()
     {
-        if(inventory.isOnSellMenu)
-        panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
+        if (inventory.isOnSellMenu)
+            panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
     public void PulsarEnMejorarDeEquipo()
@@ -206,20 +194,20 @@ public class Slot : MonoBehaviour
         if (inventory.isOnMejoraMenu)
         {
             MejoraArmas mejoraArmas = GameObject.Find("MejoraDeArmasPanel").GetComponent<MejoraArmas>();
-            if (mejoraArmas.huecoItemMejorarLibre&&!slotInfo.nivelMax)
+            if (mejoraArmas.huecoItemMejorarLibre && !slotInfo.nivelMax)
             {
-                
+
                 mejoraArmas.atk.text = slotInfo.itemGuardado.stats.damage.ToString();
                 mejoraArmas.curacion.text = slotInfo.itemGuardado.stats.curacion.ToString();
                 mejoraArmas.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
 
                 this.GetComponent<Image>().color = new Color(0, 255, 0);
-                mejoraArmas.itemAMejorar = slotInfo.itemGuardado;
+                mejoraArmas.SlotInfoItemAMejorar.itemGuardado = slotInfo.itemGuardado;
                 mejoraArmas.imagenItemAMejorar.sprite = slotInfo.itemGuardado.imagenItem;
                 mejoraArmas.huecoItemMejorarLibre = false;
                 slotInfo.seleccionadoParaMejorarse = true;
             }
-            else if(!mejoraArmas.huecoItemMejorarLibre)
+            else if (!mejoraArmas.huecoItemMejorarLibre)
             {
                 if (slotInfo.seleccionadoParaMejorarse)
                 {
@@ -228,7 +216,7 @@ public class Slot : MonoBehaviour
                     mejoraArmas.vida.text = 0.ToString();
 
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
-                    mejoraArmas.itemAMejorar = new Item();
+                    mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
                     mejoraArmas.imagenItemAMejorar.sprite = null;
                     mejoraArmas.huecoItemMejorarLibre = true;
                     slotInfo.seleccionadoParaMejorarse = false;
@@ -247,7 +235,7 @@ public class Slot : MonoBehaviour
 
                     }
                 }
-                else if (!slotInfo.seleccionadoParaMejorar&&!slotInfo.seleccionadoParaMejorarse)
+                else if (!slotInfo.seleccionadoParaMejorar && !slotInfo.seleccionadoParaMejorarse)
                 {
                     //añadir el item a una lista de items del mejoraArmas
                     SlotInfo newslotInfo = this.slotInfo;
@@ -256,7 +244,7 @@ public class Slot : MonoBehaviour
                     this.GetComponent<Image>().color = new Color(255, 0, 0);
                 }
 
-                else if (slotInfo.seleccionadoParaMejorar&& !slotInfo.seleccionadoParaMejorarse)
+                else if (slotInfo.seleccionadoParaMejorar && !slotInfo.seleccionadoParaMejorarse)
                 {
                     //eliminar el item de la lista de items del mejoraArmas
                     SlotInfo newslotInfo = this.slotInfo;
@@ -266,20 +254,118 @@ public class Slot : MonoBehaviour
                 }
 
 
-            } 
+            }
 
-           
+
         }
     }
 
+
+    //************************************************************
+    public void SetValueStatsLevel()
+    {
+
+        slotInfo.itemGuardado.stats.damageLevel = (slotInfo.itemGuardado.stats.maxDamage - slotInfo.itemGuardado.stats.damageBase) / slotInfo.itemGuardado.nivelMax;
+        slotInfo.itemGuardado.stats.curacionLevel = (slotInfo.itemGuardado.stats.maxCuracion - slotInfo.itemGuardado.stats.curacionBase) / slotInfo.itemGuardado.nivelMax;
+        slotInfo.itemGuardado.stats.vidaLevel = (slotInfo.itemGuardado.stats.maxVida - slotInfo.itemGuardado.stats.vidaBase) / slotInfo.itemGuardado.nivelMax;
+
+    }
+
+    public void SetValueOfMaxLevel()
+    {
+        {
+            switch (slotInfo.itemGuardado.rareza)
+            {
+                case (1):
+                    slotInfo.itemGuardado.nivelMax = 40;
+                    break;
+                case (2):
+                    slotInfo.itemGuardado.nivelMax = 60;
+                    break;
+                case (3):
+                    slotInfo.itemGuardado.nivelMax = 80;
+                    break;
+                case (4):
+                    slotInfo.itemGuardado.nivelMax = 100;
+                    break;
+                case (5):
+                    slotInfo.itemGuardado.nivelMax = 120;
+                    break;
+            }
+        }
+    }
+
+    public void SetValueOfDineroAlVender()
+    {
+
+        slotInfo.itemGuardado.dineroAlVender = slotInfo.itemGuardado.rareza * 100;
+
+    }
+
+    public void SetValueOfLevel()
+    {
+
+        if (slotInfo.itemGuardado.expAcumulada <= 2000 && slotInfo.itemGuardado.expAcumulada >= 0)
+            slotInfo.itemGuardado.nivel = slotInfo.itemGuardado.expAcumulada / 50; //50== exp por nivel
+
+        else if (slotInfo.itemGuardado.expAcumulada <= 5000 && slotInfo.itemGuardado.expAcumulada >= 2000)
+            slotInfo.itemGuardado.nivel = 40 + ((slotInfo.itemGuardado.expAcumulada - 2000) / 150);//150== exp por nivel
+
+        else if (slotInfo.itemGuardado.expAcumulada <= 9000 && slotInfo.itemGuardado.expAcumulada >= 5000)
+            slotInfo.itemGuardado.nivel = 60 + ((slotInfo.itemGuardado.expAcumulada - 5000) / 200); //200== exp por nivel
+
+        else if (slotInfo.itemGuardado.expAcumulada <= 14000 && slotInfo.itemGuardado.expAcumulada >= 9000)
+            slotInfo.itemGuardado.nivel = 80 + ((slotInfo.itemGuardado.expAcumulada - 9000) / 250); //250== exp por nivel
+
+        else if (slotInfo.itemGuardado.expAcumulada <= 20000 && slotInfo.itemGuardado.expAcumulada >= 14000)
+            slotInfo.itemGuardado.nivel = 100 + ((slotInfo.itemGuardado.expAcumulada - 14000) / 300); //300== exp por nivel
+
+        if (slotInfo.nivelMax)
+            slotInfo.itemGuardado.nivel = slotInfo.itemGuardado.nivelMax;
+    }
+
+    public void ComprobarSiEsNivelMax()
+    {
+
+        switch (slotInfo.itemGuardado.rareza)
+        {
+            case (1):
+                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 2000);
+                break;
+            case (2):
+                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 5000);
+                break;
+            case (3):
+                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 9000);
+                break;
+            case (4):
+                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 14000);
+                break;
+            case (5):
+                slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 20000);
+                break;
+        }
+
+    }
+
+    public void SetValueOfStats()
+    {
+        slotInfo.itemGuardado.stats.damage = slotInfo.itemGuardado.stats.damageBase + slotInfo.itemGuardado.stats.damageLevel * slotInfo.itemGuardado.nivel;
+        slotInfo.itemGuardado.stats.curacion = slotInfo.itemGuardado.stats.curacionBase + slotInfo.itemGuardado.stats.curacionLevel * slotInfo.itemGuardado.nivel;
+        slotInfo.itemGuardado.stats.vida = slotInfo.itemGuardado.stats.vidaBase + slotInfo.itemGuardado.stats.vidaLevel * slotInfo.itemGuardado.nivel;
+    }
+
+    //************************************************************
 }
+
+
 [System.Serializable]
-public class SlotInfo
-{
-  
+    public class SlotInfo
+    {
+
         public int identificador;
         public bool isEmpty;
-       // public bool used; //no recuerdo para que se usa esto, y piesno que se utilizaba para lo que utilizo ahora el equipado. Hay que comprobar si se utiliza de lo contrario borrarlo
+        // public bool used; //no recuerdo para que se usa esto, y piesno que se utilizaba para lo que utilizo ahora el equipado. Hay que comprobar si se utiliza de lo contrario borrarlo
         public int identificadorItem;
         public int cantidad;
         public int cantidadMax;
@@ -294,15 +380,17 @@ public class SlotInfo
         public void SetEmptySlot()
         {
             seleccionadoParaMejorar = false;
-            seleccionadoParaMejorarse=false;
+            seleccionadoParaMejorarse = false;
 
             isEmpty = true;
-           // used = false;
+            // used = false;
             cantidad = 0;
             identificadorItem = -1;
             equipado = false;
-            itemGuardado= new Item();
+            itemGuardado = new Item();
+            itemGuardado.rareza = 1;
 
         }
-    
-}
+
+    }
+

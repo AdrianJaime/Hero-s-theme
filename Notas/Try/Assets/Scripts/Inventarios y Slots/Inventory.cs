@@ -125,6 +125,7 @@ public class Inventory : MonoBehaviour
                 EncontrarSlot(slotInfo.identificador).ActualizarInterfaz();
             }
         }
+
     }
 
     public int EspaciosVacios()

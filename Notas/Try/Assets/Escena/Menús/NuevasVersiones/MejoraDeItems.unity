@@ -687,7 +687,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 584948894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 597138362}
+        m_MethodName: ConfirmarSeleccion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &584948894
@@ -808,23 +819,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b1ca09cbf72b94eaca9b33d943ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1540632700}
   monedero: {fileID: 0}
   itemAMejorar:
-    imagenItem: {fileID: 0}
     identificador: 0
-    name: 
-    rareza: 0
-    nivel: 0
-    rango: 0
-    expAcumulada: 0
-    dineroAlVender: 0
-    expProporcionada: 0
-    stats:
-      damage: 0
-      curacion: 0
-      vida: 0
-    tipoItem: 0
+    isEmpty: 0
+    identificadorItem: 0
+    cantidad: 0
+    cantidadMax: 0
+    nivelMax: 0
+    seleccionadoParaMejorarse: 0
+    seleccionadoParaMejorar: 0
+    equipado: 0
+    itemGuardado:
+      imagenItem: {fileID: 0}
+      identificador: 0
+      name: 
+      rareza: 0
+      nivel: 0
+      nivelMax: 0
+      rango: 0
+      expAcumulada: 0
+      dineroAlVender: 0
+      expProporcionada: 0
+      stats:
+        maxDamage: 0
+        maxCuracion: 0
+        maxVida: 0
+        damage: 0
+        curacion: 0
+        vida: 0
+        damageLevel: 0
+        curacionLevel: 0
+        vidaLevel: 0
+        damageBase: 0
+        curacionBase: 0
+        vidaBase: 0
+      tipoItem: 0
   imagenItemAMejorar: {fileID: 484408779}
   atk: {fileID: 1781240427}
   newAtk: {fileID: 647665965}

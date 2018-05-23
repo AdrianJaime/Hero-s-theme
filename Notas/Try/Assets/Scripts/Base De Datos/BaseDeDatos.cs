@@ -11,6 +11,7 @@ public class Item
     public string name;//Nombre
     public int rareza;//del 0 al 4;
     public int nivel;//Asignación del calculo hecho a partir de la experiencia acumulada
+    public int nivelMax;
     public int rango;//Nivel de rngo == al nivel de fusión de armas (creo, o de veces evolucionada).
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
     public int dineroAlVender;
@@ -23,15 +24,32 @@ public class Item
     [System.Serializable]//para poder ver los atributos
     public struct Stats
     {
+        public int maxDamage;
+        public int maxCuracion;
+        public int maxVida;
+
         public int damage;
         public int curacion;
         public int vida;
+
+        public int damageLevel;
+        public int curacionLevel;
+        public int vidaLevel;
+
+        public int damageBase;
+        public int curacionBase;
+        public int vidaBase;
+
 
         public void StatsAcero()
         {
             damage = 0;
             curacion = 0;
             vida = 0;
+
+            damageLevel = 0;
+            curacionLevel = 0;
+            vidaLevel = 0;
         }
     }
     public void ItemDefault()
@@ -46,6 +64,8 @@ public class Item
         imagenItem = null;
         stats.StatsAcero();
     }
+
+   
 }
 
 public enum TipoItem {Arma=0,Cabeza=1,Cuerpo=2,Piernas=3};
