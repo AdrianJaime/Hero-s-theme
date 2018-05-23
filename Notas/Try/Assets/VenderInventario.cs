@@ -22,8 +22,5 @@ public class VenderInventario : MonoBehaviour {
     {
         panelConfirmacion.SetActive(activo);
     }
-    public void SumarDineroAlMonedero()
-    {
-        
-    }
+
 }

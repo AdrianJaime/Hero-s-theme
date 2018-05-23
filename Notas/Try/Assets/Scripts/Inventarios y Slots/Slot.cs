@@ -15,6 +15,7 @@ public class Slot : MonoBehaviour
     public BaseDeDatos baseDeDatos;
 
     public GameObject panelConfirmarVenta;
+    public PanelConfirmacionVenta panelConfirmacionVenta;
 
     public Image eliminarSlot;
     public Image representacionItem; //Atributos refernetes al aspecto visual del slot
@@ -27,7 +28,8 @@ public class Slot : MonoBehaviour
 
         if (inventory.isOnSellMenu)
         {
-            panelConfirmarVenta = GameObject.Find("PanelConfirmar");
+            panelConfirmarVenta = GameObject.Find("PanelConfirmarVenta");
+            panelConfirmacionVenta = panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>();
             //panelConfirmarVenta.SetActive(false); //error no lo desactiva
 
         }
@@ -146,7 +148,7 @@ public class Slot : MonoBehaviour
         {
             if (!slotInfo.equipado)
             {
-                monedero.AñadirMonedasNormales(baseDeDatos.FindItem(slotInfo.identificadorItem).dineroAlVender);
+                monedero.AñadirMonedasNormales(slotInfo.itemGuardado.dineroAlVender);
                 if (slotInfo.cantidad == 1)
                     slotInfo.SetEmptySlot();
                 else
@@ -184,10 +186,11 @@ public class Slot : MonoBehaviour
 
         if (inventory.isOnSellMenu)
         {
+            panelConfirmacionVenta.MostrarPanel(activar);
             if (activar)
             {
-                panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>()._identifadorSlot = slotInfo.identificador;
-                panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().setInfoSlotVenta();
+                panelConfirmacionVenta._identifadorSlot = slotInfo.identificador;
+                panelConfirmacionVenta.SetInfoSlotVenta();
             }
         }
     }

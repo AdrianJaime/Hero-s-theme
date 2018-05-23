@@ -233,6 +233,7 @@ MonoBehaviour:
     identificadorItem: 1
     cantidad: 0
     cantidadMax: 1
+    nivelMax: 0
     seleccionadoParaMejorarse: 0
     seleccionadoParaMejorar: 0
     equipado: 0
@@ -245,6 +246,7 @@ MonoBehaviour:
       rango: 0
       expAcumulada: 0
       dineroAlVender: 0
+      expProporcionada: 0
       stats:
         damage: 0
         curacion: 0
@@ -252,6 +254,7 @@ MonoBehaviour:
       tipoItem: 0
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   panelConfirmarVenta: {fileID: 0}
+  panelConfirmacionVenta: {fileID: 0}
   eliminarSlot: {fileID: 114120157700929348}
   representacionItem: {fileID: 114331742434780314}
   nivel: {fileID: 114274497872624380}
@@ -392,30 +395,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114394399146361054}
-        m_MethodName: AbrirPanelVenta
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 114394399146361054}
-        m_MethodName: EliminarSlot_VenderSlot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 114394399146361054}
-        m_MethodName: pulsarEnMejorarDeEquipo
-        m_Mode: 1
+        m_MethodName: MostrarPanelVenta
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

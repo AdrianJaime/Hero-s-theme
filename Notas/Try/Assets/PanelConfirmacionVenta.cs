@@ -12,15 +12,12 @@ public class PanelConfirmacionVenta : MonoBehaviour {
     public Image imagenItem;
     public int _identifadorSlot;
 
-    private void Start()
-    {
-       // this.gameObject.SetActive(false);
-    }
-    public void setInfoSlotVenta()
+
+    public void SetInfoSlotVenta()
     {
         Slot slotAux = inventory.EncontrarSlot(_identifadorSlot);
-        imagenItem.sprite = baseDeDatos.FindItem(slotAux.slotInfo.identificadorItem).imagenItem;
-        dineroDelItem.text = baseDeDatos.FindItem(slotAux.slotInfo.identificadorItem).dineroAlVender.ToString();
+        imagenItem.sprite = slotAux.slotInfo.itemGuardado.imagenItem;
+        dineroDelItem.text = slotAux.slotInfo.itemGuardado.dineroAlVender.ToString();
     }
     
     public void EliminarDesdeElPanel()
@@ -31,7 +28,7 @@ public class PanelConfirmacionVenta : MonoBehaviour {
 
     public void MostrarPanel(bool _value)
     {
-        this.gameObject.SetActive(_value);
+        gameObject.SetActive(_value);
     }
 
 }
