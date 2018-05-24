@@ -13,7 +13,7 @@ public class MejoraArmas : MonoBehaviour {
 
     public Image imagenItemAMejorar;
     public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
-    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar;
+    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar, experienciaTotal;
 
     public bool huecoItemMejorarLibre=true;
 
@@ -34,6 +34,9 @@ public class MejoraArmas : MonoBehaviour {
     private void Update()
     {
         ExperienciaExtra();
+        NuevosStats();
+        AñadirExpAlItem();
+
         CosteMejora();
         costeAMejorar.text = costeMejora.ToString();
 
@@ -70,32 +73,22 @@ public class MejoraArmas : MonoBehaviour {
         {
             experienciaExtra += slotInfo.itemGuardado.expProporcionada ;
         }
+
     }
 
     public void NuevosStats()
     {
-
-
+         experienciaTotal = expAntesDeMejorar + experienciaExtra;
     }
-   /* public SlotInfo CopiaDeSlotInfo (SlotInfo anotherSlotInfo)
+
+    public void AñadirExpAlItem()
     {
-        SlotInfo aux = new SlotInfo();
-
-        aux.identificador = anotherSlotInfo.identificador;
-        aux.isEmpty = anotherSlotInfo.isEmpty;
-        aux.identificadorItem = anotherSlotInfo.identificadorItem;
-        aux.cantidad = anotherSlotInfo.cantidad;
-        aux.cantidadMax = anotherSlotInfo.cantidadMax;
-        aux.nivelMax = anotherSlotInfo.nivelMax;
-        aux.seleccionadoParaMejorarse = anotherSlotInfo.seleccionadoParaMejorarse;
-        aux.seleccionadoParaMejorar = anotherSlotInfo.seleccionadoParaMejorar;
-        aux.equipado = anotherSlotInfo.equipado;
-        aux.itemGuardado.stats = anotherSlotInfo.itemGuardado.stats;
-        
-
-        return aux;
+        SlotInfoItemAMejorar.itemGuardado.expAcumulada = experienciaTotal;
+        newAtk.text = SlotInfoItemAMejorar.itemGuardado.stats.damage.ToString();
+        newVida.text = SlotInfoItemAMejorar.itemGuardado.stats.vida.ToString();
+        newCuracion.text = SlotInfoItemAMejorar.itemGuardado.stats.curacion.ToString();
     }
-    */
+
 
     public void RemoveConfiguracion()
     {

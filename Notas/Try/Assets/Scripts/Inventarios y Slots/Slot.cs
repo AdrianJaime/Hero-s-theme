@@ -65,10 +65,12 @@ public class Slot : MonoBehaviour
 
     public void ActualizarInterfaz()
     {
+        
         if (slotInfo.isEmpty) //representacion del slot cuando no hay ningun item
         {
             representacionItem.sprite = null;
             representacionItem.enabled = false;
+
             eliminarSlot.enabled = false;
 
             nivel.gameObject.SetActive(false);
@@ -81,7 +83,8 @@ public class Slot : MonoBehaviour
             representacionItem.sprite = slotInfo.itemGuardado.imagenItem;//Imagen
             representacionItem.enabled = true;
 
-            eliminarSlot.enabled = true;
+            if (inventory.isOnSellMenu)
+                eliminarSlot.enabled = true;
 
             nivel.text = slotInfo.itemGuardado.nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);

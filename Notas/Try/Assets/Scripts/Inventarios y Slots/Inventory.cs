@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         //PlayerPrefs.DeleteAll();
+        
         slotInfoList = new List<SlotInfo>();
         if(PlayerPrefs.HasKey("inventario"))
         {
@@ -71,6 +72,7 @@ public class Inventory : MonoBehaviour
             newSlot.CreateSlot(i);
             newSlot.baseDeDatos = BaseDeDatosScript;
             newSlot.slotInfo = slotInfoList[i];
+            newSlot.eliminarSlot.enabled=false;
 
             newSlot.ActualizarInterfaz();
             //problema arreglado la funcion no sirv de nada ponerla aqui xD parezco subnormal
