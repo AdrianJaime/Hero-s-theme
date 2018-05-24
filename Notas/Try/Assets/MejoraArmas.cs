@@ -8,7 +8,7 @@ public class MejoraArmas : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
-    public SlotInfo SlotInfoItemAMejorar;
+    public Slot SlotInfoItemAMejorar;
 
 
     public Image imagenItemAMejorar;
@@ -47,7 +47,7 @@ public class MejoraArmas : MonoBehaviour {
         costeMejora = 0;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
-            costeMejora += SlotInfoItemAMejorar.itemGuardado.rareza * 50;
+            costeMejora += SlotInfoItemAMejorar.slotInfo.itemGuardado.rareza * 50;
         }
     }
 
@@ -59,7 +59,7 @@ public class MejoraArmas : MonoBehaviour {
             Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
             auxSlot.EliminarSlot_VenderSlot();
         }
-        SlotInfoItemAMejorar.itemGuardado.expAcumulada = auxExp;
+        SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = auxExp;
         expAntesDeMejorar = auxExp;
 
         RemoveConfiguracion();
@@ -80,13 +80,16 @@ public class MejoraArmas : MonoBehaviour {
 
     public void AñadirExpAlItem()
     {
-        if(experienciaTotal!=0)
-             SlotInfoItemAMejorar.itemGuardado.expAcumulada = experienciaTotal;
-        else if (!huecoItemMejorarLibre)
-             SlotInfoItemAMejorar.itemGuardado.expAcumulada = expAntesDeMejorar;
-        newAtk.text = SlotInfoItemAMejorar.itemGuardado.stats.damage.ToString();
-        newVida.text = SlotInfoItemAMejorar.itemGuardado.stats.vida.ToString();
-        newCuracion.text = SlotInfoItemAMejorar.itemGuardado.stats.curacion.ToString();
+        if (SlotInfoItemAMejorar != null)
+        {
+            if (experienciaTotal != 0)
+                SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = experienciaTotal;
+            else if (!huecoItemMejorarLibre)
+                SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = expAntesDeMejorar;
+            newAtk.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.damage.ToString();
+            newVida.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.vida.ToString();
+            newCuracion.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.curacion.ToString();
+        }
     }
 
     public void RemoveConfiguracion()
@@ -113,17 +116,17 @@ public class MejoraArmas : MonoBehaviour {
     public void ComprobarSiSeQuiereMeorarNivelMax()
     {
         
-        if (SlotInfoItemAMejorar.seleccionadoParaMejorarse && SlotInfoItemAMejorar.nivelMax)
+        if (SlotInfoItemAMejorar.slotInfo.seleccionadoParaMejorarse && SlotInfoItemAMejorar.slotInfo.nivelMax)
         {
             atk.text = 0.ToString();
             curacion.text = 0.ToString();
             vida.text = 0.ToString();
 
             expAntesDeMejorar = 0;
-            inventory.EncontrarSlot(SlotInfoItemAMejorar.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
+            inventory.EncontrarSlot(SlotInfoItemAMejorar.slotInfo.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
             imagenItemAMejorar.sprite = null;
             huecoItemMejorarLibre = true;
-            SlotInfoItemAMejorar.seleccionadoParaMejorarse = false;
+            SlotInfoItemAMejorar.slotInfo.seleccionadoParaMejorarse = false;
         }
     }
 

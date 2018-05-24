@@ -217,7 +217,7 @@ public class Slot : MonoBehaviour
                 mejoraArmas.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
 
                 this.GetComponent<Image>().color = new Color(0, 255, 0);
-                mejoraArmas.SlotInfoItemAMejorar = slotInfo;
+                mejoraArmas.SlotInfoItemAMejorar = this;
                 mejoraArmas.expAntesDeMejorar = slotInfo.itemGuardado.expAcumulada; // aqui tambien está la solución
 
                 mejoraArmas.imagenItemAMejorar.sprite = slotInfo.itemGuardado.imagenItem;
@@ -232,7 +232,7 @@ public class Slot : MonoBehaviour
                     mejoraArmas.curacion.text = 0.ToString();
                     mejoraArmas.vida.text = 0.ToString();
 
-                    mejoraArmas.SlotInfoItemAMejorar.itemGuardado.expAcumulada = mejoraArmas.expAntesDeMejorar;
+                    mejoraArmas.SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = mejoraArmas.expAntesDeMejorar;
                     mejoraArmas.expAntesDeMejorar = 0;
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
                     //mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
