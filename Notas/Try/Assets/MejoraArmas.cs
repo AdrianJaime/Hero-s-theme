@@ -10,16 +10,16 @@ public class MejoraArmas : MonoBehaviour {
 
     public SlotInfo SlotInfoItemAMejorar;
 
+
     public Image imagenItemAMejorar;
     public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
-    public int  valorNewAtk ,valorNewCuracion, valorNewVida,costeMejora;
+    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar;
 
     public bool huecoItemMejorarLibre=true;
 
     public List<SlotInfo> listaItemsParaFusionar;
 
 
-    
     public SlotInfo EncontarItemEnListaDeFusion(int _identificador)
     {
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
@@ -30,11 +30,13 @@ public class MejoraArmas : MonoBehaviour {
         }
         return null;
     }
+
     private void Update()
     {
+        ExperienciaExtra();
         CosteMejora();
         costeAMejorar.text = costeMejora.ToString();
-        SaveNewStats();
+
     }
 
     public void CosteMejora()
@@ -44,20 +46,6 @@ public class MejoraArmas : MonoBehaviour {
         {
             costeMejora += SlotInfoItemAMejorar.itemGuardado.rareza * 50;
         }
-    }
-
-    public void ActualizarValoresNuevos() //por cada slot guardado, coge el valor de cada stat y lo guarda. Esta acción se llama cada vez que se elimina o se guarda un valor en la lista de slots!
-    {
-        ValoresNuevosACero();
-        foreach(SlotInfo slotInfo in listaItemsParaFusionar)
-        {
-           // itemParaMejorar.expAcumulada+=
-        }
-    }
-
-    public void ValoresNuevosACero()
-    {
-        valorNewAtk =valorNewCuracion= valorNewVida = 0;
     }
 
     public void ConfirmarSeleccion()//botón de confirmar.
@@ -75,33 +63,39 @@ public class MejoraArmas : MonoBehaviour {
         _slot.slotInfo = SlotInfoItemAMejorar;
     }
 
-     public void CalculoNuevoNivel()
+    public void ExperienciaExtra()
     {
-
-    }
-
-
-
-
-
-
-
-
-
-public void SaveNewStats()
-    {
-        valorNewAtk = valorNewCuracion = valorNewVida = 0;
+        experienciaExtra = 0;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
-            valorNewAtk += slotInfo.itemGuardado.stats.damage;
-            valorNewCuracion += slotInfo.itemGuardado.stats.curacion;
-            valorNewVida += slotInfo.itemGuardado.stats.vida;
+            experienciaExtra += slotInfo.itemGuardado.expProporcionada ;
         }
-        newAtk.text = valorNewAtk.ToString();
-        newCuracion.text = valorNewCuracion.ToString();
-        newVida.text = valorNewVida.ToString();
     }
 
+    public void NuevosStats()
+    {
+
+
+    }
+   /* public SlotInfo CopiaDeSlotInfo (SlotInfo anotherSlotInfo)
+    {
+        SlotInfo aux = new SlotInfo();
+
+        aux.identificador = anotherSlotInfo.identificador;
+        aux.isEmpty = anotherSlotInfo.isEmpty;
+        aux.identificadorItem = anotherSlotInfo.identificadorItem;
+        aux.cantidad = anotherSlotInfo.cantidad;
+        aux.cantidadMax = anotherSlotInfo.cantidadMax;
+        aux.nivelMax = anotherSlotInfo.nivelMax;
+        aux.seleccionadoParaMejorarse = anotherSlotInfo.seleccionadoParaMejorarse;
+        aux.seleccionadoParaMejorar = anotherSlotInfo.seleccionadoParaMejorar;
+        aux.equipado = anotherSlotInfo.equipado;
+        aux.itemGuardado.stats = anotherSlotInfo.itemGuardado.stats;
+        
+
+        return aux;
+    }
+    */
 
     public void RemoveConfiguracion()
     {

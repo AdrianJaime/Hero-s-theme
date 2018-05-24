@@ -156,7 +156,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (SlotInfo slotInfo in slotInfoList)
         {
-            if (slotInfo.seleccionadoParaMejorar)
+                slotInfo.seleccionadoParaMejorarse = false;
                 slotInfo.seleccionadoParaMejorar = false;
         }
     }

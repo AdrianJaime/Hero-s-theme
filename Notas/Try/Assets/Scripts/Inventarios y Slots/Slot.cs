@@ -53,10 +53,11 @@ public class Slot : MonoBehaviour
         SetValueOfLevel();
         ComprobarSiEsNivelMax();
         SetValueOfStats();
+        SetValueOfExpProporcionada();
     }
     public void CreateSlot(int _identificador)
     {
-        slotInfo = new SlotInfo();
+       // slotInfo = new SlotInfo();
         slotInfo.identificador = _identificador;
 
         slotInfo.SetEmptySlot();
@@ -194,6 +195,7 @@ public class Slot : MonoBehaviour
         if (inventory.isOnMejoraMenu)
         {
             MejoraArmas mejoraArmas = GameObject.Find("MejoraDeArmasPanel").GetComponent<MejoraArmas>();
+
             if (mejoraArmas.huecoItemMejorarLibre && !slotInfo.nivelMax)
             {
 
@@ -202,7 +204,9 @@ public class Slot : MonoBehaviour
                 mejoraArmas.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
 
                 this.GetComponent<Image>().color = new Color(0, 255, 0);
-                mejoraArmas.SlotInfoItemAMejorar.itemGuardado = slotInfo.itemGuardado;
+                mejoraArmas.SlotInfoItemAMejorar = slotInfo;
+                mejoraArmas.expAntesDeMejorar = slotInfo.itemGuardado.expAcumulada;
+
                 mejoraArmas.imagenItemAMejorar.sprite = slotInfo.itemGuardado.imagenItem;
                 mejoraArmas.huecoItemMejorarLibre = false;
                 slotInfo.seleccionadoParaMejorarse = true;
@@ -215,8 +219,9 @@ public class Slot : MonoBehaviour
                     mejoraArmas.curacion.text = 0.ToString();
                     mejoraArmas.vida.text = 0.ToString();
 
+                    mejoraArmas.SlotInfoItemAMejorar.itemGuardado.expAcumulada = mejoraArmas.expAntesDeMejorar;
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
-                    mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
+                    //mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
                     mejoraArmas.imagenItemAMejorar.sprite = null;
                     mejoraArmas.huecoItemMejorarLibre = true;
                     slotInfo.seleccionadoParaMejorarse = false;
@@ -253,10 +258,10 @@ public class Slot : MonoBehaviour
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
-
             }
 
-
+            mejoraArmas.ExperienciaExtra();
+            mejoraArmas.NuevosStats();
         }
     }
 
@@ -324,6 +329,11 @@ public class Slot : MonoBehaviour
             slotInfo.itemGuardado.nivel = slotInfo.itemGuardado.nivelMax;
     }
 
+    public void SetValueOfExpProporcionada()
+    {
+        slotInfo.itemGuardado.expProporcionada = (slotInfo.itemGuardado.rareza * 500) + (slotInfo.itemGuardado.expAcumulada / 5);
+    }
+
     public void ComprobarSiEsNivelMax()
     {
 
@@ -365,7 +375,7 @@ public class Slot : MonoBehaviour
 
         public int identificador;
         public bool isEmpty;
-        // public bool used; //no recuerdo para que se usa esto, y piesno que se utilizaba para lo que utilizo ahora el equipado. Hay que comprobar si se utiliza de lo contrario borrarlo
+
         public int identificadorItem;
         public int cantidad;
         public int cantidadMax;
@@ -383,7 +393,7 @@ public class Slot : MonoBehaviour
             seleccionadoParaMejorarse = false;
 
             isEmpty = true;
-            // used = false;
+
             cantidad = 0;
             identificadorItem = -1;
             equipado = false;
@@ -392,5 +402,9 @@ public class Slot : MonoBehaviour
 
         }
 
-    }
+
+
+
+}
+
 
