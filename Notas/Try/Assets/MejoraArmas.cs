@@ -33,10 +33,10 @@ public class MejoraArmas : MonoBehaviour {
 
     private void Update()
     {
-        ExperienciaExtra();
-        NuevosStats();
-        if(experienciaTotal!=0)
-            AñadirExpAlItem();
+        ExperienciaTotal();
+        AñadirExpAlItem();
+
+
 
         CosteMejora();
         costeAMejorar.text = costeMejora.ToString();
@@ -53,34 +53,37 @@ public class MejoraArmas : MonoBehaviour {
 
     public void ConfirmarSeleccion()//botón de confirmar.
     {
-
+        auxExp = experienciaTotal;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
             Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
             auxSlot.EliminarSlot_VenderSlot();
         }
+        SlotInfoItemAMejorar.itemGuardado.expAcumulada = auxExp;
+        expAntesDeMejorar = auxExp;
 
         RemoveConfiguracion();
+        ComprobarSiSeQuiereMeorarNivelMax();
 
     }
 
-    public void ExperienciaExtra()
+    public void ExperienciaTotal()
     {
         experienciaExtra = 0;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
             experienciaExtra += slotInfo.itemGuardado.expProporcionada;
         }
+        experienciaTotal = expAntesDeMejorar + experienciaExtra;
     }
 
-    public void NuevosStats()
-    {
-         experienciaTotal = expAntesDeMejorar + experienciaExtra;
-    }
 
     public void AñadirExpAlItem()
     {
-        SlotInfoItemAMejorar.itemGuardado.expAcumulada = experienciaTotal;
+        if(experienciaTotal!=0)
+             SlotInfoItemAMejorar.itemGuardado.expAcumulada = experienciaTotal;
+        else if (!huecoItemMejorarLibre)
+             SlotInfoItemAMejorar.itemGuardado.expAcumulada = expAntesDeMejorar;
         newAtk.text = SlotInfoItemAMejorar.itemGuardado.stats.damage.ToString();
         newVida.text = SlotInfoItemAMejorar.itemGuardado.stats.vida.ToString();
         newCuracion.text = SlotInfoItemAMejorar.itemGuardado.stats.curacion.ToString();
@@ -105,5 +108,26 @@ public class MejoraArmas : MonoBehaviour {
         }
         listaItemsParaFusionar = new List<SlotInfo>();
     }
+
+
+    public void ComprobarSiSeQuiereMeorarNivelMax()
+    {
+        
+        if (SlotInfoItemAMejorar.seleccionadoParaMejorarse && SlotInfoItemAMejorar.nivelMax)
+        {
+            atk.text = 0.ToString();
+            curacion.text = 0.ToString();
+            vida.text = 0.ToString();
+
+            expAntesDeMejorar = 0;
+            inventory.EncontrarSlot(SlotInfoItemAMejorar.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
+            imagenItemAMejorar.sprite = null;
+            huecoItemMejorarLibre = true;
+            SlotInfoItemAMejorar.seleccionadoParaMejorarse = false;
+        }
+    }
+
+
+
 } 
 

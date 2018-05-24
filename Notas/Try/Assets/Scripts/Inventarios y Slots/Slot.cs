@@ -44,6 +44,7 @@ public class Slot : MonoBehaviour
     private void Update()
     {
         //comprovar si es nivel max o no.
+
         SetValueOfMaxLevel();
         SetValueOfDineroAlVender();
         SetValueStatsLevel();
@@ -51,6 +52,7 @@ public class Slot : MonoBehaviour
         ComprobarSiEsNivelMax();
         SetValueOfStats();
         SetValueOfExpProporcionada();
+
     }
     public void CreateSlot(int _identificador)
     {
@@ -216,7 +218,7 @@ public class Slot : MonoBehaviour
 
                 this.GetComponent<Image>().color = new Color(0, 255, 0);
                 mejoraArmas.SlotInfoItemAMejorar = slotInfo;
-                mejoraArmas.expAntesDeMejorar = slotInfo.itemGuardado.expAcumulada;
+                mejoraArmas.expAntesDeMejorar = slotInfo.itemGuardado.expAcumulada; // aqui tambien está la solución
 
                 mejoraArmas.imagenItemAMejorar.sprite = slotInfo.itemGuardado.imagenItem;
                 mejoraArmas.huecoItemMejorarLibre = false;
@@ -272,10 +274,10 @@ public class Slot : MonoBehaviour
 
             }
 
-            mejoraArmas.ExperienciaExtra();
-            mejoraArmas.NuevosStats();
         }
     }
+
+
 
 
     //************************************************************
