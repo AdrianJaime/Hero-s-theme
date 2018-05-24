@@ -576,7 +576,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 556371064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 597138362}
+        m_MethodName: RemoveConfiguracion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &556371064
@@ -821,7 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 1540632700}
   monedero: {fileID: 0}
-  itemAMejorar:
+  SlotInfoItemAMejorar:
     identificador: 0
     isEmpty: 0
     identificadorItem: 0
@@ -864,10 +875,13 @@ MonoBehaviour:
   vida: {fileID: 2063366587}
   newVida: {fileID: 2076116002}
   costeAMejorar: {fileID: 2043693878}
-  valorNewAtk: 0
-  valorNewCuracion: 0
-  valorNewVida: 0
+  valueAtakNew: 0
+  valueCuracionNew: 0
+  valueVidaNew: 0
+  experienciaExtra: 0
   costeMejora: 0
+  expAntesDeMejorar: 0
+  experienciaTotal: 0
   huecoItemMejorarLibre: 1
   listaItemsParaFusionar: []
 --- !u!1 &647665963

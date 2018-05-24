@@ -37,9 +37,6 @@ public class Slot : MonoBehaviour
     private void Start()
     {
 
-
-
-
         if (inventory.isOnSellMenu)
             panelConfirmarVenta.SetActive(false);
 
@@ -136,11 +133,22 @@ public class Slot : MonoBehaviour
             }
 
         }
-        if (inventory.isOnSellMenu == true || inventory.isOnMejoraMenu)
+        if (inventory.isOnSellMenu == true )
         {
             if (!slotInfo.equipado)
             {
                 monedero.AñadirMonedasNormales(slotInfo.itemGuardado.dineroAlVender);
+                if (slotInfo.cantidad == 1)
+                    slotInfo.SetEmptySlot();
+                else
+                    slotInfo.cantidad--;
+                ActualizarInterfaz();
+            }
+        }
+        if (inventory.isOnMejoraMenu==true)
+        {
+            if (!slotInfo.equipado)
+            {
                 if (slotInfo.cantidad == 1)
                     slotInfo.SetEmptySlot();
                 else
@@ -223,6 +231,7 @@ public class Slot : MonoBehaviour
                     mejoraArmas.vida.text = 0.ToString();
 
                     mejoraArmas.SlotInfoItemAMejorar.itemGuardado.expAcumulada = mejoraArmas.expAntesDeMejorar;
+                    mejoraArmas.expAntesDeMejorar = 0;
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
                     //mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
                     mejoraArmas.imagenItemAMejorar.sprite = null;
@@ -243,7 +252,7 @@ public class Slot : MonoBehaviour
 
                     }
                 }
-                else if (!slotInfo.seleccionadoParaMejorar && !slotInfo.seleccionadoParaMejorarse)
+                else if (!slotInfo.seleccionadoParaMejorar && !slotInfo.seleccionadoParaMejorarse&&!slotInfo.equipado)
                 {
                     //añadir el item a una lista de items del mejoraArmas
                     SlotInfo newslotInfo = this.slotInfo;
@@ -276,6 +285,12 @@ public class Slot : MonoBehaviour
         slotInfo.itemGuardado.stats.damageLevel = (slotInfo.itemGuardado.stats.maxDamage - slotInfo.itemGuardado.stats.damageBase) / slotInfo.itemGuardado.nivelMax;
         slotInfo.itemGuardado.stats.curacionLevel = (slotInfo.itemGuardado.stats.maxCuracion - slotInfo.itemGuardado.stats.curacionBase) / slotInfo.itemGuardado.nivelMax;
         slotInfo.itemGuardado.stats.vidaLevel = (slotInfo.itemGuardado.stats.maxVida - slotInfo.itemGuardado.stats.vidaBase) / slotInfo.itemGuardado.nivelMax;
+        if (slotInfo.itemGuardado.stats.damageLevel == 0)
+            slotInfo.itemGuardado.stats.damageLevel = 1;
+        if (slotInfo.itemGuardado.stats.curacionLevel == 0)
+            slotInfo.itemGuardado.stats.curacionLevel = 1;
+        if (slotInfo.itemGuardado.stats.vidaLevel == 0)
+            slotInfo.itemGuardado.stats.vidaLevel = 1;
 
     }
 

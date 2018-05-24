@@ -13,7 +13,7 @@ public class MejoraArmas : MonoBehaviour {
 
     public Image imagenItemAMejorar;
     public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
-    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar, experienciaTotal;
+    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar, experienciaTotal, auxExp;
 
     public bool huecoItemMejorarLibre=true;
 
@@ -35,11 +35,11 @@ public class MejoraArmas : MonoBehaviour {
     {
         ExperienciaExtra();
         NuevosStats();
-        AñadirExpAlItem();
+        if(experienciaTotal!=0)
+            AñadirExpAlItem();
 
         CosteMejora();
         costeAMejorar.text = costeMejora.ToString();
-
     }
 
     public void CosteMejora()
@@ -53,17 +53,15 @@ public class MejoraArmas : MonoBehaviour {
 
     public void ConfirmarSeleccion()//botón de confirmar.
     {
-        //Suma el valor que de los newStats y
 
-        foreach(SlotInfo slotInfo in listaItemsParaFusionar)
+        foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
-            SlotInfoItemAMejorar.itemGuardado.expAcumulada += slotInfo.itemGuardado.expProporcionada;
             Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
-            listaItemsParaFusionar.Remove(slotInfo);
             auxSlot.EliminarSlot_VenderSlot();
         }
-        Slot _slot = inventory.EncontrarSlot(SlotInfoItemAMejorar.identificador);
-        _slot.slotInfo = SlotInfoItemAMejorar;
+
+        RemoveConfiguracion();
+
     }
 
     public void ExperienciaExtra()
@@ -71,9 +69,8 @@ public class MejoraArmas : MonoBehaviour {
         experienciaExtra = 0;
         foreach (SlotInfo slotInfo in listaItemsParaFusionar)
         {
-            experienciaExtra += slotInfo.itemGuardado.expProporcionada ;
+            experienciaExtra += slotInfo.itemGuardado.expProporcionada;
         }
-
     }
 
     public void NuevosStats()
@@ -89,9 +86,23 @@ public class MejoraArmas : MonoBehaviour {
         newCuracion.text = SlotInfoItemAMejorar.itemGuardado.stats.curacion.ToString();
     }
 
-
     public void RemoveConfiguracion()
     {
+        foreach (SlotInfo slot in inventory.slotInfoList)
+        {
+            if (slot.seleccionadoParaMejorar)
+            {
+                //eliminar el item de la lista de items del mejoraArmas
+                SlotInfo newslotInfo = slot;
+                listaItemsParaFusionar.Remove(EncontarItemEnListaDeFusion(newslotInfo.identificador));
+                slot.seleccionadoParaMejorar = false;
+                inventory.EncontrarSlot(slot.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
+            }
+            if (inventory.EncontrarSlot(slot.identificador).GetComponent<Image>().color == new Color(255, 0, 0))
+                inventory.EncontrarSlot(slot.identificador).GetComponent<Image>().color = new Color(255, 255, 255);
+
+
+        }
         listaItemsParaFusionar = new List<SlotInfo>();
     }
 } 
