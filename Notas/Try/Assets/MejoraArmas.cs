@@ -62,6 +62,10 @@ public class MejoraArmas : MonoBehaviour {
         SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = auxExp;
         expAntesDeMejorar = auxExp;
 
+        atk.text =SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.damage.ToString();
+        curacion.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.curacion.ToString();
+        vida.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.vida.ToString();
+
         RemoveConfiguracion();
         ComprobarSiSeQuiereMeorarNivelMax();
 

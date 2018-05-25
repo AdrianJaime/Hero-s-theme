@@ -265,6 +265,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &377958749 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224817786724471338, guid: dcbf1d0371bc19c469d46ddd45aead91,
+    type: 2}
+  m_PrefabInternal: {fileID: 1510901526}
 --- !u!224 &389794780 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
@@ -1140,6 +1145,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
+        type: 2}
+      propertyPath: panelPersonalizacion
+      value: 
+      objectReference: {fileID: 377958749}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbf1d0371bc19c469d46ddd45aead91, type: 2}
   m_IsPrefabParent: 0

@@ -96,7 +96,8 @@ public class Slot : MonoBehaviour
 
     public void EliminarSlot_VenderSlot()
     {
-        if (inventory.isOnEquipMenu)
+
+       /* if (inventory.isOnEquipMenu)
         {
             if (slotInfo.equipado)
             {
@@ -125,54 +126,47 @@ public class Slot : MonoBehaviour
             else
             {
                 if (slotInfo != null)
-                {
-                    if (slotInfo.cantidad == 1)
-                        slotInfo.SetEmptySlot();
-                    else
-                        slotInfo.cantidad--;
-                }
-                ActualizarInterfaz();
+                    EliminarItem();
             }
 
-        }
+        }*/
+
         if (inventory.isOnSellMenu == true )
         {
             if (!slotInfo.equipado)
             {
                 monedero.AñadirMonedasNormales(slotInfo.itemGuardado.dineroAlVender);
-                if (slotInfo.cantidad == 1)
-                    slotInfo.SetEmptySlot();
-                else
-                    slotInfo.cantidad--;
-                ActualizarInterfaz();
+                EliminarItem();
             }
         }
         if (inventory.isOnMejoraMenu==true)
         {
             if (!slotInfo.equipado)
             {
-                if (slotInfo.cantidad == 1)
-                    slotInfo.SetEmptySlot();
-                else
-                    slotInfo.cantidad--;
-                ActualizarInterfaz();
+                EliminarItem();
             }
         }
+    }
+
+    private void EliminarItem()
+    {
+        if (slotInfo.cantidad == 1)
+            slotInfo.SetEmptySlot();
+        else
+            slotInfo.cantidad--;
+        ActualizarInterfaz();
     }
 
     public void SetItemInSlotPersonalizacion()
     {
         if (inventory.isOnEquipMenu)
         {
-            SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem);
+            SlotPersonalización SlotPersonalizacion = panelPersonalizacion.EncontrarSlotPersonalizacion(slotInfo.itemGuardado.tipoItem);
             if (SlotPersonalizacion.personalizacionInfo.libre)
             {
                 slotInfo.equipado = true;
-                SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion = baseDeDatos.FindItem(slotInfo.identificadorItem);
+                SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion = slotInfo.itemGuardado;
                 SlotPersonalizacion.personalizacionInfo.libre = false;
-                SlotPersonalizacion.personalizacionInfo.itemSlotPersonalizacion.identificador = slotInfo.identificadorItem;
-                SlotPersonalizacion.personalizacionInfo.tipoItem = (int)baseDeDatos.FindItem(slotInfo.identificadorItem).tipoItem;
-
 
                 SlotPersonalizacion.personalizacionInfo.identificadorSlotInventario = slotInfo.identificador;
 
@@ -231,6 +225,10 @@ public class Slot : MonoBehaviour
                     mejoraArmas.atk.text = 0.ToString();
                     mejoraArmas.curacion.text = 0.ToString();
                     mejoraArmas.vida.text = 0.ToString();
+
+                    mejoraArmas.newAtk.text = 0.ToString();
+                    mejoraArmas.newCuracion.text = 0.ToString();
+                    mejoraArmas.newVida.text = 0.ToString();
 
                     mejoraArmas.SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = mejoraArmas.expAntesDeMejorar;
                     mejoraArmas.expAntesDeMejorar = 0;
