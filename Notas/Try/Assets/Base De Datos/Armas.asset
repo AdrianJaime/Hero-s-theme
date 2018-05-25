@@ -16,7 +16,7 @@ MonoBehaviour:
     identificador: 1
     name: 
     rareza: 1
-    nivel: 0
+    nivel: 1
     nivelMax: 0
     rango: 0
     expAcumulada: 0
@@ -40,10 +40,10 @@ MonoBehaviour:
     identificador: 2
     name: nada
     rareza: 3
-    nivel: 80
+    nivel: 1
     nivelMax: 80
     rango: 0
-    expAcumulada: 13146
+    expAcumulada: 0
     dineroAlVender: 300
     expProporcionada: 4129
     stats:
@@ -64,10 +64,10 @@ MonoBehaviour:
     identificador: 3
     name: Polla
     rareza: 3
-    nivel: 80
+    nivel: 1
     nivelMax: 80
     rango: 0
-    expAcumulada: 10124
+    expAcumulada: 0
     dineroAlVender: 300
     expProporcionada: 3524
     stats:
@@ -88,19 +88,19 @@ MonoBehaviour:
     identificador: 4
     name: Polla
     rareza: 5
-    nivel: 79
+    nivel: 0
     nivelMax: 120
     rango: 0
-    expAcumulada: 8812
+    expAcumulada: 0
     dineroAlVender: 500
-    expProporcionada: 4262
+    expProporcionada: 2500
     stats:
       maxDamage: 100
       maxCuracion: 100
       maxVida: 100
-      damage: 79
-      curacion: 79
-      vida: 79
+      damage: 0
+      curacion: 0
+      vida: 0
       damageLevel: 1
       curacionLevel: 1
       vidaLevel: 1
