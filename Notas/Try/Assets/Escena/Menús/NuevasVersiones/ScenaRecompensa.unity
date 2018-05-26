@@ -336,6 +336,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &114116327 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224414348162445294, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 713074494}
 --- !u!1 &147459771
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +631,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 450672983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 914956769}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &450672983
@@ -946,6 +962,11 @@ Prefab:
       propertyPath: isOnEquipMenu
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: panelInventrio
+      value: 
+      objectReference: {fileID: 114116327}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0
@@ -1035,9 +1056,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDeDatos: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1622070561}
   monedero: {fileID: 639043538}
-  nivelRecompensa: 0
+  nivelRecompensa: 1
+  panelItemRecibido: {fileID: 508442285}
+  dineroRecompensa: {fileID: 2086731145}
+  nombreItemRecompensa: {fileID: 350494788}
+  imagenItemRecompensa: {fileID: 1123080299}
 --- !u!1 &945934336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1564,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
     type: 2}
   m_PrefabInternal: {fileID: 713074494}
+--- !u!114 &1622070561 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 713074494}
+  m_Script: {fileID: 11500000, guid: 378298b8a5d409841ac413bd697690d9, type: 3}
 --- !u!1 &1661188455
 GameObject:
   m_ObjectHideFlags: 0

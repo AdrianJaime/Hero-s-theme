@@ -94,6 +94,12 @@ public class MejoraArmas : MonoBehaviour {
             newVida.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.vida.ToString();
             newCuracion.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.curacion.ToString();
         }
+        if(huecoItemMejorarLibre == true)
+        {
+            newAtk.text =0.ToString();
+            newVida.text = 0.ToString();
+            newCuracion.text = 0.ToString();
+        }
     }
 
     public void RemoveConfiguracion()

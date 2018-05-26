@@ -99,6 +99,8 @@ MonoBehaviour:
   isOnEquipMenu: 1
   isOnSellMenu: 0
   isOnSummonMenu: 0
+  isOnMejoraMenu: 0
+  isOnRecomensaMenu: 0
 --- !u!114 &114295198373287506
 MonoBehaviour:
   m_ObjectHideFlags: 1

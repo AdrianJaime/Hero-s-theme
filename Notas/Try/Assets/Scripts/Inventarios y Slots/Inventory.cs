@@ -37,8 +37,8 @@ public class Inventory : MonoBehaviour
         }
         if (isOnMejoraMenu)
             SetAllItemsNoSeleccionadosComoMejora();
-        if (isOnRecomensaMenu)
-            this.gameObject.transform.localScale= new Vector3(0,0,0);
+        //if (isOnRecomensaMenu)
+        //    this.gameObject.transform.localScale= new Vector3(0,0,0);
     }
 
     private void Update()

@@ -402,6 +402,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c05a33ad927dd7046bf9eb79d9d67b43, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &1377324980 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224414348162445294, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1437784740}
 --- !u!1001 &1437784740
 Prefab:
   m_ObjectHideFlags: 0
@@ -509,6 +514,11 @@ Prefab:
       propertyPath: isOnEquipMenu
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: panelInventrio
+      value: 
+      objectReference: {fileID: 1377324980}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0

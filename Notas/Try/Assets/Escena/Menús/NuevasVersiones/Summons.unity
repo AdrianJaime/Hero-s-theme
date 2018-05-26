@@ -421,7 +421,7 @@ MonoBehaviour:
   dineroBanner: {fileID: 129436916}
   inventory: {fileID: 847530248}
   monedero: {fileID: 493612662}
-  costeDeSummon: 500
+  costeDeSummon: 1
 --- !u!114 &331905360
 MonoBehaviour:
   m_ObjectHideFlags: 0
