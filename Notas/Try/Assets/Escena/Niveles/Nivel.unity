@@ -704,6 +704,8 @@ MonoBehaviour:
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
+  hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
+  enemySiteToBeHited: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 115
 --- !u!212 &281592114
@@ -1010,6 +1012,8 @@ MonoBehaviour:
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
+  hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
+  enemySiteToBeHited: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 102
 --- !u!212 &590229032
@@ -1534,6 +1538,8 @@ MonoBehaviour:
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
+  hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
+  enemySiteToBeHited: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 97
 --- !u!212 &1303199617
@@ -1881,6 +1887,8 @@ MonoBehaviour:
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
+  hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
+  enemySiteToBeHited: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 100
 --- !u!212 &1859941717

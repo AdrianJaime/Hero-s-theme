@@ -11,6 +11,9 @@ public class Activator : MonoBehaviour {
     public PuntosDeJuego PuntosDeJuegoScript;
     public BarraVida BarraVidaScript;
 
+    public GameObject hitPlayer;
+    public Transform enemySiteToBeHited;
+
     public Text InfoText;
     public KeyCode key;
     bool active = false;
@@ -43,6 +46,7 @@ public class Activator : MonoBehaviour {
                     PuntosDeJuegoScript.PuntosTotales += good();
                     InfoText.text = "Good!";
                 }
+                Instantiate<GameObject>(hitPlayer,this.gameObject.transform.position,new Quaternion ());
             }
             else
             {
