@@ -22,12 +22,12 @@ public class Inventory : MonoBehaviour
     public bool isOnMejoraMenu = false;
     public bool isOnRecomensaMenu = false;
 
-    private void Start()
+    private void Awake()
     {
         //PlayerPrefs.DeleteAll();
-        
+
         slotInfoList = new List<SlotInfo>();
-        if(PlayerPrefs.HasKey("inventario"))
+        if (PlayerPrefs.HasKey("inventario"))
         {
             CargarInventario();
         }
@@ -37,9 +37,10 @@ public class Inventory : MonoBehaviour
         }
         if (isOnMejoraMenu)
             SetAllItemsNoSeleccionadosComoMejora();
-        //if (isOnRecomensaMenu)
-        //    this.gameObject.transform.localScale= new Vector3(0,0,0);
+        if (isOnRecomensaMenu)
+            this.gameObject.transform.localScale= new Vector3(0,0,0);
     }
+
 
     private void Update()
     {

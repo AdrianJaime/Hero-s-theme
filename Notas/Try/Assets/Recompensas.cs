@@ -24,7 +24,7 @@ public class Recompensas : MonoBehaviour {
     public void SelectTypeOfReward()
     {
         int dineroGanado=0;
-        int probabilidadDeItem = Random.Range(0,2);
+        int probabilidadDeItem = Random.Range(0,20);
 
         switch (nivelRecompensa)
         {
@@ -64,7 +64,7 @@ public class Recompensas : MonoBehaviour {
         do { identificadorItem = Random.Range(1, 4); }
         while (baseDeDatos.FindItem(identificadorItem).rareza==_nivelRecompensa);
         ActivarPanel(true, identificadorItem);
-        inventory.AñadirItem(4);
+        inventory.AñadirItem(identificadorItem);
 
     }
 
