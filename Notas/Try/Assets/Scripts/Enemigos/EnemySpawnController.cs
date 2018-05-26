@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemySpawnController : MonoBehaviour {
+
     public BarraVidaEnemigo vidaEnemigo;
-    public BarraVida vidaPlayer;      
+    public BarraVida vidaPlayer;    
+    
     [SerializeField]
     public EnemyCode enemyCode;
     public GameObject enemyPrefab;     // The enemy prefab to be spawned.
     public BaseDeDatosEnemigos baseDeDatosEnemigos;
     public Transform panelEnemy;
-    public int primerIdentificadorEnemigo;
+    public int primerIdentificadorEnemigo,contadorDeDerrotas;
 
     public Enemy actualEnemy;
 
@@ -19,6 +21,7 @@ public class EnemySpawnController : MonoBehaviour {
 
     void Start()
     {
+        contadorDeDerrotas = 0;
         primerIdentificadorEnemigo = 0;
         SetFirtsEnemy();
         vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
@@ -27,16 +30,7 @@ public class EnemySpawnController : MonoBehaviour {
     void Update()
     {
 
-
-        //comprobar que el enemigo del start sigue vivo, y si no spawnear el siguiente en la lista.
-        if (actualEnemy.stats.vidaMax <= 0)
-        {
-
-            SpawnEnemy();
-            vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
-    
-        }
-        
+        DestroyEnemyAndSpawn();
     }
     
     public void SetFirtsEnemy()
@@ -51,7 +45,7 @@ public class EnemySpawnController : MonoBehaviour {
 
         actualEnemy.stats.vidaMax = enemyCode.enemyInfo.vida;
         actualEnemy.stats.damage = enemyCode.enemyInfo.damage;
-
+    
         enemyCode.ActualizarInterfazEnemy();
      
     }
@@ -76,8 +70,20 @@ public class EnemySpawnController : MonoBehaviour {
             enemyCode.ActualizarInterfazEnemy(); 
         }
         
+
+ 
     }
 
+    public void DestroyEnemyAndSpawn()
+    {
+        if (actualEnemy.stats.vidaMax <= 0)
+        {
+            contadorDeDerrotas++;
+            actualEnemy=new Enemy();
+            SpawnEnemy();
+            vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
+        }
+    }
 
 
 

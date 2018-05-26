@@ -1752,6 +1752,7 @@ MonoBehaviour:
     type: 2}
   panelEnemy: {fileID: 241275623}
   primerIdentificadorEnemigo: 0
+  contadorDeDerrotas: 0
   actualEnemy:
     image: {fileID: 0}
     stats:
