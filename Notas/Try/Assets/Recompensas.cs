@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.IO;
 using UnityEngine.UI;
 
 public class Recompensas : MonoBehaviour {
@@ -15,9 +17,12 @@ public class Recompensas : MonoBehaviour {
     public Text dineroRecompensa, nombreItemRecompensa;
     public Image imagenItemRecompensa;
 
+
+
     private void Start()
     {
         panelItemRecibido.SetActive(false);
+        ReadString();
         SelectTypeOfReward();
     }
 
@@ -79,4 +84,16 @@ public class Recompensas : MonoBehaviour {
     {
         panelItemRecibido.SetActive( false);
     }
+
+    [MenuItem("Tools/Read file")]
+    public void ReadString()
+    {
+        string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";
+
+        StreamReader reader = new StreamReader(path);
+        nivelRecompensa = int.Parse(reader.ReadLine());
+
+        reader.Close();
+    }
+
 }
