@@ -1058,6 +1058,11 @@ Prefab:
       propertyPath: panelInventrio
       value: 
       objectReference: {fileID: 114116327}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: isOnSellMenu
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0
