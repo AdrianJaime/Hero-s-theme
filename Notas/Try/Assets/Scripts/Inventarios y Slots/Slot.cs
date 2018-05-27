@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     Inventory inventory;
     public PanelPersonalizacion panelPersonalizacion;
 
-
+    
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;

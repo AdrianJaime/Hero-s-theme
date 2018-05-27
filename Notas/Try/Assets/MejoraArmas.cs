@@ -12,8 +12,8 @@ public class MejoraArmas : MonoBehaviour {
 
 
     public Image imagenItemAMejorar;
-    public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar;
-    public int valueAtakNew,valueCuracionNew,valueVidaNew, experienciaExtra, costeMejora, expAntesDeMejorar, experienciaTotal, auxExp;
+    public Text atk, newAtk, curacion, newCuracion, vida, newVida,costeAMejorar, dineroMonedero;
+    public int /*valueAtakNew,valueCuracionNew,valueVidaNew,*/ experienciaExtra, costeMejora, expAntesDeMejorar, experienciaTotal, auxExp;
 
     public bool huecoItemMejorarLibre=true;
 
@@ -35,7 +35,7 @@ public class MejoraArmas : MonoBehaviour {
     {
         ExperienciaTotal();
         AñadirExpAlItem();
-
+        dineroMonedero.text = monedero.monedasNormales.ToString() + "€";
 
 
         CosteMejora();
@@ -53,22 +53,26 @@ public class MejoraArmas : MonoBehaviour {
 
     public void ConfirmarSeleccion()//botón de confirmar.
     {
-        auxExp = experienciaTotal;
-        foreach (SlotInfo slotInfo in listaItemsParaFusionar)
+        if (monedero.monedasNormales >= costeMejora)
         {
-            Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
-            auxSlot.EliminarSlot_VenderSlot();
+            auxExp = experienciaTotal;
+            foreach (SlotInfo slotInfo in listaItemsParaFusionar)
+            {
+                Slot auxSlot = inventory.EncontrarSlot(slotInfo.identificador);
+                auxSlot.EliminarSlot_VenderSlot();
+            }
+            SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = auxExp;
+            expAntesDeMejorar = auxExp;
+
+            atk.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.damage.ToString();
+            curacion.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.curacion.ToString();
+            vida.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.vida.ToString();
+
+            monedero.EliminarMonedasNormales(costeMejora);
+
+            RemoveConfiguracion();
+            ComprobarSiSeQuiereMeorarNivelMax();
         }
-        SlotInfoItemAMejorar.slotInfo.itemGuardado.expAcumulada = auxExp;
-        expAntesDeMejorar = auxExp;
-
-        atk.text =SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.damage.ToString();
-        curacion.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.curacion.ToString();
-        vida.text = SlotInfoItemAMejorar.slotInfo.itemGuardado.stats.vida.ToString();
-
-        RemoveConfiguracion();
-        ComprobarSiSeQuiereMeorarNivelMax();
-
     }
 
     public void ExperienciaTotal()

@@ -415,6 +415,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.006041
       objectReference: {fileID: 0}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: isOnSellMenu
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: isOnEquipMenu
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0
@@ -612,6 +622,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1335366849335242, guid: c05a33ad927dd7046bf9eb79d9d67b43, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_Text
+      value: Seguro?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799308031507166, guid: c05a33ad927dd7046bf9eb79d9d67b43,
+        type: 2}
+      propertyPath: m_FontData.m_RichText
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
