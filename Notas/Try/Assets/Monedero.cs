@@ -9,7 +9,7 @@ public class Monedero : MonoBehaviour
     public int monedasEspeciales;
 
     public string saveDataMonedero;
-    private void Start()
+    private void Awake()
     {
         //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("monedero"))

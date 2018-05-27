@@ -29,7 +29,7 @@ public class Recompensas : MonoBehaviour {
     public void SelectTypeOfReward()
     {
         int dineroGanado=0;
-        int probabilidadDeItem = Random.Range(0,20);
+
 
         switch (nivelRecompensa)
         {
@@ -59,8 +59,12 @@ public class Recompensas : MonoBehaviour {
 
         }
         dineroRecompensa.text = dineroGanado.ToString();
-        if (probabilidadDeItem == 0&&nivelRecompensa<6&&nivelRecompensa>0)
-            AñadirItem(nivelRecompensa);
+        if (inventory.EspaciosVacios() >= 1)
+        {
+            int probabilidadDeItem = Random.Range(0, 1);
+            if (probabilidadDeItem == 0 && nivelRecompensa < 6 && nivelRecompensa > 0)
+                AñadirItem(nivelRecompensa);
+        }
     }
 
     public void AñadirItem(int _nivelRecompensa)

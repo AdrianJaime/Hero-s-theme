@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Summons : MonoBehaviour {
 
+    public Text dineroMonedero;
     public Text dineroBanner;
+
     public Inventory inventory;
     public Monedero monedero;
 
@@ -13,7 +15,9 @@ public class Summons : MonoBehaviour {
 
     private void Start()
     {
-        dineroBanner.text = costeDeSummon.ToString()+ "€";
+        dineroBanner.text = costeDeSummon.ToString()+ " €";
+        dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
+
     }
     public void Summon()
     {
@@ -22,6 +26,7 @@ public class Summons : MonoBehaviour {
             if (monedero.monedasNormales >= costeDeSummon)
             {
                 monedero.EliminarMonedasNormales(costeDeSummon);
+                dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
                 int a = Random.Range(0, 100);
                 if (a <= 90)
                 {

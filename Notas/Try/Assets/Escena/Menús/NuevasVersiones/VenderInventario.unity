@@ -400,6 +400,21 @@ Prefab:
       propertyPath: panelInventrio
       value: 
       objectReference: {fileID: 2132385888}
+    - target: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.0060409
+      objectReference: {fileID: 0}
+    - target: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.006041
+      objectReference: {fileID: 0}
+    - target: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.006041
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0

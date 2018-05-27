@@ -101,7 +101,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -200,7 +200,7 @@ TextureImporter:
         height: 168
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 41, y: 40, z: 40, w: 37}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -270,7 +270,7 @@ TextureImporter:
         height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 179, y: 51, z: 170, w: 34}
       outline: []
       physicsShape: []
       tessellationDetail: 0
