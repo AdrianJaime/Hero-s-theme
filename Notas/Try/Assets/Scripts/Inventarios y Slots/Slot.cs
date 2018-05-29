@@ -88,7 +88,7 @@ public class Slot : MonoBehaviour
             nivel.text = slotInfo.itemGuardado.nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
-            rango.text = slotInfo.itemGuardado.rango.ToString();//Rango
+            rango.text = slotInfo.itemGuardado.rareza.ToString();//Rango
             rango.gameObject.SetActive(true);
 
         }
@@ -372,15 +372,16 @@ public class Slot : MonoBehaviour
             case (5):
                 slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 20000);
                 break;
+              
         }
 
     }
 
     public void SetValueOfStats()
     {
-        slotInfo.itemGuardado.stats.damage = slotInfo.itemGuardado.stats.damageBase + slotInfo.itemGuardado.stats.damageLevel * slotInfo.itemGuardado.nivel;
-        slotInfo.itemGuardado.stats.curacion = slotInfo.itemGuardado.stats.curacionBase + slotInfo.itemGuardado.stats.curacionLevel * slotInfo.itemGuardado.nivel;
-        slotInfo.itemGuardado.stats.vida = slotInfo.itemGuardado.stats.vidaBase + slotInfo.itemGuardado.stats.vidaLevel * slotInfo.itemGuardado.nivel;
+        slotInfo.itemGuardado.stats.damage = Mathf.RoundToInt(slotInfo.itemGuardado.stats.damageBase + slotInfo.itemGuardado.stats.damageLevel * slotInfo.itemGuardado.nivel);
+        slotInfo.itemGuardado.stats.curacion = Mathf.RoundToInt(slotInfo.itemGuardado.stats.curacionBase + slotInfo.itemGuardado.stats.curacionLevel * slotInfo.itemGuardado.nivel);
+        slotInfo.itemGuardado.stats.vida = Mathf.RoundToInt(slotInfo.itemGuardado.stats.vidaBase + slotInfo.itemGuardado.stats.vidaLevel * slotInfo.itemGuardado.nivel);
     }
 
     //************************************************************

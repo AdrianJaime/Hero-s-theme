@@ -12,7 +12,6 @@ public class Item
     public int rareza;//del 0 al 4;
     public int nivel;//Asignación del calculo hecho a partir de la experiencia acumulada
     public int nivelMax;
-    public int rango;//Nivel de rngo == al nivel de fusión de armas (creo, o de veces evolucionada).
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
     public int dineroAlVender;
     public int expProporcionada;
@@ -32,9 +31,9 @@ public class Item
         public int curacion;
         public int vida;
 
-        public int damageLevel;
-        public int curacionLevel;
-        public int vidaLevel;
+        public float damageLevel;
+        public float curacionLevel;
+        public float vidaLevel;
 
         public int damageBase;
         public int curacionBase;
@@ -58,7 +57,6 @@ public class Item
         name = "nada";
         rareza = 1;
         nivel = 0;
-        rango = 0;
         expAcumulada = 0;
         dineroAlVender = 0;
         imagenItem = null;
