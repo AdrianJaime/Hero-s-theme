@@ -35,8 +35,8 @@ public class PlayerStats : MonoBehaviour {
             counter++;
         }
         totalDamage = int.Parse(stats[0]);
-        curacion = int.Parse(stats[1]);
-        totalVida = int.Parse(stats[2]);
+        totalVida = int.Parse(stats[1]);
+        curacion = int.Parse(stats[2]);
 
         reader.Close();
     }
