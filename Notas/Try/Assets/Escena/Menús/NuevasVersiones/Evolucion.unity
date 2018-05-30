@@ -332,8 +332,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ConfirmarSeleccion
+      - m_Target: {fileID: 1331795144}
+        m_MethodName: ConfirmarEvolucion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1806,8 +1806,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: RemoveConfiguracion
+      - m_Target: {fileID: 1331795144}
+        m_MethodName: ReiniciarEvolucion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3256,6 +3256,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847800093}
+--- !u!114 &951682615 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1217978984}
+  m_Script: {fileID: 11500000, guid: 31845bbdf4e1cb24d8d2013ef27868f1, type: 3}
 --- !u!1 &959330588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,8 +3392,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3691,6 +3697,165 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1215242115}
+--- !u!1001 &1217978984
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 298.83847
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 118.57413
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6272796
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6272796
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359762908067916, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.6272796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969822519845130, guid: 0750edd079807e74b9bad9edbfa3540f, type: 2}
+      propertyPath: m_Name
+      value: SlotAux
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.stats.maxDamage
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.stats.maxCuracion
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.stats.maxVida
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.stats.damage
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.rareza
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.nivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.nivelMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394399146361054, guid: 0750edd079807e74b9bad9edbfa3540f,
+        type: 2}
+      propertyPath: slotInfo.itemGuardado.rango
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0750edd079807e74b9bad9edbfa3540f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1220405626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,33 +4278,9 @@ MonoBehaviour:
   inventory: {fileID: 184592046}
   monedero: {fileID: 713990176}
   baseDeDatos: {fileID: 11400000, guid: 5c2436d697ee09b479b9b7d5a232cedb, type: 2}
-  SlotInfoItemAEvolucionar: {fileID: 0}
-  Evolucion:
-    imagenItem: {fileID: 0}
-    identificador: 0
-    identificadorItemEvolucionado: 0
-    name: 
-    rareza: 0
-    nivel: 0
-    nivelMax: 0
-    rango: 0
-    expAcumulada: 0
-    dineroAlVender: 0
-    expProporcionada: 0
-    stats:
-      maxDamage: 0
-      maxCuracion: 0
-      maxVida: 0
-      damage: 0
-      curacion: 0
-      vida: 0
-      damageLevel: 0
-      curacionLevel: 0
-      vidaLevel: 0
-      damageBase: 0
-      curacionBase: 0
-      vidaBase: 0
-    tipoItem: 0
+  SlotItemAEvolucionar: {fileID: 0}
+  Evolucion: {fileID: 951682615}
+  defaultImagen: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   imagenItemAEvolucionar: {fileID: 1846892059}
   imagenEvolucion: {fileID: 978844109}
   atk: {fileID: 1226687648}
@@ -4856,8 +4997,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

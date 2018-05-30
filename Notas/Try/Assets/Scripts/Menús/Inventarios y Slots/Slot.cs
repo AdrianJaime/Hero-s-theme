@@ -204,7 +204,7 @@ public class Slot : MonoBehaviour
             if (slotInfo.itemGuardado.identificadorItemEvolucionado != -1)
             {
                 EvolucionMenu evolucionMenu = GameObject.Find("EvoluciónDeArmasPanel").GetComponent<EvolucionMenu>();
-                evolucionMenu.SlotInfoItemAEvolucionar = this;
+                evolucionMenu.SlotItemAEvolucionar = this;
                 evolucionMenu.EncontrarItemMejorado();
             }
         }
@@ -396,6 +396,8 @@ public class Slot : MonoBehaviour
     }
 
     //************************************************************
+
+    
 }
 
 
