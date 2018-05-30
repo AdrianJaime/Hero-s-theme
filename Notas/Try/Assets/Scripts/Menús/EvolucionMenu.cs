@@ -13,9 +13,8 @@ public class EvolucionMenu : MonoBehaviour {
 
     public Sprite defaultImagen;
     public Image imagenItemAEvolucionar, imagenEvolucion;
-    public Text atk, newAtk, curacion, newCuracion, vida, newVida, costeAMejorar, dineroMonedero;
-    public int  costeMejora;
-
+    public Text atk, newAtk, curacion, newCuracion, vida, newVida, dineroMonedero;
+    public int costeEvolucion;
 
     private void Update()
     {
@@ -24,6 +23,7 @@ public class EvolucionMenu : MonoBehaviour {
 
     public void ActualizarDatosEnSlots()
     {
+        dineroMonedero.text = monedero.monedasNormales.ToString();
         if (SlotItemAEvolucionar != null)
         {
             atk.text = SlotItemAEvolucionar.slotInfo.itemGuardado.stats.damage.ToString();
@@ -67,8 +67,12 @@ public class EvolucionMenu : MonoBehaviour {
 
     public void ConfirmarEvolucion()
     {
-        inventory.EncontrarSlot(SlotItemAEvolucionar.slotInfo.identificador).slotInfo.itemGuardado = Evolucion.slotInfo.itemGuardado;
-        inventory.EncontrarSlot(SlotItemAEvolucionar.slotInfo.identificador).ActualizarInterfaz();
-        ReiniciarEvolucion();
+        if (monedero.monedasNormales >= costeEvolucion)
+        {
+            monedero.EliminarMonedasNormales(costeEvolucion);
+            inventory.EncontrarSlot(SlotItemAEvolucionar.slotInfo.identificador).slotInfo.itemGuardado = Evolucion.slotInfo.itemGuardado;
+            inventory.EncontrarSlot(SlotItemAEvolucionar.slotInfo.identificador).ActualizarInterfaz();
+            ReiniciarEvolucion();
+        }
     }
 }

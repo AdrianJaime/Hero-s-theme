@@ -2708,7 +2708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "0000 \u20AC"
+  m_Text: "5000 \u20AC"
 --- !u!222 &722864834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4289,9 +4289,8 @@ MonoBehaviour:
   newCuracion: {fileID: 528946258}
   vida: {fileID: 1475564534}
   newVida: {fileID: 959330590}
-  costeAMejorar: {fileID: 722864833}
   dineroMonedero: {fileID: 489070853}
-  costeMejora: 0
+  costeEvolucion: 5000
 --- !u!114 &1331795145
 MonoBehaviour:
   m_ObjectHideFlags: 0
