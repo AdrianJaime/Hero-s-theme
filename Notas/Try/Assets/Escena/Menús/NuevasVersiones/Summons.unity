@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dineroMonedero: {fileID: 622484534}
   dineroBanner: {fileID: 129436916}
+  items: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   inventory: {fileID: 2129007496}
   monedero: {fileID: 974321794}
   costeDeSummon: 1
