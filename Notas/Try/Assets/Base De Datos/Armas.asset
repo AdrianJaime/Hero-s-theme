@@ -17,7 +17,7 @@ MonoBehaviour:
     name: Cloud breaker
     rareza: 3
     nivel: 1
-    nivelMax: 0
+    nivelMax: 60
     expAcumulada: 0
     dineroAlVender: 1000
     expProporcionada: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   - imagenItem: {fileID: 21300008, guid: 3f3032f6c9be5434e9aba75e9f7126e6, type: 3}
     identificador: 2
     name: Last spell
-    rareza: 4
+    rareza: 3
     nivel: 1
     nivelMax: 80
     expAcumulada: 0
@@ -80,27 +80,96 @@ MonoBehaviour:
       damageBase: 54
       curacionBase: 3
       vidaBase: 81
-    tipoItem: 3
-  - imagenItem: {fileID: 21300006, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    tipoItem: 0
+  - imagenItem: {fileID: 21300012, guid: 3f3032f6c9be5434e9aba75e9f7126e6, type: 3}
     identificador: 4
-    name: Polla
-    rareza: 5
-    nivel: 0
-    nivelMax: 120
+    name: Wrath Saber
+    rareza: 4
+    nivel: 1
+    nivelMax: 80
     expAcumulada: 0
     dineroAlVender: 500
     expProporcionada: 2500
     stats:
-      maxDamage: 100
-      maxCuracion: 100
-      maxVida: 100
+      maxDamage: 453
+      maxCuracion: 103
+      maxVida: 532
       damage: 0
       curacion: 0
       vida: 0
-      damageLevel: 1
-      curacionLevel: 1
-      vidaLevel: 1
-      damageBase: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 234
+      curacionBase: 45
+      vidaBase: 221
+    tipoItem: 0
+  - imagenItem: {fileID: 21300010, guid: 3f3032f6c9be5434e9aba75e9f7126e6, type: 3}
+    identificador: 5
+    name: The one
+    rareza: 1
+    nivel: 1
+    nivelMax: 40
+    expAcumulada: 0
+    dineroAlVender: 500
+    expProporcionada: 2500
+    stats:
+      maxDamage: 1
+      maxCuracion: 1
+      maxVida: 1
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 2
+      curacionBase: 2
+      vidaBase: 1
+    tipoItem: 0
+  - imagenItem: {fileID: 21300020, guid: 3f3032f6c9be5434e9aba75e9f7126e6, type: 3}
+    identificador: 6
+    name: The end
+    rareza: 4
+    nivel: 1
+    nivelMax: 100
+    expAcumulada: 0
+    dineroAlVender: 500
+    expProporcionada: 2500
+    stats:
+      maxDamage: 999
+      maxCuracion: 0
+      maxVida: 666
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 333
       curacionBase: 0
-      vidaBase: 0
-    tipoItem: 1
+      vidaBase: 333
+    tipoItem: 0
+  - imagenItem: {fileID: 21300028, guid: 3f3032f6c9be5434e9aba75e9f7126e6, type: 3}
+    identificador: 7
+    name: Sword
+    rareza: 1
+    nivel: 1
+    nivelMax: 40
+    expAcumulada: 0
+    dineroAlVender: 500
+    expProporcionada: 2500
+    stats:
+      maxDamage: 105
+      maxCuracion: 3
+      maxVida: 124
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 21
+      curacionBase: 0
+      vidaBase: 32
+    tipoItem: 0
