@@ -135,34 +135,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Windows_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2947
-        width: 1116
-        height: 840
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_1
-      rect:
-        serializedVersion: 2
-        x: 1218
-        y: 2947
-        width: 1051
-        height: 840
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Windows_2
       rect:
         serializedVersion: 2
@@ -219,20 +191,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Windows_6
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 2107
-        width: 557
-        height: 749
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Windows_7
       rect:
         serializedVersion: 2
@@ -270,21 +228,7 @@ TextureImporter:
         height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 179, y: 51, z: 170, w: 34}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_10
-      rect:
-        serializedVersion: 2
-        x: 2766
-        y: 2312
-        width: 622
-        height: 522
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 171, y: 42, z: 173, w: 24}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -317,48 +261,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Windows_13
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 966
-        width: 672
-        height: 963
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_14
-      rect:
-        serializedVersion: 2
-        x: 933
-        y: 966
-        width: 673
-        height: 963
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_15
-      rect:
-        serializedVersion: 2
-        x: 1782
-        y: 966
-        width: 672
-        height: 963
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Windows_16
       rect:
         serializedVersion: 2
@@ -380,20 +282,6 @@ TextureImporter:
         y: 1758
         width: 326
         height: 223
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_18
-      rect:
-        serializedVersion: 2
-        x: 2659
-        y: 1023
-        width: 617
-        height: 655
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,34 +478,6 @@ TextureImporter:
         y: 997
         width: 135
         height: 126
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_33
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 73
-        width: 635
-        height: 786
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Windows_34
-      rect:
-        serializedVersion: 2
-        x: 928
-        y: 73
-        width: 635
-        height: 786
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
