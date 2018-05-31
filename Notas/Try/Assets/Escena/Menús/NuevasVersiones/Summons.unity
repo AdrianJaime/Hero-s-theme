@@ -152,6 +152,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1329026258352336, guid: 17dbbe87f0f30334693662be8d46bba0, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17dbbe87f0f30334693662be8d46bba0, type: 2}
   m_IsPrefabParent: 0
@@ -165,7 +169,7 @@ GameObject:
   - component: {fileID: 129436915}
   - component: {fileID: 129436917}
   - component: {fileID: 129436916}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Dinero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +243,7 @@ GameObject:
   - component: {fileID: 139564883}
   - component: {fileID: 139564885}
   - component: {fileID: 139564884}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +323,7 @@ GameObject:
   - component: {fileID: 331905361}
   - component: {fileID: 331905360}
   - component: {fileID: 331905359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PanelDeSummon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +416,7 @@ GameObject:
   - component: {fileID: 580547431}
   - component: {fileID: 580547430}
   - component: {fileID: 580547429}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,8 +468,8 @@ Canvas:
   m_GameObject: {fileID: 580547428}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 645039441}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -474,7 +478,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -48
   m_TargetDisplay: 0
 --- !u!224 &580547432
 RectTransform:
@@ -489,6 +493,7 @@ RectTransform:
   - {fileID: 331905358}
   - {fileID: 2129007495}
   - {fileID: 974321793}
+  - {fileID: 1133317380}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -507,7 +512,7 @@ GameObject:
   - component: {fileID: 622484533}
   - component: {fileID: 622484535}
   - component: {fileID: 622484534}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +667,7 @@ GameObject:
   - component: {fileID: 717417145}
   - component: {fileID: 717417147}
   - component: {fileID: 717417146}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +741,7 @@ GameObject:
   - component: {fileID: 863255504}
   - component: {fileID: 863255506}
   - component: {fileID: 863255505}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PanelMonedero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +851,7 @@ GameObject:
   - component: {fileID: 905657472}
   - component: {fileID: 905657474}
   - component: {fileID: 905657473}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Precio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +994,7 @@ GameObject:
   - component: {fileID: 975067811}
   - component: {fileID: 975067810}
   - component: {fileID: 975067809}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SUMMON X1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1115,7 @@ GameObject:
   - component: {fileID: 1079242342}
   - component: {fileID: 1079242344}
   - component: {fileID: 1079242343}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Nombre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,6 +1174,111 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1079242341}
+--- !u!1001 &1133317379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 580547432}
+    m_Modifications:
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 230.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.700005
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &1133317380 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224056899225890290, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1133317379}
 --- !u!1 &1174347115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1289,7 @@ GameObject:
   - component: {fileID: 1174347116}
   - component: {fileID: 1174347118}
   - component: {fileID: 1174347117}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1364,7 @@ GameObject:
   - component: {fileID: 1238332969}
   - component: {fileID: 1238332968}
   - component: {fileID: 1238332967}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SUMMON X5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,6 +1602,26 @@ Prefab:
       propertyPath: isOnSellMenu
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1876373852739524, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967311835077794, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452099684992638, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081193207810630, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070626512705008, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0
@@ -1505,7 +1635,7 @@ GameObject:
   - component: {fileID: 1572220972}
   - component: {fileID: 1572220974}
   - component: {fileID: 1572220973}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1835,7 @@ GameObject:
   - component: {fileID: 2143070722}
   - component: {fileID: 2143070724}
   - component: {fileID: 2143070723}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ImagenDelBanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
