@@ -197,6 +197,21 @@ public class Slot : MonoBehaviour
             panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
+<<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Slot.cs
+=======
+    public void PulsarEnEvolucion()
+    {
+        if (inventory.isOnEvolutionMenu)
+        {
+            if (slotInfo.itemGuardado.identificadorItemEvolucionado != -1)
+            {
+                EvolucionMenu evolucionMenu = GameObject.Find("EvoluciónDeArmasPanel").GetComponent<EvolucionMenu>();
+                evolucionMenu.SlotItemAEvolucionar = this;
+                evolucionMenu.EncontrarItemMejorado();
+            }
+        }
+    }
+>>>>>>> parent of 837c9ce... Bastantes cambios:Notas/Try/Assets/Scripts/Menús/Inventarios y Slots/Slot.cs
     public void PulsarEnMejorarDeEquipo()
     {
         if (inventory.isOnMejoraMenu)
