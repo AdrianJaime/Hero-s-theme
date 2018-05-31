@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         }
         if (isOnMejoraMenu)
             SetAllItemsNoSeleccionadosComoMejora();
-        if (isOnRecomensaMenu)
+        if (isOnRecomensaMenu||isOnSummonMenu)
             this.gameObject.transform.localScale= new Vector3(0,0,0);
     }
 

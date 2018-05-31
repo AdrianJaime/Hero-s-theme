@@ -1758,6 +1758,11 @@ Prefab:
       propertyPath: isOnListMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114089022958042744, guid: 7c7cce643bc43df4da940247e248ebb6,
+        type: 2}
+      propertyPath: panelInventrio
+      value: 
+      objectReference: {fileID: 2127881301}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c7cce643bc43df4da940247e248ebb6, type: 2}
   m_IsPrefabParent: 0
@@ -2188,6 +2193,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2088571724}
+--- !u!224 &2127881301 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224414348162445294, guid: 7c7cce643bc43df4da940247e248ebb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1745552115}
 --- !u!1 &2144511820
 GameObject:
   m_ObjectHideFlags: 0

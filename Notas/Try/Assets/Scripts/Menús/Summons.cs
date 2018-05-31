@@ -11,17 +11,21 @@ public class Summons : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
+    public GameObject panelStats;
+    public PanelStats playerStatsS;
+
     public int costeDeSummon;
 
     private void Start()
     {
+        
         dineroBanner.text = costeDeSummon.ToString()+ " €";
         dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
 
     }
     public void Summon()
     {
-        if (inventory.EspaciosVacios() >= 1)
+        if (inventory.EspaciosVacios() >= 1 && !playerStatsS.activo)
         {
             if (monedero.monedasNormales >= costeDeSummon)
             {
@@ -47,6 +51,20 @@ public class Summons : MonoBehaviour {
                 while (items.FindItem(a).rareza != rarity)
                     a = Random.Range(1, 4);
                 inventory.AñadirItem(a);
+
+
+                PanelStats aux = panelStats.GetComponent<PanelStats>();
+                panelStats.SetActive(true);
+                Item itemGuardado = items.FindItem(a);
+                aux.activo = true;
+
+                aux.atk.text = itemGuardado.stats.damage.ToString();
+                aux.vida.text = itemGuardado.stats.vida.ToString();
+                aux.curacion.text = itemGuardado.stats.curacion.ToString();
+
+                aux.nombreItem.text = itemGuardado.name.ToString();
+
+                aux.imagenITEM.sprite = itemGuardado.imagenItem;
             }
            
         }
