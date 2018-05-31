@@ -198,6 +198,7 @@ public class Slot : MonoBehaviour
     }
 
 <<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Slot.cs
+<<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Slot.cs
 =======
     public void PulsarEnEvolucion()
     {
@@ -212,6 +213,8 @@ public class Slot : MonoBehaviour
         }
     }
 >>>>>>> parent of 837c9ce... Bastantes cambios:Notas/Try/Assets/Scripts/Menús/Inventarios y Slots/Slot.cs
+=======
+>>>>>>> parent of f8664d2... Merge branch 'Branca-de-seguridad' into General:Notas/Try/Assets/Scripts/Inventarios y Slots/Slot.cs
     public void PulsarEnMejorarDeEquipo()
     {
         if (inventory.isOnMejoraMenu)

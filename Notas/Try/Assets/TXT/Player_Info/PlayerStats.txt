@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 281
 350
 80
@@ -7,3 +8,8 @@
 46
 4
 >>>>>>> parent of 837c9ce... Bastantes cambios
+=======
+281
+350
+80
+>>>>>>> parent of f8664d2... Merge branch 'Branca-de-seguridad' into General
