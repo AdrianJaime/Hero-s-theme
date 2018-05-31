@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
-
+    public GameObject panelDeStats;
     public GameObject panelConfirmarVenta;
     public PanelConfirmacionVenta panelConfirmacionVenta;
 
@@ -32,6 +32,10 @@ public class Slot : MonoBehaviour
             panelConfirmacionVenta = panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>();
             //panelConfirmarVenta.SetActive(false); //error no lo desactiva
 
+        }
+        if (inventory.isOnListMenu)
+        {
+            panelDeStats = GameObject.Find("PanelStats");
         }
     }
     private void Start()
@@ -88,7 +92,7 @@ public class Slot : MonoBehaviour
             nivel.text = slotInfo.itemGuardado.nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
-            rango.text = slotInfo.itemGuardado.rareza.ToString();//Rango
+            rango.text = slotInfo.itemGuardado.rango.ToString();//Rango
             rango.gameObject.SetActive(true);
 
         }
@@ -197,8 +201,6 @@ public class Slot : MonoBehaviour
             panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>().MostrarPanel(true);
     }
 
-<<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Slot.cs
-=======
     public void PulsarEnEvolucion()
     {
         if (inventory.isOnEvolutionMenu)
@@ -211,7 +213,31 @@ public class Slot : MonoBehaviour
             }
         }
     }
->>>>>>> parent of 837c9ce... Bastantes cambios:Notas/Try/Assets/Scripts/Menús/Inventarios y Slots/Slot.cs
+
+    public void ClickOnListMenu()
+    {
+        if (inventory.isOnListMenu)
+        {
+            PanelStats aux = panelDeStats.GetComponent<PanelStats>();
+            if (!aux.activo)
+            {
+                panelDeStats.SetActive(true);
+                aux.activo = true;
+
+                aux.atk.text = slotInfo.itemGuardado.stats.damage.ToString();
+                aux.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
+                aux.curacion.text = slotInfo.itemGuardado.stats.curacion.ToString();
+
+                aux.nombreItem.text = slotInfo.itemGuardado.name.ToString();
+
+                aux.imagenITEM.sprite = slotInfo.itemGuardado.imagenItem;
+            }
+  
+
+        }
+
+    }
+
     public void PulsarEnMejorarDeEquipo()
     {
         if (inventory.isOnMejoraMenu)
@@ -387,19 +413,20 @@ public class Slot : MonoBehaviour
             case (5):
                 slotInfo.nivelMax = (slotInfo.itemGuardado.expAcumulada >= 20000);
                 break;
-              
         }
 
     }
 
     public void SetValueOfStats()
     {
-        slotInfo.itemGuardado.stats.damage = Mathf.RoundToInt(slotInfo.itemGuardado.stats.damageBase + slotInfo.itemGuardado.stats.damageLevel * slotInfo.itemGuardado.nivel);
-        slotInfo.itemGuardado.stats.curacion = Mathf.RoundToInt(slotInfo.itemGuardado.stats.curacionBase + slotInfo.itemGuardado.stats.curacionLevel * slotInfo.itemGuardado.nivel);
-        slotInfo.itemGuardado.stats.vida = Mathf.RoundToInt(slotInfo.itemGuardado.stats.vidaBase + slotInfo.itemGuardado.stats.vidaLevel * slotInfo.itemGuardado.nivel);
+        slotInfo.itemGuardado.stats.damage = slotInfo.itemGuardado.stats.damageBase + slotInfo.itemGuardado.stats.damageLevel * slotInfo.itemGuardado.nivel;
+        slotInfo.itemGuardado.stats.curacion = slotInfo.itemGuardado.stats.curacionBase + slotInfo.itemGuardado.stats.curacionLevel * slotInfo.itemGuardado.nivel;
+        slotInfo.itemGuardado.stats.vida = slotInfo.itemGuardado.stats.vidaBase + slotInfo.itemGuardado.stats.vidaLevel * slotInfo.itemGuardado.nivel;
     }
 
     //************************************************************
+
+    
 }
 
 

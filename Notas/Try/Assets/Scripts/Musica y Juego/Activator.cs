@@ -46,9 +46,7 @@ public class Activator : MonoBehaviour {
                     PuntosDeJuegoScript.PuntosTotales += good();
                     InfoText.text = "Good!";
                 }
-               GameObject clone = Instantiate<GameObject>(hitPlayer,this.gameObject.transform.position,new Quaternion ());
-              Destroy(clone, 1.0f);
-
+                Instantiate<GameObject>(hitPlayer,this.gameObject.transform.position,new Quaternion ());
             }
             else
             {

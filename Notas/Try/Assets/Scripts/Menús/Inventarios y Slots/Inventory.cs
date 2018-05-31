@@ -21,10 +21,8 @@ public class Inventory : MonoBehaviour
     public bool isOnSummonMenu = false;
     public bool isOnMejoraMenu = false;
     public bool isOnRecomensaMenu = false;
-<<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Inventory.cs
-=======
     public bool isOnEvolutionMenu = false;
->>>>>>> parent of 837c9ce... Bastantes cambios:Notas/Try/Assets/Scripts/Menús/Inventarios y Slots/Inventory.cs
+    public bool isOnListMenu = false;
 
     private void Awake()
     {

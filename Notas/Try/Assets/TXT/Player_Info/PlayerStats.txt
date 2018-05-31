@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-281
-350
-80
-=======
-205
-46
-4
->>>>>>> parent of 837c9ce... Bastantes cambios
+0
+0
+0
