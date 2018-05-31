@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class EnemySpawnController : MonoBehaviour {
 
     public BarraVidaEnemigo vidaEnemigo;
-    public BarraVida vidaPlayer;    
-    
+    public BarraVida vidaPlayer;
+    public ControladorRescompensa controladorRescompensa;
+
     [SerializeField]
     public EnemyCode enemyCode;
     public GameObject enemyPrefab;     // The enemy prefab to be spawned.
     public BaseDeDatosEnemigos baseDeDatosEnemigos;
     public Transform panelEnemy;
-    public int primerIdentificadorEnemigo,contadorDeDerrotas;
+    public int primerIdentificadorEnemigo;
 
     public Enemy actualEnemy;
 
@@ -21,7 +22,7 @@ public class EnemySpawnController : MonoBehaviour {
 
     void Start()
     {
-        contadorDeDerrotas = 0;
+        
         primerIdentificadorEnemigo = 0;
         SetFirtsEnemy();
         vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
@@ -38,7 +39,7 @@ public class EnemySpawnController : MonoBehaviour {
 
         GameObject enemy = Instantiate<GameObject>(enemyPrefab, panelEnemy);
         enemyCode = enemy.GetComponent<EnemyCode>();
-        enemyCode.createEnemy(primerIdentificadorEnemigo);
+        enemyCode.CreateEnemy(primerIdentificadorEnemigo);
         enemyCode.baseDeDatosEnemigos = baseDeDatosEnemigos;
         EnemyInfo newEnemyInfo = enemyCode.enemyInfo;
         enemyInfoList.Add(newEnemyInfo);
@@ -47,6 +48,7 @@ public class EnemySpawnController : MonoBehaviour {
         actualEnemy.stats.damage = enemyCode.enemyInfo.damage;
     
         enemyCode.ActualizarInterfazEnemy();
+        
      
     }
 
@@ -59,7 +61,7 @@ public class EnemySpawnController : MonoBehaviour {
         if (baseDeDatosEnemigos.FindEnemy(primerIdentificadorEnemigo) != null) {
             GameObject enemy = Instantiate<GameObject>(enemyPrefab, panelEnemy);
             enemyCode = enemy.GetComponent<EnemyCode>();
-            enemyCode.createEnemy(primerIdentificadorEnemigo);
+            enemyCode.CreateEnemy(primerIdentificadorEnemigo);
             enemyCode.baseDeDatosEnemigos = baseDeDatosEnemigos;
             EnemyInfo newEnemyInfo = enemyCode.enemyInfo;
             enemyInfoList.Add(newEnemyInfo);
@@ -67,7 +69,7 @@ public class EnemySpawnController : MonoBehaviour {
             actualEnemy.stats.vidaMax = enemyCode.enemyInfo.vida;
             actualEnemy.stats.damage = enemyCode.enemyInfo.damage;
 
-            enemyCode.ActualizarInterfazEnemy(); 
+            enemyCode.ActualizarInterfazEnemy();
         }
         
 
@@ -78,7 +80,8 @@ public class EnemySpawnController : MonoBehaviour {
     {
         if (actualEnemy.stats.vidaMax <= 0)
         {
-            contadorDeDerrotas++;
+            controladorRescompensa.numeroTotalEnemigos--;
+            controladorRescompensa.contadorDeDerrotas++;
             actualEnemy=new Enemy();
             SpawnEnemy();
             vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;

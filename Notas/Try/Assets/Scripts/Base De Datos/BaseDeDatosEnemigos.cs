@@ -35,5 +35,16 @@ public class BaseDeDatosEnemigos : ScriptableObject
         }
         return null;
     }
+    public int SizeBaseDeDatosEnemy()
+    {
+        int aux = 0;
+        foreach (Enemy enemy in enemys)
+        {
+            aux++;
+
+        }
+        return aux;
+
+    }
 
 }

@@ -584,11 +584,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d07b40f024aba43b798cb93b2c08ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animacionSummon: {fileID: 1721554122440208, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+    type: 2}
+  particulasColor: {fileID: 198519577657688030, guid: df85b4bf1492fa64eaa9bc7a6b25b2fa,
+    type: 2}
   dineroMonedero: {fileID: 622484534}
   dineroBanner: {fileID: 129436916}
   items: {fileID: 11400000, guid: dede2b77fa99cdc4bb2dade20cea7725, type: 2}
   inventory: {fileID: 2129007496}
   monedero: {fileID: 974321794}
+  "tiempoAnimaci\xF3n": 4
+  "lugarAnimaci\xF3n": {fileID: 2143070722}
   panelStats: {fileID: 1527713937}
   playerStatsS: {fileID: 1527713939}
   costeDeSummon: 1

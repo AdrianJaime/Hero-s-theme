@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/Pruebas de inventario.unity"
     guid: 9c6fb0a1e57adbe4194a28f0b47c39c7
   - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Lista.unity"
+    guid: 75f14807fb2e52f4294d8976257a6927
+  - enabled: 1
     path: "Assets/Escena/Men\xFAs/Arranque.unity"
     guid: 7a0534734380691499b12f8757492709
   - enabled: 1

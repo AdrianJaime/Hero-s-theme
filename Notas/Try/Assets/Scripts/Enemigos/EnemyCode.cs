@@ -10,7 +10,7 @@ public class EnemyCode : MonoBehaviour {
     public BaseDeDatosEnemigos baseDeDatosEnemigos;
     public Image representacionEnemy;
 
-    public void createEnemy(int _identificadoEnemy)
+    public void CreateEnemy(int _identificadoEnemy)
     {
         enemyInfo = new EnemyInfo();
         enemyInfo.identificadorEnemy = _identificadoEnemy;

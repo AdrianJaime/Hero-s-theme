@@ -8,6 +8,8 @@ public class Summons : MonoBehaviour {
 
     public GameObject animacionSummon;
 
+    public ParticleSystem particulasColor;
+
     public Text dineroMonedero;
     public Text dineroBanner;
     public BaseDeDatos items;
@@ -15,7 +17,7 @@ public class Summons : MonoBehaviour {
     public Monedero monedero;
 
     public float tiempoAnimación=5;
-    public float nextAnimationTime=0;
+
     public Transform lugarAnimación;
 
     public GameObject panelStats;
@@ -39,38 +41,51 @@ public class Summons : MonoBehaviour {
                 int a = Random.Range(0, 100);
                 monedero.EliminarMonedasNormales(costeDeSummon);
                 dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
-                
+
                 int rarity;
                 if (a <= 90)
                 {
                     if (a <= 80)
                     {
                         if (a <= 60)
+                        {
                             rarity = 1;
+                            particulasColor.startColor = new Color(255, 0, 0);
+                        }
+
                         else
+                        {
                             rarity = 2;
+                            particulasColor.startColor = new Color(0, 0, 255);
+                        }
                     }
-                    else rarity = 3;
+                    else
+                    {
+                        rarity = 3;
+                        particulasColor.startColor = new Color(0, 255, 0);
+                        }
                 }
                 else
+                {
                     rarity = 4;
+                    particulasColor.startColor = new Color(0, 0, 0);
+                }
                 a = Random.Range(1, 17);
                 while (items.FindItem(a).rareza != rarity)
                     a = Random.Range(1, 17);
+
                 SlotInfo al = inventory.SlotAccesible(a);
                 inventory.AñadirItem(a);
 
                 //***************************************************   Animación Del summon
-                while (Time.time - nextAnimationTime <= tiempoAnimación)
-                {
-                    nextAnimationTime = Time.time;
-                }
-
-                Instantiate<GameObject>(animacionSummon, lugarAnimación.position, new Quaternion());
+                GameObject clone = Instantiate<GameObject>(animacionSummon, lugarAnimación.position, new Quaternion());
+                Destroy(clone, tiempoAnimación);
                 //***************************************************
-
+                
                 PanelStats aux = panelStats.GetComponent<PanelStats>();
-                panelStats.SetActive(true);
+                StartCoroutine(Wait());
+                Wait();
+                
                 aux.activo = true;
 
                 aux.atk.text = al.itemGuardado.stats.damage.ToString();
@@ -94,5 +109,15 @@ public class Summons : MonoBehaviour {
                 Summon();
             }
         }
+    }
+
+
+    IEnumerator Wait()
+    {
+
+
+    yield return new WaitForSeconds(tiempoAnimación);
+    panelStats.SetActive(true);
+
     }
 }

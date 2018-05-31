@@ -12,18 +12,13 @@ MonoBehaviour:
   m_Name: Enemigos
   m_EditorClassIdentifier: 
   enemys:
-  - image: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
+  - image: {fileID: 0}
     stats:
-      vidaMax: 10
-      damage: 1
+      vidaMax: 47
+      damage: 0
     identificador: 0
-  - image: {fileID: 21300000, guid: db9ac2a37a06bea4399e7d0f06279da6, type: 3}
+  - image: {fileID: 0}
     stats:
-      vidaMax: 13
-      damage: 1
-    identificador: 1
-  - image: {fileID: 21300000, guid: 8295002095a53ec4db27cd278a372099, type: 3}
-    stats:
-      vidaMax: 6
-      damage: 1
-    identificador: 2
+      vidaMax: 0
+      damage: 0
+    identificador: 0

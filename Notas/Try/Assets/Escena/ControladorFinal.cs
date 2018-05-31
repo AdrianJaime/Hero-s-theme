@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ControladorFinal : MonoBehaviour {
 
+
+ 
     public BarraVida BarraVidaScript;
     public bool Finish;
 
@@ -15,7 +17,8 @@ public class ControladorFinal : MonoBehaviour {
     {
        Finish= BarraVidaScript.NoSalud();
         if (Finish)
-        {            SceneManager.LoadScene("Game_Over");
+        {
+            SceneManager.LoadScene("Game_Over");
 
         }
     }

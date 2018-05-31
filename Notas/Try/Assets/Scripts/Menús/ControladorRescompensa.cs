@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 
 public class ControladorRescompensa : MonoBehaviour {
 
+    public AudioSource song;
+
     public int nivelRecompensa;//{1,5}
+    public BaseDeDatosEnemigos enemyDataBase;
+    public int numeroTotalEnemigos, contadorDeDerrotas;
 
-
-    public void Start()
+    public void Awake()
     {
-        WriteString();
+        contadorDeDerrotas = 0;
+        numeroTotalEnemigos = enemyDataBase.SizeBaseDeDatosEnemy();
+    }
+
+    private void Update()
+    {
+        if(numeroTotalEnemigos<=0||!song.isPlaying)
+            SceneManager.LoadScene("ScenaRecompensa");
     }
 
     [MenuItem("Tools/Write file")]
