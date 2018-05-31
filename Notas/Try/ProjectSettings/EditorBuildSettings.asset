@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: "Assets/Escena/Men\xFAs/Arranque.unity"
     guid: 7a0534734380691499b12f8757492709
   - enabled: 1
-    path: "Assets/Escena/Men\xFAs/Inventario.unity"
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Inventario.unity"
     guid: 54b8d03c010364442a361c28bf2d0f4d
   - enabled: 1
-    path: "Assets/Escena/Men\xFAs/Men\xFAPrincipal.unity"
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Men\xFAPrincipal.unity"
     guid: 240cee86936e1384a9dd6bb9715a015b
   - enabled: 1
     path: "Assets/Escena/Men\xFAs/New Game.unity"

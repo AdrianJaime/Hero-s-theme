@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class Summons : MonoBehaviour {
 
+
+    public GameObject animacionSummon;
+
     public Text dineroMonedero;
     public Text dineroBanner;
     public BaseDeDatos items;
     public Inventory inventory;
     public Monedero monedero;
+
+    public float tiempoAnimación=5;
+    public float nextAnimationTime=0;
+    public Transform lugarAnimación;
 
     public GameObject panelStats;
     public PanelStats playerStatsS;
@@ -52,7 +59,16 @@ public class Summons : MonoBehaviour {
                     a = Random.Range(1, 17);
                 SlotInfo al = inventory.SlotAccesible(a);
                 inventory.AñadirItem(a);
-                
+
+                //***************************************************   Animación Del summon
+                while (Time.time - nextAnimationTime <= tiempoAnimación)
+                {
+                    nextAnimationTime = Time.time;
+                }
+
+                Instantiate<GameObject>(animacionSummon, lugarAnimación.position, new Quaternion());
+                //***************************************************
+
                 PanelStats aux = panelStats.GetComponent<PanelStats>();
                 panelStats.SetActive(true);
                 aux.activo = true;
