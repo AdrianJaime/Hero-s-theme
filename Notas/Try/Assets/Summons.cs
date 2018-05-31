@@ -7,7 +7,7 @@ public class Summons : MonoBehaviour {
 
     public Text dineroMonedero;
     public Text dineroBanner;
-    public BaseDeDatos items;
+
     public Inventory inventory;
     public Monedero monedero;
 
@@ -25,30 +25,23 @@ public class Summons : MonoBehaviour {
         {
             if (monedero.monedasNormales >= costeDeSummon)
             {
-                int a = Random.Range(0, 100);
                 monedero.EliminarMonedasNormales(costeDeSummon);
                 dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
-                
-                int rarity;
+                int a = Random.Range(0, 100);
                 if (a <= 90)
                 {
                     if (a <= 80)
                     {
                         if (a <= 60)
-                            rarity = 1;
+                            inventory.AñadirItem(1);
                         else
-                            rarity = 2;
+                            inventory.AñadirItem(2);
                     }
-                    else rarity = 3;
+                    else inventory.AñadirItem(3);
                 }
                 else
-                    rarity = 4;
-                a = Random.Range(1, 4);
-                while (items.FindItem(a).rareza != rarity)
-                    a = Random.Range(1, 4);
-                inventory.AñadirItem(a);
+                    inventory.AñadirItem(4);
             }
-           
         }
     }
 
