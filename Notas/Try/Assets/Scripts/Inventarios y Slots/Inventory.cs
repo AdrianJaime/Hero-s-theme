@@ -22,12 +22,9 @@ public class Inventory : MonoBehaviour
     public bool isOnMejoraMenu = false;
     public bool isOnRecomensaMenu = false;
 <<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Inventory.cs
-<<<<<<< HEAD:Notas/Try/Assets/Scripts/Inventarios y Slots/Inventory.cs
 =======
     public bool isOnEvolutionMenu = false;
 >>>>>>> parent of 837c9ce... Bastantes cambios:Notas/Try/Assets/Scripts/Menús/Inventarios y Slots/Inventory.cs
-=======
->>>>>>> parent of f8664d2... Merge branch 'Branca-de-seguridad' into General:Notas/Try/Assets/Scripts/Inventarios y Slots/Inventory.cs
 
     private void Awake()
     {
