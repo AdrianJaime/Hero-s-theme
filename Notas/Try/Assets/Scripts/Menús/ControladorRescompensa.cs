@@ -22,8 +22,10 @@ public class ControladorRescompensa : MonoBehaviour {
 
     private void Update()
     {
-        if(numeroTotalEnemigos<=0||!song.isPlaying)
+        if (numeroTotalEnemigos <= 0 || !song.isPlaying) {
             SceneManager.LoadScene("ScenaRecompensa");
+            WriteString();
+        }
     }
 
     [MenuItem("Tools/Write file")]
