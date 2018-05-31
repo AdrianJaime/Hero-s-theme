@@ -326,12 +326,6 @@ public class Slot : MonoBehaviour
         slotInfo.itemGuardado.stats.damageLevel = (slotInfo.itemGuardado.stats.maxDamage - slotInfo.itemGuardado.stats.damageBase) / slotInfo.itemGuardado.nivelMax;
         slotInfo.itemGuardado.stats.curacionLevel = (slotInfo.itemGuardado.stats.maxCuracion - slotInfo.itemGuardado.stats.curacionBase) / slotInfo.itemGuardado.nivelMax;
         slotInfo.itemGuardado.stats.vidaLevel = (slotInfo.itemGuardado.stats.maxVida - slotInfo.itemGuardado.stats.vidaBase) / slotInfo.itemGuardado.nivelMax;
-        if (slotInfo.itemGuardado.stats.damageLevel == 0)
-            slotInfo.itemGuardado.stats.damageLevel = 1;
-        if (slotInfo.itemGuardado.stats.curacionLevel == 0)
-            slotInfo.itemGuardado.stats.curacionLevel = 1;
-        if (slotInfo.itemGuardado.stats.vidaLevel == 0)
-            slotInfo.itemGuardado.stats.vidaLevel = 1;
 
     }
 

@@ -60,9 +60,9 @@ public class Item
         identificadorItemEvolucionado = -1;
         name = "nada";
         rareza = 1;
-        nivel = 0;
+        nivel = 1;
         rango = 0;
-        expAcumulada = 0;
+        expAcumulada = 50;
         dineroAlVender = 0;
         imagenItem = null;
         stats.StatsAcero();

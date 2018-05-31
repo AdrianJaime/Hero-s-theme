@@ -47,24 +47,23 @@ public class Summons : MonoBehaviour {
                 }
                 else
                     rarity = 4;
-                a = Random.Range(1, 4);
+                a = Random.Range(1, 17);
                 while (items.FindItem(a).rareza != rarity)
-                    a = Random.Range(1, 4);
+                    a = Random.Range(1, 17);
+                SlotInfo al = inventory.SlotAccesible(a);
                 inventory.AñadirItem(a);
-
-
+                
                 PanelStats aux = panelStats.GetComponent<PanelStats>();
                 panelStats.SetActive(true);
-                Item itemGuardado = items.FindItem(a);
                 aux.activo = true;
 
-                aux.atk.text = itemGuardado.stats.damage.ToString();
-                aux.vida.text = itemGuardado.stats.vida.ToString();
-                aux.curacion.text = itemGuardado.stats.curacion.ToString();
+                aux.atk.text = al.itemGuardado.stats.damage.ToString();
+                aux.vida.text = al.itemGuardado.stats.vida.ToString();
+                aux.curacion.text = al.itemGuardado.stats.curacion.ToString();
 
-                aux.nombreItem.text = itemGuardado.name.ToString();
+                aux.nombreItem.text = al.itemGuardado.name.ToString();
 
-                aux.imagenITEM.sprite = itemGuardado.imagenItem;
+                aux.imagenITEM.sprite = al.itemGuardado.imagenItem;
             }
            
         }

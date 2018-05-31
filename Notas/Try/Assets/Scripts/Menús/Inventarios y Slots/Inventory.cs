@@ -102,7 +102,7 @@ public class Inventory : MonoBehaviour
         return panelInventrio.GetChild(_identificador).GetComponent<Slot>(); //getchild lo que hace es buscar en el panale de inventario el componente con el identificador, hijo del panel. En este caso tanto el identificador del slot como idenificador hijo concuerdan por lo que de puta madre.Delvolviendo el slot
     }
 
-    private SlotInfo SlotAccesible(int _identificadorItem)
+    public SlotInfo SlotAccesible(int _identificadorItem)
     {
         foreach (SlotInfo slotinfo in slotInfoList) //encntrar un slot con el donde se guarden el mismo equipo
         {
