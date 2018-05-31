@@ -8,6 +8,8 @@ public class Item
     public Sprite imagenItem; //Imagen que representa al Item
 
     public int identificador; //DNI del arma;
+    public int identificadorItemEvolucionado;//Si es -1 no tiene evo
+
     public string name;//Nombre
     public int rareza;//del 0 al 4;
     public int nivel;//Asignación del calculo hecho a partir de la experiencia acumulada
@@ -54,6 +56,7 @@ public class Item
     public void ItemDefault()
     {
         identificador = -1;
+        identificadorItemEvolucionado = -1;
         name = "nada";
         rareza = 1;
         nivel = 0;

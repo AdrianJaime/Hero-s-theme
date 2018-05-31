@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b047313e9dbf0944c9755a5faefbb1f5, type: 3}
+  m_Name: Armas
+  m_EditorClassIdentifier: 
+  items:
+  - imagenItem: {fileID: 21300000, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    identificador: 1
+    identificadorItemEvolucionado: 0
+    name: 
+    rareza: 1
+    nivel: 0
+    nivelMax: 40
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 100
+    expProporcionada: 500
+    stats:
+      maxDamage: 100
+      maxCuracion: 100
+      maxVida: 100
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 2
+      curacionLevel: 2
+      vidaLevel: 2
+      damageBase: 0
+      curacionBase: 0
+      vidaBase: 0
+    tipoItem: 0
+  - imagenItem: {fileID: 21300002, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    identificador: 2
+    identificadorItemEvolucionado: 0
+    name: nada
+    rareza: 2
+    nivel: 0
+    nivelMax: 60
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 200
+    expProporcionada: 1000
+    stats:
+      maxDamage: 215
+      maxCuracion: 385
+      maxVida: 100
+      damage: 201
+      curacion: 30
+      vida: 0
+      damageLevel: 1
+      curacionLevel: 5
+      vidaLevel: 1
+      damageBase: 201
+      curacionBase: 30
+      vidaBase: 0
+    tipoItem: 2
+  - imagenItem: {fileID: 21300004, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    identificador: 3
+    identificadorItemEvolucionado: 0
+    name: Polla
+    rareza: 3
+    nivel: 0
+    nivelMax: 80
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 300
+    expProporcionada: 1500
+    stats:
+      maxDamage: 1000
+      maxCuracion: 20
+      maxVida: 200
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 12
+      curacionLevel: 1
+      vidaLevel: 2
+      damageBase: 0
+      curacionBase: 0
+      vidaBase: 0
+    tipoItem: 3
+  - imagenItem: {fileID: 21300006, guid: 18903790500b4be4c8725f6d84b9554e, type: 3}
+    identificador: 4
+    identificadorItemEvolucionado: 0
+    name: Polla
+    rareza: 4
+    nivel: 0
+    nivelMax: 120
+    rango: 0
+    expAcumulada: 0
+    dineroAlVender: 500
+    expProporcionada: 2500
+    stats:
+      maxDamage: 100
+      maxCuracion: 100
+      maxVida: 100
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 1
+      curacionLevel: 1
+      vidaLevel: 1
+      damageBase: 0
+      curacionBase: 0
+      vidaBase: 0
+    tipoItem: 1
