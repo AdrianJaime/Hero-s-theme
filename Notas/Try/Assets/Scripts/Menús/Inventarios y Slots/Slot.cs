@@ -13,7 +13,7 @@ public class Slot : MonoBehaviour
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
-
+    public GameObject panelDeStats;
     public GameObject panelConfirmarVenta;
     public PanelConfirmacionVenta panelConfirmacionVenta;
 
@@ -32,6 +32,10 @@ public class Slot : MonoBehaviour
             panelConfirmacionVenta = panelConfirmarVenta.GetComponent<PanelConfirmacionVenta>();
             //panelConfirmarVenta.SetActive(false); //error no lo desactiva
 
+        }
+        if (inventory.isOnListMenu)
+        {
+            panelDeStats = GameObject.Find("PanelStats");
         }
     }
     private void Start()
@@ -209,6 +213,31 @@ public class Slot : MonoBehaviour
             }
         }
     }
+
+    public void ClickOnListMenu()
+    {
+        if (inventory.isOnListMenu)
+        {
+            PanelStats aux = panelDeStats.GetComponent<PanelStats>();
+            if (!aux.activo)
+            {
+                panelDeStats.SetActive(true);
+                aux.activo = true;
+
+                aux.atk.text = slotInfo.itemGuardado.stats.damage.ToString();
+                aux.vida.text = slotInfo.itemGuardado.stats.vida.ToString();
+                aux.curacion.text = slotInfo.itemGuardado.stats.curacion.ToString();
+
+                aux.nombreItem.text = slotInfo.itemGuardado.name.ToString();
+
+                aux.imagenITEM.sprite = slotInfo.itemGuardado.imagenItem;
+            }
+  
+
+        }
+
+    }
+
     public void PulsarEnMejorarDeEquipo()
     {
         if (inventory.isOnMejoraMenu)

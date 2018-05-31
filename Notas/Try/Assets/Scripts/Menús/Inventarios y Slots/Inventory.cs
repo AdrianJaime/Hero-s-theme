@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
     public bool isOnMejoraMenu = false;
     public bool isOnRecomensaMenu = false;
     public bool isOnEvolutionMenu = false;
+    public bool isOnListMenu = false;
 
     private void Awake()
     {
