@@ -2728,7 +2728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   song: {fileID: 1957316781}
-  nivelRecompensa: 3
+  nivelRecompensa: 1
   enemyDataBase: {fileID: 11400000, guid: 25a577dff0d5cea4c916cd0f16738912, type: 2}
   numeroTotalEnemigos: 0
   contadorDeDerrotas: 0

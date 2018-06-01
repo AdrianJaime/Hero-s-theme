@@ -40,7 +40,6 @@ public class ControladorRescompensa : MonoBehaviour {
         writer.WriteLine(nivelRecompensa);
         writer.WriteLine(contadorDeDerrotas);
 
-
         writer.Close();
     }
 }

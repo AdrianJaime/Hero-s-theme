@@ -10,7 +10,7 @@ public class Recompensas : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
-    public int nivelRecompensa, enemyDefeated;//{1,5}
+    public int nivelRecompensa, enemyDefeated, maxEnemyDefeated;//{1,5}
 
     //Nivel de enemigos abatados en la mision
 
@@ -21,7 +21,7 @@ public class Recompensas : MonoBehaviour {
 
 
 
-    private void Start()
+    private void Awake()
     {
         panelItemRecibido.SetActive(false);
         ReadString();
@@ -99,7 +99,7 @@ public class Recompensas : MonoBehaviour {
     {
         string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";
 
-        string[] datos = new string[2];
+        string[] datos = new string[3];
         string line;
         int counter = 0;
 
@@ -111,7 +111,6 @@ public class Recompensas : MonoBehaviour {
         }
         nivelRecompensa = int.Parse(datos[0]);
         enemyDefeated = int.Parse(datos[1]);
-
 
         reader.Close();
     }
