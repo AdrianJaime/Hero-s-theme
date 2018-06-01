@@ -10,7 +10,7 @@ public class Recompensas : MonoBehaviour {
     public Inventory inventory;
     public Monedero monedero;
 
-    public int nivelRecompensa;//{1,5}
+    public int nivelRecompensa, enemyDefeated;//{1,5}
 
     //Nivel de enemigos abatados en la mision
 
@@ -37,28 +37,28 @@ public class Recompensas : MonoBehaviour {
         {
             case 1:
                 dineroGanado = 50 + Random.Range(0, 101);
-                probabilidadDeItem = Random.Range(0, 40) -nivelRecompensa*10;
+                probabilidadDeItem = Random.Range(0, 40 - enemyDefeated * 10) ;
                 monedero.monedasNormales += dineroGanado;
                 break;
             case 2:
                 dineroGanado = 100+ Random.Range(0, 201);
-                probabilidadDeItem = Random.Range(0, 60) - nivelRecompensa * 10;
+                probabilidadDeItem = Random.Range(0, 60 - enemyDefeated * 10) ;
                 monedero.monedasNormales += dineroGanado;
                 break;
             case 3:
                 dineroGanado = 150 + Random.Range(0, 301);
-                probabilidadDeItem = Random.Range(0, 60) - nivelRecompensa * 10;
+                probabilidadDeItem = Random.Range(0, 60 - enemyDefeated * 10) ;
                 monedero.monedasNormales += dineroGanado;
 
                 break;
             case 4:
                 dineroGanado = 200 + Random.Range(0, 401);
-                probabilidadDeItem = Random.Range(0, 90) - nivelRecompensa * 10;
+                probabilidadDeItem = Random.Range(0, 90 - enemyDefeated * 10) ;
                 monedero.monedasNormales += dineroGanado;
                 break;
             case 5: //creo que no se podrán spawnear items de nivel 5 preguntar a adri que decidimos.
                 dineroGanado = 250 + Random.Range(0, 501);
-                probabilidadDeItem = Random.Range(0, 100) - nivelRecompensa * 10;
+                probabilidadDeItem = Random.Range(0, 100 - enemyDefeated * 10);
                 monedero.monedasNormales += dineroGanado;                
                 break;
             default:
@@ -99,8 +99,19 @@ public class Recompensas : MonoBehaviour {
     {
         string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";
 
+        string[] datos = new string[2];
+        string line;
+        int counter = 0;
+
         StreamReader reader = new StreamReader(path);
-        nivelRecompensa = int.Parse(reader.ReadLine());
+        while ((line = reader.ReadLine()) != null)
+        {
+            datos[counter] = line;
+            counter++;
+        }
+        nivelRecompensa = int.Parse(datos[0]);
+        enemyDefeated = int.Parse(datos[1]);
+
 
         reader.Close();
     }

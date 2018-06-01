@@ -23,8 +23,10 @@ public class ControladorRescompensa : MonoBehaviour {
     private void Update()
     {
         if (numeroTotalEnemigos <= 0 || !song.isPlaying) {
-            SceneManager.LoadScene("ScenaRecompensa");
+
             WriteString();
+            SceneManager.LoadScene("ScenaRecompensa");
+
         }
     }
 
@@ -36,6 +38,8 @@ public class ControladorRescompensa : MonoBehaviour {
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(nivelRecompensa);
+        writer.WriteLine(contadorDeDerrotas);
+
 
         writer.Close();
     }

@@ -80,8 +80,9 @@ public class EnemySpawnController : MonoBehaviour {
     {
         if (actualEnemy.stats.vidaMax <= 0)
         {
-            controladorRescompensa.numeroTotalEnemigos--;
             controladorRescompensa.contadorDeDerrotas++;
+            controladorRescompensa.numeroTotalEnemigos--;
+ 
             actualEnemy=new Enemy();
             SpawnEnemy();
             vidaEnemigo.HealthMax = actualEnemy.stats.vidaMax;
