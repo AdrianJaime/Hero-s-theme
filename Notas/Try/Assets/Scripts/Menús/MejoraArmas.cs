@@ -71,6 +71,7 @@ public class MejoraArmas : MonoBehaviour {
             monedero.EliminarMonedasNormales(costeMejora);
 
             RemoveConfiguracion();
+            SlotInfoItemAMejorar.ActualizarInterfaz();
             ComprobarSiSeQuiereMeorarNivelMax();
         }
     }

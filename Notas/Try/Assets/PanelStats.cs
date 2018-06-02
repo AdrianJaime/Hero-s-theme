@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PanelStats : MonoBehaviour {
 
     public Image imagenITEM;
-    public Text atk, vida, curacion, nombreItem;
+    public Text atk, vida, curacion, nombreItem, nivel,rareza;
 
     public bool activo = false;
 

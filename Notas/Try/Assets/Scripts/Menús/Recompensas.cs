@@ -65,7 +65,7 @@ public class Recompensas : MonoBehaviour {
                 break;
 
         }
-        dineroRecompensa.text = dineroGanado.ToString();
+        dineroRecompensa.text = dineroGanado.ToString() + " €";
         if (inventory.EspaciosVacios() >= 1&& nivelRecompensa < 6 && nivelRecompensa > 0 && probabilidadDeItem==0)
         { 
             AñadirItem(nivelRecompensa);

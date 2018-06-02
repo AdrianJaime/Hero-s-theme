@@ -1167,6 +1167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1e16b98c6d181429d4ac5c863a4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 2108693286}
+  mejoraArmas: {fileID: 597138362}
 --- !u!4 &608111567
 Transform:
   m_ObjectHideFlags: 0

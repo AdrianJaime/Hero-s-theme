@@ -231,6 +231,8 @@ public class Slot : MonoBehaviour
                 aux.curacion.text = slotInfo.itemGuardado.stats.curacion.ToString();
 
                 aux.nombreItem.text = slotInfo.itemGuardado.name.ToString();
+                aux.nivel.text = slotInfo.itemGuardado.nivel.ToString();
+                aux.rareza.text = slotInfo.itemGuardado.rareza.ToString();
 
                 aux.imagenITEM.sprite = slotInfo.itemGuardado.imagenItem;
             }
