@@ -80,6 +80,9 @@ public class EnemySpawnController : MonoBehaviour {
     {
         if (actualEnemy.stats.vidaMax <= 0)
         {
+            enemyCode.enemyInfo.spawned = false;
+            enemyCode.ActualizarInterfazEnemy();
+
             controladorRescompensa.contadorDeDerrotas++;
             controladorRescompensa.numeroTotalEnemigos--;
  

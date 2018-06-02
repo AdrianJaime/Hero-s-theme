@@ -205,9 +205,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -227,6 +227,7 @@ MonoBehaviour:
   monedero: {fileID: 114131520196468664, guid: 17dbbe87f0f30334693662be8d46bba0, type: 2}
   panelPersonalizacion: {fileID: 114464330012969428, guid: dcbf1d0371bc19c469d46ddd45aead91,
     type: 2}
+  defaultSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   slotInfo:
     identificador: 0
     isEmpty: 0

@@ -9,7 +9,9 @@ public class Slot : MonoBehaviour
     Inventory inventory;
     public PanelPersonalizacion panelPersonalizacion;
 
-    
+    public Sprite defaultSprite;
+
+
     public SlotInfo slotInfo;
 
     public BaseDeDatos baseDeDatos;
@@ -92,7 +94,7 @@ public class Slot : MonoBehaviour
             nivel.text = slotInfo.itemGuardado.nivel.ToString();//Nivel
             nivel.gameObject.SetActive(true);
 
-            rango.text = slotInfo.itemGuardado.rango.ToString();//Rango
+            rango.text = slotInfo.itemGuardado.rareza.ToString();//Rango
             rango.gameObject.SetActive(true);
 
         }
@@ -275,7 +277,7 @@ public class Slot : MonoBehaviour
                     mejoraArmas.expAntesDeMejorar = 0;
                     this.GetComponent<Image>().color = new Color(255, 255, 255);
                     //mejoraArmas.SlotInfoItemAMejorar = new SlotInfo();
-                    mejoraArmas.imagenItemAMejorar.sprite = null;
+                    mejoraArmas.imagenItemAMejorar.sprite = defaultSprite;
                     mejoraArmas.huecoItemMejorarLibre = true;
                     slotInfo.seleccionadoParaMejorarse = false;
 
