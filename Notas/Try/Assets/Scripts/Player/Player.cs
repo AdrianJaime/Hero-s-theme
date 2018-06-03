@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
 
 public class Player : MonoBehaviour {
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour {
     public int totalVida=0;
     public int curacion=0;
     
-     void Start()
+     void Awake()
     {
         LeerYGuardarItems();
         SetValueOfItems();
@@ -48,7 +47,6 @@ public class Player : MonoBehaviour {
         GuardarRepresentación();
     }
 
-    [MenuItem("Tools/Write file")]
     public void WriteString()
     {
         string path = @".\Assets\TXT\Player_info\PlayerStats.txt";
@@ -58,12 +56,7 @@ public class Player : MonoBehaviour {
         writer.WriteLine(totalDamage);
         writer.WriteLine(curacion);
         writer.WriteLine(totalVida);
-        /*
-        writer.WriteLine(identificadorArma);
-        writer.WriteLine(identificadorCabeza);
-        writer.WriteLine(identificadorCuerpo);
-        writer.WriteLine(identificadorPiernas);
-    */
+
 
         writer.Close();
     }
