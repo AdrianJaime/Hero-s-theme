@@ -18,6 +18,9 @@ MonoBehaviour:
       vidaMax: 15
 =======
       vidaMax: 47
+<<<<<<< HEAD
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
+=======
 >>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 0
@@ -27,6 +30,9 @@ MonoBehaviour:
       vidaMax: 150
 =======
       vidaMax: 27
+<<<<<<< HEAD
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
+=======
 >>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 1
@@ -36,6 +42,9 @@ MonoBehaviour:
       vidaMax: 15000
 =======
       vidaMax: 27
+<<<<<<< HEAD
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
+=======
 >>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 2
