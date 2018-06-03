@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 using System.IO;
 
 public class PlayerStats : MonoBehaviour {
@@ -22,7 +21,17 @@ public class PlayerStats : MonoBehaviour {
 
     private void Start()
     {
-        CargarRepresentacionPlayer();
+        if (PlayerPrefs.HasKey("representacionPlayer"))
+        {
+            CargarRepresentacionPlayer();
+        }
+        else
+        {
+            arma = new Item();
+            cabeza = new Item();
+            cuerpo = new Item();
+            piernas = new Item();
+        }
     }
     private void Update()
     {
@@ -31,7 +40,6 @@ public class PlayerStats : MonoBehaviour {
 
 
 
-    [MenuItem("Tools/Read file")]
     public void ReadString()
     {
         string path = @".\Assets\TXT\Player_info\PlayerStats.txt";

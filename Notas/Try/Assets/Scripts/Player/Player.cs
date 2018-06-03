@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
 
 public class Player : MonoBehaviour {
@@ -48,7 +47,6 @@ public class Player : MonoBehaviour {
         GuardarRepresentación();
     }
 
-    [MenuItem("Tools/Write file")]
     public void WriteString()
     {
         string path = @".\Assets\TXT\Player_info\PlayerStats.txt";
