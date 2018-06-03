@@ -28,7 +28,7 @@ public class Summons : MonoBehaviour {
     private void Start()
     {
         
-        dineroBanner.text = costeDeSummon.ToString()+ " €";
+        dineroBanner.text = "Coste del SUMMON "+costeDeSummon.ToString()+ " €";
         dineroMonedero.text = monedero.monedasNormales.ToString() + " €";
 
     }
@@ -92,6 +92,9 @@ public class Summons : MonoBehaviour {
                 aux.vida.text = al.itemGuardado.stats.vida.ToString();
                 aux.curacion.text = al.itemGuardado.stats.curacion.ToString();
 
+                aux.nivel.text= al.itemGuardado.nivel.ToString();
+                aux.rareza.text = al.itemGuardado.rareza.ToString();
+
                 aux.nombreItem.text = al.itemGuardado.name.ToString();
 
                 aux.imagenITEM.sprite = al.itemGuardado.imagenItem;
@@ -116,7 +119,7 @@ public class Summons : MonoBehaviour {
     {
 
 
-    yield return new WaitForSeconds(tiempoAnimación);
+    yield return new WaitForSeconds(tiempoAnimación+0.1f);
     panelStats.SetActive(true);
 
     }
