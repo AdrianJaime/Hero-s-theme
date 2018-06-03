@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Escena/Niveles/Game_Over.unity
+    guid: f4095b2ccb8fd5d488ef647229dec8e9
+  - enabled: 1
+    path: Assets/Escena/Niveles/Nivel.unity
+    guid: 0708f29dd6da94e41a04252e439acc7c
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Pruebas de inventario.unity"
+    guid: 9c6fb0a1e57adbe4194a28f0b47c39c7
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Lista.unity"
+    guid: 75f14807fb2e52f4294d8976257a6927
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/Arranque.unity"
+    guid: 7a0534734380691499b12f8757492709
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Inventario.unity"
+    guid: 54b8d03c010364442a361c28bf2d0f4d
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Men\xFAPrincipal.unity"
+    guid: 240cee86936e1384a9dd6bb9715a015b
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/New Game.unity"
+    guid: 0e5d09cfd7a781d43ad7f7078a8a78a9
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Evolucion.unity"
+    guid: 93945785312e3ce44b0929ebf159b06c
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/MejoraDeItems.unity"
+    guid: f4498ec5af2c0844b9a10cb2a6810dc4
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/ScenaRecompensa.unity"
+    guid: 8d215ac5c5b20b3478153659997933e8
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/VenderInventario.unity"
+    guid: be53e3bb99a09d5419e06e34b23e96a5
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Summons.unity"
+    guid: 3ef874a29182e0342bcf6eddc97c537a
+  - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/SelectorDeNiveles.unity"
+    guid: e140a08e329d8fc41b3eba3a0ea420b5

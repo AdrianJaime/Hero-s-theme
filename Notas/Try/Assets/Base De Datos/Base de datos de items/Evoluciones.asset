@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b047313e9dbf0944c9755a5faefbb1f5, type: 3}
+  m_Name: Evoluciones
+  m_EditorClassIdentifier: 
+  items:
+  - imagenItem: {fileID: 21300002, guid: 163bfe3dae7725740bd554824707e592, type: 3}
+    identificador: 0
+    identificadorItemEvolucionado: -1
+    name: 
+    rareza: 5
+    nivel: 1
+    nivelMax: 120
+    rango: 0
+    expAcumulada: 50
+    dineroAlVender: 500
+    expProporcionada: 2510
+    evolved: 1
+    stats:
+      maxDamage: 255
+      maxCuracion: 107
+      maxVida: 85
+      damage: 2
+      curacion: 0
+      vida: 0
+      damageLevel: 2
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 0
+      curacionBase: 0
+      vidaBase: 0
+    tipoItem: 0
+  - imagenItem: {fileID: 21300004, guid: 163bfe3dae7725740bd554824707e592, type: 3}
+    identificador: 1
+    identificadorItemEvolucionado: -1
+    name: 
+    rareza: 5
+    nivel: 0
+    nivelMax: 0
+    rango: 0
+    expAcumulada: 50
+    dineroAlVender: 0
+    expProporcionada: 0
+    evolved: 1
+    stats:
+      maxDamage: 58
+      maxCuracion: 86
+      maxVida: 48
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 48
+      curacionBase: 23
+      vidaBase: 66
+    tipoItem: 0
+  - imagenItem: {fileID: 21300016, guid: 163bfe3dae7725740bd554824707e592, type: 3}
+    identificador: 2
+    identificadorItemEvolucionado: -1
+    name: 
+    rareza: 5
+    nivel: 0
+    nivelMax: 0
+    rango: 0
+    expAcumulada: 50
+    dineroAlVender: 0
+    expProporcionada: 0
+    evolved: 1
+    stats:
+      maxDamage: 36
+      maxCuracion: 54
+      maxVida: 82
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 0
+      curacionLevel: 0
+      vidaLevel: 0
+      damageBase: 62
+      curacionBase: 95
+      vidaBase: 95
+    tipoItem: 0
+  - imagenItem: {fileID: 21300008, guid: 163bfe3dae7725740bd554824707e592, type: 3}
+    identificador: 3
+    identificadorItemEvolucionado: -1
+    name: 
+    rareza: 5
+    nivel: 0
+    nivelMax: 0
+    rango: 0
+    expAcumulada: 50
+    dineroAlVender: 0
+    expProporcionada: 0
+    evolved: 1
+    stats:
+      maxDamage: 89
+      maxCuracion: 136
+      maxVida: 132
+      damage: 0
+      curacion: 0
+      vida: 0
+      damageLevel: 75
+      curacionLevel: 111
+      vidaLevel: 79
+      damageBase: 115
+      curacionBase: 126
+      vidaBase: 116
+    tipoItem: 0
+  - imagenItem: {fileID: 21300010, guid: 163bfe3dae7725740bd554824707e592, type: 3}
+    identificador: 4
+    identificadorItemEvolucionado: -1
+    name: 
+    rareza: 5
+    nivel: 1
+    nivelMax: 120
+    rango: 0
+    expAcumulada: 50
+    dineroAlVender: 500
+    expProporcionada: 2510
+    evolved: 1
+    stats:
+      maxDamage: 500
+      maxCuracion: 20
+      maxVida: 200
+      damage: 33
+      curacion: 1
+      vida: 21
+      damageLevel: 3
+      curacionLevel: 0
+      vidaLevel: 1
+      damageBase: 30
+      curacionBase: 1
+      vidaBase: 20
+    tipoItem: 0
