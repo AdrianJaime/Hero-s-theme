@@ -18,7 +18,7 @@ public class Monedero : MonoBehaviour
         }
         else
         {
-            monedasNormales = 5000;
+            monedasNormales = 0;
             monedasEspeciales = 0;
             GuardarMonedero();
         }

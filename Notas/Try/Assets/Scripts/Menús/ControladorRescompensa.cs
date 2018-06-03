@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System.IO;
 using UnityEngine.SceneManagement;
 
@@ -30,6 +31,7 @@ public class ControladorRescompensa : MonoBehaviour {
         }
     }
 
+    [MenuItem("Tools/Write file")]
     public void WriteString()
     {
         string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";

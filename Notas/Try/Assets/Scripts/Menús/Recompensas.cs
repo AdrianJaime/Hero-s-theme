@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
 
@@ -93,6 +94,7 @@ public class Recompensas : MonoBehaviour {
         panelItemRecibido.SetActive( false);
     }
 
+    [MenuItem("Tools/Read file")]
     public void ReadString()
     {
         string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";
