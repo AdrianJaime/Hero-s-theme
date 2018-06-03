@@ -5,13 +5,12 @@ using UnityEditor;
 using System.IO;
 
 public class Player : MonoBehaviour {
-
-
     
     public PanelPersonalizacion panelPersonalizacion;
 
     public Item itemArma, ItemCabeza, ItemCuerpo, ItemPiernas;
 
+    public string saveDataRepresentationPlayer;
 
     public int totalDamage=0;
     public int totalVida=0;
@@ -39,10 +38,14 @@ public class Player : MonoBehaviour {
     }
     public void LeerYGuardarItems()
     {
+
+
         itemArma = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)0).personalizacionInfo.itemSlotPersonalizacion;
         ItemCabeza = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)1).personalizacionInfo.itemSlotPersonalizacion;
         ItemCuerpo = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)2).personalizacionInfo.itemSlotPersonalizacion;
         ItemPiernas = panelPersonalizacion.EncontrarSlotPersonalizacion((TipoItem)3).personalizacionInfo.itemSlotPersonalizacion;
+
+        GuardarRepresentación();
     }
 
     [MenuItem("Tools/Write file")]
@@ -55,8 +58,33 @@ public class Player : MonoBehaviour {
         writer.WriteLine(totalDamage);
         writer.WriteLine(curacion);
         writer.WriteLine(totalVida);
-        
+        /*
+        writer.WriteLine(identificadorArma);
+        writer.WriteLine(identificadorCabeza);
+        writer.WriteLine(identificadorCuerpo);
+        writer.WriteLine(identificadorPiernas);
+    */
+
         writer.Close();
     }
 
+    public void GuardarRepresentación()
+    {
+        RepresentacionPlayer aux = new RepresentacionPlayer();
+        aux.arma = itemArma;
+        aux.cabeza = ItemCabeza;
+        aux.cuerpo = ItemCuerpo;
+        aux.piernas = ItemPiernas;
+        saveDataRepresentationPlayer = JsonUtility.ToJson(aux);
+        PlayerPrefs.SetString("representacionPlayer", saveDataRepresentationPlayer);
+
+    }
+
+
+}
+
+public class RepresentacionPlayer
+{
+
+    public Item arma, cabeza, cuerpo, piernas;
 }

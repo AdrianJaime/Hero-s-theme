@@ -23,6 +23,7 @@ MonoBehaviour:
     expAcumulada: 50
     dineroAlVender: 500
     expProporcionada: 2510
+    evolved: 1
     stats:
       maxDamage: 255
       maxCuracion: 107
@@ -48,6 +49,7 @@ MonoBehaviour:
     expAcumulada: 50
     dineroAlVender: 0
     expProporcionada: 0
+    evolved: 1
     stats:
       maxDamage: 58
       maxCuracion: 86
@@ -73,6 +75,7 @@ MonoBehaviour:
     expAcumulada: 50
     dineroAlVender: 0
     expProporcionada: 0
+    evolved: 1
     stats:
       maxDamage: 36
       maxCuracion: 54
@@ -98,6 +101,7 @@ MonoBehaviour:
     expAcumulada: 50
     dineroAlVender: 0
     expProporcionada: 0
+    evolved: 1
     stats:
       maxDamage: 89
       maxCuracion: 136
@@ -123,6 +127,7 @@ MonoBehaviour:
     expAcumulada: 50
     dineroAlVender: 500
     expProporcionada: 2510
+    evolved: 1
     stats:
       maxDamage: 500
       maxCuracion: 20

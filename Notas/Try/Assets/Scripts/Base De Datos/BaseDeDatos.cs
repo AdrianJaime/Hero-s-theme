@@ -18,6 +18,7 @@ public class Item
     public int expAcumulada; //Atributo que nos sirve para hacer el calculo de nivel
     public int dineroAlVender;
     public int expProporcionada;
+    public bool evolved = false;
 
     public Stats stats;
   
