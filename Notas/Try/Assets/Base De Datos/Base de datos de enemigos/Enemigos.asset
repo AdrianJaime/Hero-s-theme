@@ -14,16 +14,28 @@ MonoBehaviour:
   enemys:
   - image: {fileID: 21300006, guid: d1cf6ec2b7a9a5e4cbe3cb523529a4dc, type: 3}
     stats:
+<<<<<<< HEAD
       vidaMax: 15
+=======
+      vidaMax: 47
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 0
   - image: {fileID: 21300000, guid: eb69c02bbdd93ff498ab7df1eb50abba, type: 3}
     stats:
+<<<<<<< HEAD
       vidaMax: 150
+=======
+      vidaMax: 27
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 1
   - image: {fileID: 21300000, guid: dcba208c88f14964fba38268a88d7436, type: 3}
     stats:
+<<<<<<< HEAD
       vidaMax: 15000
+=======
+      vidaMax: 27
+>>>>>>> parent of 3e4475d... stas base añadidos asi como dinero inicial.
       damage: 0
     identificador: 2
