@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     public int totalVida=0;
     public int curacion=0;
     
-     void Start()
+     void Awake()
     {
         LeerYGuardarItems();
         SetValueOfItems();
@@ -56,12 +56,7 @@ public class Player : MonoBehaviour {
         writer.WriteLine(totalDamage);
         writer.WriteLine(curacion);
         writer.WriteLine(totalVida);
-        /*
-        writer.WriteLine(identificadorArma);
-        writer.WriteLine(identificadorCabeza);
-        writer.WriteLine(identificadorCuerpo);
-        writer.WriteLine(identificadorPiernas);
-    */
+
 
         writer.Close();
     }
