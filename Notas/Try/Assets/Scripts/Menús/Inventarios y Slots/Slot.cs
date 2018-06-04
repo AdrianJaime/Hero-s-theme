@@ -103,40 +103,6 @@ public class Slot : MonoBehaviour
     public void EliminarSlot_VenderSlot()
     {
 
-       /* if (inventory.isOnEquipMenu)
-        {
-            if (slotInfo.equipado)
-            {
-                panelPersonalizacion = GameObject.Find("Personalizacion").GetComponent<PanelPersonalizacion>();
-                SlotPersonalización auxSlotPers = panelPersonalizacion.EncontrarSlotPersonalizacion(slotInfo.itemGuardado.tipoItem);
-
-                if (auxSlotPers.personalizacionInfo.itemSlotPersonalizacion.identificador == slotInfo.itemGuardado.identificador)
-                {
-                    auxSlotPers.DeleteItemInSlotPersonalizacion();
-                    panelPersonalizacion.GuardarPersonalizacion();
-                }
-
-                if (slotInfo != null)
-                {
-                    if (slotInfo.cantidad == 1)
-                        slotInfo.SetEmptySlot();
-                    else
-                        slotInfo.cantidad--;
-                }
-                Player player = GameObject.Find("Player").GetComponent<Player>();
-                player.LeerYGuardarItems();
-                player.SetValueOfItems();
-
-                ActualizarInterfaz();
-            }
-            else
-            {
-                if (slotInfo != null)
-                    EliminarItem();
-            }
-
-        }*/
-
         if (inventory.isOnSellMenu == true )
         {
             if (!slotInfo.equipado)

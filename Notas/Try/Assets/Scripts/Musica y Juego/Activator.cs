@@ -18,7 +18,8 @@ public class Activator : MonoBehaviour {
     public KeyCode key;
     bool active = false;
     GameObject Note;
-    public AudioSource song;
+
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -75,11 +76,10 @@ public class Activator : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(!song.isPlaying)
-        song.Play();
         active = true;
         if (col.gameObject.tag == "Note")
         {
+
             Note = col.gameObject;
         }
 

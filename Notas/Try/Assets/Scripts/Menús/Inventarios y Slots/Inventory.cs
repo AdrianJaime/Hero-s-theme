@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour
     public int capacity;
     public string saveDataInventario;
 
-    private bool created;
 
     public bool isOnEquipMenu=false;
     public bool isOnSellMenu=false;

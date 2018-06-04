@@ -30,8 +30,8 @@ public class EnemySpawnController : MonoBehaviour {
     }
     void Update()
     {
-
-        DestroyEnemyAndSpawn();
+        if(controladorRescompensa.numeroTotalEnemigos!=0)
+         DestroyEnemyAndSpawn();
     }
     
     public void SetFirtsEnemy()

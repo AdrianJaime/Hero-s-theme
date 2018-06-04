@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 using System.IO;
 
 public class PlayerStats : MonoBehaviour {
@@ -18,11 +17,23 @@ public class PlayerStats : MonoBehaviour {
 
     public Image prefabArma, prefabCabeza, prefabCuerpo, prefabPiernas;
 
+    public Sprite armaPorDefecto, cabezaPorDefecto, cuerpoPorDefecto, piernasPorDefecto;
+
     public Item arma, cabeza, cuerpo, piernas;
 
     private void Start()
     {
-        CargarRepresentacionPlayer();
+        if (PlayerPrefs.HasKey("representacionPlayer"))
+        {
+            CargarRepresentacionPlayer();
+        }
+        else
+        {
+            arma = new Item();
+            cabeza = new Item();
+            cuerpo = new Item();
+            piernas = new Item();
+        }
     }
     private void Update()
     {
@@ -31,7 +42,6 @@ public class PlayerStats : MonoBehaviour {
 
 
 
-    [MenuItem("Tools/Read file")]
     public void ReadString()
     {
         string path = @".\Assets\TXT\Player_info\PlayerStats.txt";
@@ -45,9 +55,9 @@ public class PlayerStats : MonoBehaviour {
             stats [counter]=  line;
             counter++;
         }
-        totalDamage = int.Parse(stats[0]);
-        curacion = int.Parse(stats[1]);
-        totalVida = int.Parse(stats[2]);
+        totalDamage = 1+int.Parse(stats[0]);
+        curacion =1+ int.Parse(stats[1]);
+        totalVida =1+ int.Parse(stats[2]);
 
 
         reader.Close();
@@ -99,6 +109,7 @@ public class PlayerStats : MonoBehaviour {
         cuerpo = aux.cuerpo;
         piernas = aux.piernas;
 
+
         GuardarRepresentación();
     }
 
@@ -106,9 +117,24 @@ public class PlayerStats : MonoBehaviour {
     {
         if (enemySpawnController != null)
         {
+         if (arma.imagenItem == null)
+            prefabArma.sprite = armaPorDefecto;
+         else
             prefabArma.sprite = arma.imagenItem;
+
+         if (cabeza.imagenItem == null)
+            prefabCabeza.sprite = cabezaPorDefecto;
+         else
             prefabCabeza.sprite = cabeza.imagenItem;
+
+         if (cuerpo.imagenItem == null)
+            prefabCuerpo.sprite = cuerpoPorDefecto;
+         else
             prefabCuerpo.sprite = cuerpo.imagenItem;
+
+         if (piernas.imagenItem == null)
+            prefabPiernas.sprite = piernasPorDefecto;
+         else
             prefabPiernas.sprite = piernas.imagenItem;
         }
     }

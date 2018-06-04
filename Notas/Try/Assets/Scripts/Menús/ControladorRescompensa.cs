@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class ControladorRescompensa : MonoBehaviour {
 
     public AudioSource song;
-    private bool hasStarted = false;
+
     public int nivelRecompensa;//{1,5}
     public BaseDeDatosEnemigos enemyDataBase;
     public int numeroTotalEnemigos, contadorDeDerrotas;
@@ -22,8 +21,7 @@ public class ControladorRescompensa : MonoBehaviour {
 
     private void Update()
     {
-        if (song.isPlaying) { hasStarted = true; }
-        if (numeroTotalEnemigos <= 0 || (!song.isPlaying && hasStarted)) {
+        if (numeroTotalEnemigos <= 0 || !song.isPlaying) {
 
             WriteString();
             SceneManager.LoadScene("ScenaRecompensa");
@@ -31,7 +29,6 @@ public class ControladorRescompensa : MonoBehaviour {
         }
     }
 
-    [MenuItem("Tools/Write file")]
     public void WriteString()
     {
         string path = @".\Assets\TXT\Player_info\ConfiguracionControladorRecompensas.txt";

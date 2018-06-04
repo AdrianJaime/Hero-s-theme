@@ -70,9 +70,9 @@ public class Summons : MonoBehaviour {
                     rarity = 4;
                     particulasColor.startColor = new Color(0, 0, 0);
                 }
-                a = Random.Range(1, 17);
+                a = Random.Range(1, 32);
                 while (items.FindItem(a).rareza != rarity)
-                    a = Random.Range(1, 17);
+                    a = Random.Range(1, 32);
 
                 SlotInfo al = inventory.SlotAccesible(a);
                 inventory.AñadirItem(a);
@@ -85,34 +85,27 @@ public class Summons : MonoBehaviour {
                 PanelStats aux = panelStats.GetComponent<PanelStats>();
                 StartCoroutine(Wait());
                 Wait();
-                
-                aux.activo = true;
-
+                // esta acción puede que se haga a la par que el inssert del item en el slot y por eso a veces accede a la información antes de que esta contenga algo. de ahi el 0 en stats;
                 aux.atk.text = al.itemGuardado.stats.damage.ToString();
                 aux.vida.text = al.itemGuardado.stats.vida.ToString();
                 aux.curacion.text = al.itemGuardado.stats.curacion.ToString();
 
-                aux.nivel.text= al.itemGuardado.nivel.ToString();
+                aux.nivel.text = al.itemGuardado.nivel.ToString();
                 aux.rareza.text = al.itemGuardado.rareza.ToString();
 
                 aux.nombreItem.text = al.itemGuardado.name.ToString();
 
                 aux.imagenITEM.sprite = al.itemGuardado.imagenItem;
+
+                aux.activo = true;
+
+
             }
            
         }
     }
 
-    public void SummonXcapacity(int _capacity)
-    {
-        if (inventory.EspaciosVacios() >= _capacity&&monedero.monedasNormales>=costeDeSummon*_capacity)
-        {
-            for (int i = 0; i < _capacity; i++)
-            {
-                Summon();
-            }
-        }
-    }
+
 
 
     IEnumerator Wait()
