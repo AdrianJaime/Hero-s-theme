@@ -951,11 +951,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 115
 --- !u!212 &281592114
@@ -1479,11 +1481,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 102
 --- !u!212 &590229032
@@ -2283,11 +2287,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 97
 --- !u!212 &1303199617
@@ -3238,11 +3244,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 100
 --- !u!212 &1859941717
@@ -3793,6 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499415f83edec8f4f9494c07c1180439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasStarted: 0
   song: {fileID: 1957316781}
   nivelRecompensa: 1
   enemyDataBase: {fileID: 11400000, guid: 25a577dff0d5cea4c916cd0f16738912, type: 2}

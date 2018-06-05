@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4050504045312854}
   - component: {fileID: 212418930141219672}
   - component: {fileID: 95089017500012760}
-  - component: {fileID: 114185045244318268}
   m_Layer: 0
   m_Name: EnemyHit_3
   m_TagString: Untagged
@@ -51,8 +50,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023023039043360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37846944, y: -0.1755847, z: 9.829123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.42, y: -0.01, z: 9.829123}
+  m_LocalScale: {x: 0.7811365, y: 0.7811365, z: 0.7811365}
   m_Children: []
   m_Father: {fileID: 4129183800323722}
   m_RootOrder: 0
@@ -63,9 +62,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016863324619324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37846944, y: 0.1755847, z: -9.829123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.75, y: -1.25, z: -53.067}
+  m_LocalScale: {x: 5.6405883, y: 6.5140667, z: 5.3986645}
   m_Children:
   - {fileID: 4050504045312854}
   m_Father: {fileID: 0}
@@ -88,18 +87,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114185045244318268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1023023039043360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60fc235bf49b5e14aa1321802cc858b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
 --- !u!212 &212418930141219672
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,8 +118,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1083442371
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80475e1b646373742a3b3d2ef05635ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

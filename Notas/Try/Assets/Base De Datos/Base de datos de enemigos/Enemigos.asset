@@ -15,7 +15,7 @@ MonoBehaviour:
   - image: {fileID: 21300006, guid: d1cf6ec2b7a9a5e4cbe3cb523529a4dc, type: 3}
     stats:
       vidaMax: 3000
-      damage: 27
+      damage: 0
     identificador: 0
   - image: {fileID: 21300000, guid: eb69c02bbdd93ff498ab7df1eb50abba, type: 3}
     stats:

@@ -898,11 +898,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1035913464}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1596208087}
   PuntosDeJuegoScript: {fileID: 1291735402}
   BarraVidaScript: {fileID: 421076935}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 849871706}
   key: 115
 --- !u!212 &489604313
@@ -1185,6 +1187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02446d70935b90479723fa5903c40f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 0
+  destino: SilentHill2.txt
   Redobject: {fileID: 133328, guid: a7b26044afd8d8042b40a5633c88e0b2, type: 2}
   Blueobject: {fileID: 124930, guid: a0dfb27111921914798a30a3eac01a25, type: 2}
   Greenobject: {fileID: 155092, guid: 88c9ebe76fa37b44e8f6a4b5e933bf14, type: 2}
@@ -1813,11 +1817,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1035913464}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1596208087}
   PuntosDeJuegoScript: {fileID: 1291735402}
   BarraVidaScript: {fileID: 421076935}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 849871706}
   key: 100
 --- !u!212 &848367475
@@ -2150,6 +2156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499415f83edec8f4f9494c07c1180439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasStarted: 0
   song: {fileID: 506821947}
   nivelRecompensa: 2
   enemyDataBase: {fileID: 11400000, guid: eeb770489243b914a8032b47d73ed93f, type: 2}
@@ -2605,11 +2612,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1035913464}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1596208087}
   PuntosDeJuegoScript: {fileID: 1291735402}
   BarraVidaScript: {fileID: 421076935}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 849871706}
   key: 102
 --- !u!212 &1146829110
@@ -4027,11 +4036,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1035913464}
+  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1596208087}
   PuntosDeJuegoScript: {fileID: 1291735402}
   BarraVidaScript: {fileID: 421076935}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
-  enemySiteToBeHited: {fileID: 0}
+  hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
+  song: {fileID: 0}
   InfoText: {fileID: 849871706}
   key: 97
 --- !u!212 &2023300285
