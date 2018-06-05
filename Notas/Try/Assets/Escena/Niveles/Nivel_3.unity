@@ -187,7 +187,6 @@ MonoBehaviour:
   BarraVidaScript: {fileID: 1316438268}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  panelSite: {fileID: 1677901696}
   song: {fileID: 961491294}
   InfoText: {fileID: 442034771}
   key: 115
@@ -2176,7 +2175,6 @@ MonoBehaviour:
   BarraVidaScript: {fileID: 1316438268}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  panelSite: {fileID: 1677901696}
   song: {fileID: 961491294}
   InfoText: {fileID: 442034771}
   key: 97
@@ -2531,7 +2529,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef5adbe71c2703646a4a485e4c165167, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 00ee3fac911bd5447931b26697c7f1f2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2613,8 +2611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02446d70935b90479723fa5903c40f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1.4
-  destino: mario.txt
+  delay: 0.7
+  destino: BubbleBobble.txt
   Redobject: {fileID: 133328, guid: a7b26044afd8d8042b40a5633c88e0b2, type: 2}
   Blueobject: {fileID: 124930, guid: a0dfb27111921914798a30a3eac01a25, type: 2}
   Greenobject: {fileID: 155092, guid: 88c9ebe76fa37b44e8f6a4b5e933bf14, type: 2}
@@ -3332,7 +3330,6 @@ MonoBehaviour:
   BarraVidaScript: {fileID: 1316438268}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  panelSite: {fileID: 1677901696}
   song: {fileID: 961491294}
   InfoText: {fileID: 442034771}
   key: 100
@@ -3737,7 +3734,6 @@ MonoBehaviour:
   BarraVidaScript: {fileID: 1316438268}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  panelSite: {fileID: 1677901696}
   song: {fileID: 961491294}
   InfoText: {fileID: 442034771}
   key: 102
@@ -3819,11 +3815,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1677901696 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1238393374}
 --- !u!4 &1677901697 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4129183800323722, guid: fae5ffa13ca10e04d978ce5d1b97f28a,
