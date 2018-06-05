@@ -14,16 +14,16 @@ MonoBehaviour:
   enemys:
   - image: {fileID: 21300000, guid: 42c7911845eee044eac15fe533c6fe47, type: 3}
     stats:
-      vidaMax: 5000
-      damage: 10
+      vidaMax: 1
+      damage: 0
     identificador: 0
   - image: {fileID: 21300002, guid: 2ef663aa981eea047b72429f4613b6d3, type: 3}
     stats:
-      vidaMax: 15000
-      damage: 15
+      vidaMax: 1
+      damage: 0
     identificador: 1
   - image: {fileID: 21300000, guid: cbd7142d74fb9ef4f856c25a308ec582, type: 3}
     stats:
-      vidaMax: 30000
-      damage: 30
+      vidaMax: 1
+      damage: 0
     identificador: 2

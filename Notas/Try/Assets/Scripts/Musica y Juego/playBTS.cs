@@ -4,6 +4,8 @@ using System.Collections;
 
 public class playBTS : MonoBehaviour
 {
+    public float delay;
+
     public System.IO.StreamReader song;
     //bool played;
     //System.IO.StreamReader file = new System.IO.StreamReader(@".\Assets\TXT\Canciones\BS&T.txt");
@@ -16,37 +18,32 @@ public class playBTS : MonoBehaviour
 
     public IEnumerator Yellow(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.56f);
+        yield return new WaitForSeconds(tme - delay);
         Instantiate(Yellowobject, new Vector2(2, 1), Quaternion.Euler(0, 0, 0));
 
     }
     public IEnumerator Red(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.56f);
+        yield return new WaitForSeconds(tme - delay);
         Instantiate(Redobject, new Vector2(-2, 1), Quaternion.Euler(0, 0, 0));
     }
     public IEnumerator Blue(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.56f);
+        yield return new WaitForSeconds(tme - delay);
         Instantiate(Blueobject, new Vector2(-0.7f, 1), Quaternion.Euler(0, 0, 0));
     }
     public IEnumerator Green(float tme)
     {
-        yield return new WaitForSeconds(tme - 0.56f);
+        yield return new WaitForSeconds(tme - delay);
         Instantiate(Greenobject, new Vector2(0.7f, 1), Quaternion.Euler(0, 0, 0));
     }
 
-
-void Start()
-    {
-        //SongStart
-
-    }
 void Update()
     {
         songStart();
         //Na Pi ttam nunmul
     }
+
     void songStart()
     {
         while ((line = song.ReadLine()) != null)
