@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         slotInfoList = new List<SlotInfo>();
         if (PlayerPrefs.HasKey("inventario"))

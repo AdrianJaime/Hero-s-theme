@@ -8,14 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class Name : MonoBehaviour {
     public InputField named;
-
-      public void GetInput(string scene)
+    public string savedName;
+      public void GetInput()
       {
-          StreamWriter nameFile = new StreamWriter(@".\Assets\TXT\Player_Info\PlayerName.txt");
-          nameFile.Write(named.text,false);
-        nameFile.Close();
-        SceneManager.LoadScene(scene);
+        GuardarNombre();     
       }
+    public void GuardarNombre()
+    {
 
+
+        NombreJugador guardarNombre = new NombreJugador();
+        guardarNombre.name = this.named.text;
+        savedName = JsonUtility.ToJson(guardarNombre);
+        PlayerPrefs.SetString("nombrePlayer", savedName);
+    }
 }
+
+public class NombreJugador{public string name; }
+
+
 

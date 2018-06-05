@@ -190,7 +190,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 681514565}
-        m_MethodName: CambioScena
+        m_MethodName: "CambioScenaArranqueAMen\xFA"
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   mejoraArmas: {fileID: 0}
+  newName: 
 --- !u!4 &681514566
 Transform:
   m_ObjectHideFlags: 0
