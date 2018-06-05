@@ -13,7 +13,7 @@ public class EvolucionMenu : MonoBehaviour {
 
     public Sprite defaultImagen;
     public Image imagenItemAEvolucionar, imagenEvolucion;
-    public Text atk, newAtk, curacion, newCuracion, vida, newVida, dineroMonedero,nivelItem,rarezaItem,nivelEvolucion,rarezaEvolucion;
+    public Text atk, newAtk, curacion, newCuracion, vida, newVida, dineroMonedero,nivelItem,rarezaItem,nivelEvolucion,rarezaEvolucion, nombreItem,nombreEvo;
     public int costeEvolucion;
 
     private void Update()
@@ -34,6 +34,7 @@ public class EvolucionMenu : MonoBehaviour {
             imagenItemAEvolucionar.sprite = SlotItemAEvolucionar.slotInfo.itemGuardado.imagenItem;
             nivelItem.text= SlotItemAEvolucionar.slotInfo.itemGuardado.nivel.ToString();
             rarezaItem.text = SlotItemAEvolucionar.slotInfo.itemGuardado.rareza.ToString();
+            nombreItem.text = SlotItemAEvolucionar.slotInfo.itemGuardado.name.ToString();
 
             newAtk.text = Evolucion.slotInfo.itemGuardado.stats.damage.ToString();
             newCuracion.text = Evolucion.slotInfo.itemGuardado.stats.curacion.ToString();
@@ -41,6 +42,7 @@ public class EvolucionMenu : MonoBehaviour {
             imagenEvolucion.sprite = Evolucion.slotInfo.itemGuardado.imagenItem;
             nivelEvolucion.text = Evolucion.slotInfo.itemGuardado.nivel.ToString();
             rarezaEvolucion.text = Evolucion.slotInfo.itemGuardado.rareza.ToString();
+            nombreEvo.text = Evolucion.slotInfo.itemGuardado.name.ToString();
 
 
         }
@@ -54,12 +56,16 @@ public class EvolucionMenu : MonoBehaviour {
             imagenItemAEvolucionar.sprite = defaultImagen;
             nivelItem.text = 0.ToString();
             rarezaItem.text = 0.ToString();
+            nombreItem.text = "";
+
 
             newAtk.text = 0.ToString();
             newCuracion.text = 0.ToString();
             newVida.text = 0.ToString();
             nivelEvolucion.text = 0.ToString();
             rarezaEvolucion.text = 0.ToString();
+            nombreEvo.text = "";
+
             imagenEvolucion.sprite = defaultImagen;
         }
     }

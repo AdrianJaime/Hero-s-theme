@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ControladorRescompensa : MonoBehaviour {
 
+    public bool HasStarted = false;
     public AudioSource song;
 
     public int nivelRecompensa;//{1,5}
@@ -21,7 +22,7 @@ public class ControladorRescompensa : MonoBehaviour {
 
     private void Update()
     {
-        if (numeroTotalEnemigos <= 0 || !song.isPlaying) {
+        if (numeroTotalEnemigos <= 0 || !song.isPlaying && HasStarted) {
 
             WriteString();
             SceneManager.LoadScene("ScenaRecompensa");
