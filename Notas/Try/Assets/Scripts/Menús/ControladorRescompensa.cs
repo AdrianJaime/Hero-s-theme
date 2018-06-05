@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class ControladorRescompensa : MonoBehaviour {
 
-    public bool HasStarted = false;
     public AudioSource song;
 
     public int nivelRecompensa;//{1,5}
     public BaseDeDatosEnemigos enemyDataBase;
     public int numeroTotalEnemigos, contadorDeDerrotas;
-
+    public bool HasStarted = false;
     public void Awake()
     {
         contadorDeDerrotas = 0;
@@ -22,6 +21,7 @@ public class ControladorRescompensa : MonoBehaviour {
 
     private void Update()
     {
+        if (song.isPlaying) { HasStarted = true; };
         if (numeroTotalEnemigos <= 0 || !song.isPlaying && HasStarted) {
 
             WriteString();

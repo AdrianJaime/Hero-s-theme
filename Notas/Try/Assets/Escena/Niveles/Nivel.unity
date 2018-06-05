@@ -179,8 +179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.27197266, y: 0.3919983}
-  m_SizeDelta: {x: 0.20800781, y: 20}
+  m_AnchoredPosition: {x: 263.27197, y: -9.608002}
+  m_SizeDelta: {x: 526.208, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74291747
 MonoBehaviour:
@@ -257,9 +257,9 @@ RectTransform:
   m_Father: {fileID: 510331032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: 4.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 98, y: -69.6}
   m_SizeDelta: {x: 535.03, y: 78.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74328249
@@ -331,10 +331,10 @@ RectTransform:
   m_Father: {fileID: 1099362944}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 188, y: 269}
-  m_SizeDelta: {x: -455.6, y: -486.8}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 588, y: -51}
+  m_SizeDelta: {x: 344.4, y: 153.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &101962087
 CanvasRenderer:
@@ -374,9 +374,9 @@ RectTransform:
   m_Father: {fileID: 101962085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180.98366, y: -57.118}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 163.01634, y: -57.118}
   m_SizeDelta: {x: 526, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110747370
@@ -460,9 +460,9 @@ RectTransform:
   m_Father: {fileID: 1099362944}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -320}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &241275622
@@ -495,9 +495,9 @@ RectTransform:
   m_Father: {fileID: 1099362944}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -288, y: -109}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 512, y: -109}
   m_SizeDelta: {x: 753.7, y: 434.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241275624
@@ -567,8 +567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.27197266, y: 0.3919983}
-  m_SizeDelta: {x: 0.20800781, y: 20}
+  m_AnchoredPosition: {x: 263.27197, y: -10.108002}
+  m_SizeDelta: {x: 526.208, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264069507
 MonoBehaviour:
@@ -951,13 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
-  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 115
 --- !u!212 &281592114
@@ -1481,13 +1479,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
-  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 102
 --- !u!212 &590229032
@@ -1568,10 +1564,10 @@ RectTransform:
   m_Father: {fileID: 1099362944}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60.597504, y: 175}
-  m_SizeDelta: {x: -548.4, y: -350}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 339.4025, y: -145}
+  m_SizeDelta: {x: 251.59998, y: 290}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624805308
 MonoBehaviour:
@@ -2040,7 +2036,7 @@ SpriteRenderer:
   m_SortingLayerID: 1740013867
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 594aa5282e7de6d42b2fc9cc0be8f990, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd74773dc0875c1498fdabdeb03074a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2287,13 +2283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
-  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 97
 --- !u!212 &1303199617
@@ -2370,9 +2364,9 @@ RectTransform:
   m_Father: {fileID: 110747369}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.27197266, y: 0.3919983}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 263.27197, y: -9.608002}
   m_SizeDelta: {x: 526, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320405594
@@ -2938,10 +2932,10 @@ RectTransform:
   m_Father: {fileID: 510331032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: -1.608439}
-  m_SizeDelta: {x: 34, y: 48.311}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 234, y: -75.608444}
+  m_SizeDelta: {x: 34, y: 48.311005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824895602
 MonoBehaviour:
@@ -3244,13 +3238,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1844520582}
-  sc: {fileID: 0}
   vidaEnemigo: {fileID: 1140412351}
   PuntosDeJuegoScript: {fileID: 641638004}
   BarraVidaScript: {fileID: 271566933}
   hitPlayer: {fileID: 1058641511182032, guid: e0b70a72a3494e24a87e5b3f3ca20885, type: 2}
   hitEnemy: {fileID: 1016863324619324, guid: fae5ffa13ca10e04d978ce5d1b97f28a, type: 2}
-  song: {fileID: 0}
   InfoText: {fileID: 1955878388}
   key: 100
 --- !u!212 &1859941717
@@ -3392,9 +3384,9 @@ RectTransform:
   m_Father: {fileID: 150647707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -166.7, y: -2.9}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -166.7, y: -52.9}
   m_SizeDelta: {x: 293.7, y: 145.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955878388
@@ -3479,7 +3471,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3530,7 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02446d70935b90479723fa5903c40f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.04
+  delay: 1
   destino: SilentHill2.txt
   Redobject: {fileID: 133328, guid: a7b26044afd8d8042b40a5633c88e0b2, type: 2}
   Blueobject: {fileID: 124930, guid: a0dfb27111921914798a30a3eac01a25, type: 2}
@@ -3801,12 +3793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499415f83edec8f4f9494c07c1180439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasStarted: 0
   song: {fileID: 1957316781}
   nivelRecompensa: 1
   enemyDataBase: {fileID: 11400000, guid: 25a577dff0d5cea4c916cd0f16738912, type: 2}
   numeroTotalEnemigos: 0
   contadorDeDerrotas: 0
+  HasStarted: 0
 --- !u!1 &1968886024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,9 +3891,9 @@ RectTransform:
   m_Father: {fileID: 2044622617}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.27197266, y: 0.3919983}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 263.27197, y: -9.608002}
   m_SizeDelta: {x: 526, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992616094
@@ -4129,9 +4121,9 @@ RectTransform:
   m_Father: {fileID: 74291746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 263, y: -20}
   m_SizeDelta: {x: 526, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050618874
@@ -4197,9 +4189,9 @@ RectTransform:
   m_Father: {fileID: 264069506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 263, y: -20}
   m_SizeDelta: {x: 526, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070044644

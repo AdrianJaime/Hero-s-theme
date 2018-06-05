@@ -569,7 +569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -514, y: -384}
+  m_AnchoredPosition: {x: -587, y: -384}
   m_SizeDelta: {x: 564, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331905359
@@ -1649,6 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   mejoraArmas: {fileID: 0}
+  newName: 
 --- !u!4 &872491444
 Transform:
   m_ObjectHideFlags: 0
@@ -2642,7 +2643,7 @@ Prefab:
     - target: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 242
+      value: 165
       objectReference: {fileID: 0}
     - target: {fileID: 224017883204404484, guid: 7c7cce643bc43df4da940247e248ebb6,
         type: 2}

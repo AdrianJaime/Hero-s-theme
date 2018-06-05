@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/Arranque.unity"
+    guid: 7a0534734380691499b12f8757492709
+  - enabled: 1
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/Men\xFAPrincipal.unity"
     guid: 240cee86936e1384a9dd6bb9715a015b
   - enabled: 1
@@ -21,13 +24,10 @@ EditorBuildSettings:
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/Lista.unity"
     guid: 75f14807fb2e52f4294d8976257a6927
   - enabled: 1
-    path: "Assets/Escena/Men\xFAs/Arranque.unity"
-    guid: 7a0534734380691499b12f8757492709
-  - enabled: 1
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/Inventario.unity"
     guid: 54b8d03c010364442a361c28bf2d0f4d
   - enabled: 1
-    path: "Assets/Escena/Men\xFAs/New Game.unity"
+    path: "Assets/Escena/Men\xFAs/NuevasVersiones/New Game.unity"
     guid: 0e5d09cfd7a781d43ad7f7078a8a78a9
   - enabled: 1
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/Evolucion.unity"
@@ -53,6 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Escena/Men\xFAs/NuevasVersiones/SelectorDeNiveles.unity"
     guid: e140a08e329d8fc41b3eba3a0ea420b5
-  - enabled: 1
-    path: Assets/__DELETED_GUID_Trash/9dfded726775ec04ea9d0acdbfa396f3
-    guid: 9dfded726775ec04ea9d0acdbfa396f3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000

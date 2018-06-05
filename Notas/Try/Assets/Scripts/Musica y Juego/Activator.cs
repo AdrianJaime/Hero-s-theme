@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Activator : MonoBehaviour {
 
     public PlayerStats playerStats;
-    public ControladorRescompensa sc;
     public BarraVidaEnemigo vidaEnemigo;
 
     public PuntosDeJuego PuntosDeJuegoScript;
@@ -14,17 +13,11 @@ public class Activator : MonoBehaviour {
     public GameObject hitPlayer;
     public GameObject hitEnemy;
 
-    public AudioSource song;
-
     public Text InfoText;
     public KeyCode key;
     bool active = false;
     GameObject Note;
 
-    private void Start()
-    {
-        sc = GameObject.Find("ControlDeEscenaRecompensa").GetComponent<ControladorRescompensa>();
-    }
 
 
     // Update is called once per frame
@@ -72,7 +65,7 @@ public class Activator : MonoBehaviour {
             vidaEnemigo.Damage();
 
         }
-        else if  (Input.GetKeyDown(key) && active==false)
+        else if  (Input.GetKeyDown(key) && active==false )
             {
 
             PuntosDeJuegoScript.MultiplicadorDeCombo = 1;
@@ -85,14 +78,6 @@ public class Activator : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (song != null) {
-            if (!song.isPlaying)
-            {
-                sc.HasStarted = true;
-                song.Play();
-
-            }
-        }
 
         active = true;
         if (col.gameObject.tag == "Note")
