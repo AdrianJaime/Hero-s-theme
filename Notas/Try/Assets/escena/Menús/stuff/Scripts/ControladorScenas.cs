@@ -22,7 +22,7 @@ public class ControladorScenas : MonoBehaviour {
     public void CambioScenaNuevoJuego(string Activador)
     {
         CargarName();
-        if (newName!="")
+       if (newName!="")
             SceneManager.LoadScene(Activador);
     }
     public void CambioScenaArranqueAMenú(string Activador)
