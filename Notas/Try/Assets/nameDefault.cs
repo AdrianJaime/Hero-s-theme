@@ -1,30 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+public class nameDefault : MonoBehaviour {
 
-
-
-public class Name : MonoBehaviour {
-    public InputField named;
     public string savedName;
-      public void GetInput()
-      {
-        GuardarNombre();     
-      }
+	// Use this for initialization
+	void Start () {
+        if (!PlayerPrefs.HasKey("nombrePlayer"))
+        GuardarNombre();
+
+    }
+
+
     public void GuardarNombre()
     {
-
-
         NombreJugador guardarNombre = new NombreJugador();
-        guardarNombre.name = this.named.text;
+        guardarNombre.name = "";
         savedName = JsonUtility.ToJson(guardarNombre);
         PlayerPrefs.SetString("nombrePlayer", savedName);
     }
 }
-
-public class NombreJugador{public string name; }
-
-
-
